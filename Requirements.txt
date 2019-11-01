@@ -1,0 +1,4 @@
+Er moet een werkende DB zijn voor alle card.
+PLayers moeten vorige games opslaan.
+
+random kaart trekken.
