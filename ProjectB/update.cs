@@ -4,6 +4,9 @@ using System.ComponentModel;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Permissions;
 
 namespace ProjectB
 {
@@ -49,7 +52,7 @@ namespace ProjectB
             User newuser = new User(id, title, password, false, orders);
             users.Add(newuser);
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
-            string jsonFilePath = @"C:/Users/31634/Desktop/School/ProjectB/ProjectB/ProjectB/users.json";
+            string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/users.json";
             File.WriteAllText(jsonFilePath, json);
         }
         public static void registerAccount()
@@ -93,6 +96,7 @@ namespace ProjectB
                     {
                         newUser = false;
                         message = "Username has been taken, please enter another one:";
+                        getUsername();
                     }
                 }
             }

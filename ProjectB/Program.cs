@@ -15,6 +15,7 @@ namespace ProjectB
         public static int currentId = -1;
         public static List<User> users = JsonConverter.getUserList();
         public static List<Movie> movies = JsonConverter.getMovieList();
+        public static List<UserInfo> usersinfo = JsonConverter.getUserInfoList();
 
         static bool isAdmin() => users[currentId].Admin;
         static bool IsLoggedIn() => currentId >= 0;
@@ -46,7 +47,8 @@ namespace ProjectB
                 Console.WriteLine(
                     "--Version // Shows version of program\n" +
                     "--Exit // Exit the program\n" +
-                    "--Logout // logout"
+                    "--Logout // logout\n" + 
+                    "--Userinfo // Enter your personal information"
                 );
             }
             else
@@ -116,13 +118,60 @@ namespace ProjectB
             Console.WriteLine(result);
             Console.ReadLine();
         }
-    
+        private static void newInfo(int id, string title, string firstname, string lastname, string email)
+        {
+            UserInfo newinfo = new UserInfo(id, title, firstname, lastname, email);
+            usersinfo.Add(newinfo);
+            string json = JsonConvert.SerializeObject(usersinfo, Formatting.Indented);
+            string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/usersinfo.json";
+            File.WriteAllText(jsonFilePath, json);
+        }
+        public static void userinfo()
+        {
+            foreach (var item in usersinfo)
+            {
+                if (item.Id == currentId)
+                {
+                    ClearAndWrite("We already have your information!");
+                    string CurrentUserInfo = "Username   = " + item.Title + 
+                                             "\nFirst Name = " + item.FirstName +
+                                             "\nLast Name  = " + item.LastName +
+                                             "\nEmail      = " + item.Email;
+                    Console.WriteLine(CurrentUserInfo);
+                    Console.ReadLine();
+                    break;
+                }
+                else if (item.Id == currentId)
+                {
+                    ClearAndWrite("Please enter your personal information:");
+                    Console.WriteLine("First name:");
+                    string firstname = Console.ReadLine();
+                    Console.WriteLine("Last name:");
+                    string lastname = Console.ReadLine();
+                    Console.WriteLine("E-mailadres:");
+                    string email = Console.ReadLine();
+                    newInfo(users[currentId].Id, users[currentId].Title, firstname, lastname, email);
+                    string CurrentUserInfo = "Username   = " + item.Title +
+                                            "\nFirst Name = " + item.FirstName +
+                                            "\nLast Name  = " + item.LastName +
+                                            "\nEmail      = " + item.Email;
+                    Console.ReadLine();
+                    Console.WriteLine(CurrentUserInfo);
+                    break;
+                    
+                }
+            }
+            
+        }
+      
+        
         static void Main()
         {
             while (true)
             {
                 Console.Clear();
                 PrintIntroductionAndOptions();
+                
                 string input = Console.ReadLine();
                 switch (input.ToLower())
                 {
@@ -132,7 +181,8 @@ namespace ProjectB
                     case "logout": currentId = -1; break;
                     case "register": Register(); break;
                     case "movies": printMovies(); break;
-                    case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; } 
+                    case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; }
+                    case "userinfo": if (IsLoggedIn()) { userinfo(); break; } else { break; }
                 }
             }
         }
