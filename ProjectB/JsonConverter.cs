@@ -10,17 +10,24 @@ namespace ProjectB
     {
         public static List<Movie> getMovieList()
         {
-            string jsonFilePath = @"C:/Users/31634/Desktop/School/ProjectB/ProjectB/ProjectB/movies.json";
+            string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/movies.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
         public static List<User> getUserList()
         {
-            string jsonFilePath = @"C:/Users/31634/Desktop/School/ProjectB/ProjectB/ProjectB/users.json";
+            string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
+        }
+        public static List<UserInfo> getUserInfoList()
+        {
+            string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/usersinfo.json";
+            string json = File.ReadAllText(jsonFilePath);
+            List<UserInfo> usersinfo = JsonConvert.DeserializeObject<List<UserInfo>>(json);
+            return usersinfo;
         }
     }
     class Movie
@@ -46,6 +53,22 @@ namespace ProjectB
             Password = password;
             Admin = admin;
             Orderlist = orderlist;
+        }
+    }
+    class UserInfo
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public UserInfo(int id, string title, string firstname, string lastname, string email)
+        {
+            Id = id;
+            Title = title;
+            FirstName = firstname;
+            LastName = lastname;
+            Email = email;
         }
     }
 }
