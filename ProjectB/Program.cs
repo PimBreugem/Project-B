@@ -124,13 +124,26 @@ namespace ProjectB
             Console.Clear();
             string print = "Available movies:\n";
             int i = 0;
-            foreach (var item in movies) { print += "\n" +(item.Id)+ "." + (item.Title) + 
-                    "\n" + (item.Genre[0]+"/"+item.Genre[1]) +
-                    "\n" + (item.Length) + 
-                    "\n" + (item.Price) +
-                    "\n-"+
-                    "\n"+ (item.Bio)+ "\n"; }
-            Console.WriteLine(print + "\n\nPlease enter a movie:");
+            foreach (var item in movies) {
+                print += "\n" + (item.Id) + "." + (item.Title) +
+                "\n" + "Genre: " + (item.Genre[0] + "/" + item.Genre[1]) +
+                "\n" + "Movie Length: " + (item.Length) +
+                "\n" + "Price: " + (item.Price) +
+                "\n" + (item.Screen) +
+                "\n" + "Version(s): ";
+                for (int j = 0; j < item.Version.Count(); j++)
+                {
+                    print += item.Version[j];
+                    if (j != item.Version.Count() - 1)
+                    {
+                       print += ", ";
+                    }
+                    
+                }
+                print += "\nDescription-" +
+                "\n" + (item.Bio) + "\n" ; }
+                    
+            Console.WriteLine(print + "\n\nPlease enter the number of the movie:");
             while (true)
             {
                 string result = Console.ReadLine();

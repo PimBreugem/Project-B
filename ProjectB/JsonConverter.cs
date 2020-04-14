@@ -10,14 +10,14 @@ namespace ProjectB
     {
         public static List<Movie> getMovieList()
         {
-            string jsonFilePath = @"C:\Users\tijme\OneDrive\Bureaublad\Project-B-master\Project-B-master\projectB\movies.json";
+            string jsonFilePath = @"C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\movies.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
         public static List<User> getUserList()
         {
-            string jsonFilePath = @"C:\Users\tijme\OneDrive\Bureaublad\Project-B-master\Project-B-master\ProjectB\users.json";
+            string jsonFilePath = @"C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
@@ -33,6 +33,7 @@ namespace ProjectB
         public string[] PlayTimes { get; set; }
         public string Price { get; set; }
         public string[] Version { get; set; }
+        public string Screen { get; set; }
     }
     class User
     {
