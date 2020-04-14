@@ -28,3 +28,16 @@ C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.c
 C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.dll
 C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.pdb
 C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.genruntimeconfig.cache
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.exe
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.deps.json
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.runtimeconfig.json
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.runtimeconfig.dev.json
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.dll
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.pdb
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.csprojAssemblyReference.cache
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.AssemblyInfoInputs.cache
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.AssemblyInfo.cs
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.csproj.CopyComplete
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.dll
+C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.pdb

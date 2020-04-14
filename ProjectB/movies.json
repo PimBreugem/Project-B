@@ -1,26 +1,34 @@
+
 [
   {
-    "Id": 1,
+    "Id": "1",
     "Title": "Avengers",
     "Bio": "Blah blah blah, Avengers",
     "Genre": [ "Action", "Thriller" ],
-    "Length": 120,
-    "PlayTimes": [ "2020-03-30T16:30:00Z", "2020-03-30T18:30:00Z", "2020-03-30T20:30:00Z" ]
+    "Length": "120",
+    "PlayTimes": [ "2020-03-30T16:30:00Z", "2020-03-30T18:30:00Z", "2020-03-30T20:30:00Z" ],
+    "Price": "11.50",
+    "Version": ["Imax", "3D","2D"]
+    
   },
   {
-    "Id": 2,
+    "Id": "2",
     "Title": "Lego Movie",
     "Bio": "This is the lego movie",
     "Genre": [ "Action", "Comedy" ],
-    "Length": 70,
-    "PlayTimes": [ "2020-03-30T16:30:00Z", "2020-03-30T18:30:00Z", "2020-03-30T20:30:00Z" ]
+    "Length": "70",
+    "PlayTimes": [ "2020-03-30T16:30:00Z", "2020-03-30T18:30:00Z", "2020-03-30T20:30:00Z" ],
+    "Price": "9.50",
+    "Version": ["2D"]
   },
   {
-    "Id": 3,
+    "Id": "3",
     "Title": "The Martian",
     "Bio": "Info about the Martian",
     "Genre": [ "Action", "Thriller" ],
-    "Length": 90,
-    "PlayTimes": [ "2020-03-30T16:30:00Z", "2020-03-30T18:30:00Z", "2020-03-30T20:30:00Z" ]
+    "Length": "90",
+    "PlayTimes": [ "2020-03-30T16:30:00Z", "2020-03-30T18:30:00Z", "2020-03-30T20:30:00Z" ],
+    "Price": "11.50",
+    "Version": ["Imax","2D"]
   }   
 ]

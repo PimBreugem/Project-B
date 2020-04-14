@@ -46,7 +46,8 @@ namespace ProjectB
                 Console.WriteLine(
                     "--Version // Shows version of program\n" +
                     "--Exit // Exit the program\n" +
-                    "--Logout // logout"
+                    "--Logout // logout\n"+
+                    "--Reserve // reserve"
                 );
             }
             else
@@ -60,6 +61,7 @@ namespace ProjectB
                 );
             }
         }
+        
         static void Login()
         {
             ClearAndWrite("Please enter your username:");
@@ -116,7 +118,31 @@ namespace ProjectB
             Console.WriteLine(result);
             Console.ReadLine();
         }
-    
+        static string Reserve()
+        {
+            List<string> list = new List<string>();
+            Console.Clear();
+            string print = "Available movies:\n";
+            int i = 0;
+            foreach (var item in movies) { print += "\n" +(item.Id)+ "." + (item.Title) + 
+                    "\n" + (item.Genre[0]+"/"+item.Genre[1]) +
+                    "\n" + (item.Length) + 
+                    "\n" + (item.Price) +
+                    "\n-"+
+                    "\n"+ (item.Bio)+ "\n"; }
+            Console.WriteLine(print + "\n\nPlease enter a movie:");
+            while (true)
+            {
+                string result = Console.ReadLine();
+                if (list.Contains(result.ToLower()))
+                {
+                    return result;
+                }
+                else { ClearAndWrite(print + "\n\nPlease enter a valid movie name:"); }
+            }
+        }
+
+
         static void Main()
         {
             while (true)
@@ -132,7 +158,8 @@ namespace ProjectB
                     case "logout": currentId = -1; break;
                     case "register": Register(); break;
                     case "movies": printMovies(); break;
-                    case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; } 
+                    case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; }
+                    case "reserve": Reserve(); break;
                 }
             }
         }

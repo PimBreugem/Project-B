@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\31634\\Desktop\\ProjectBtoGit\\ProjectB\\ProjectB.csproj": {}
+    "C:\\Users\\tijme\\OneDrive\\Documenten\\GitHub\\Project-B\\ProjectB\\ProjectB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\31634\\Desktop\\ProjectBtoGit\\ProjectB\\ProjectB.csproj": {
+    "C:\\Users\\tijme\\OneDrive\\Documenten\\GitHub\\Project-B\\ProjectB\\ProjectB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\31634\\Desktop\\ProjectBtoGit\\ProjectB\\ProjectB.csproj",
+        "projectUniqueName": "C:\\Users\\tijme\\OneDrive\\Documenten\\GitHub\\Project-B\\ProjectB\\ProjectB.csproj",
         "projectName": "ProjectB",
-        "projectPath": "C:\\Users\\31634\\Desktop\\ProjectBtoGit\\ProjectB\\ProjectB.csproj",
-        "packagesPath": "C:\\Users\\31634\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\31634\\Desktop\\ProjectBtoGit\\ProjectB\\obj\\",
+        "projectPath": "C:\\Users\\tijme\\OneDrive\\Documenten\\GitHub\\Project-B\\ProjectB\\ProjectB.csproj",
+        "packagesPath": "C:\\Users\\tijme\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tijme\\OneDrive\\Documenten\\GitHub\\Project-B\\ProjectB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\31634\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tijme\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
