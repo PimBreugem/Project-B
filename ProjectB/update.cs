@@ -46,6 +46,7 @@ namespace ProjectB
     class RegisterAccount
     {
         private static List<User> users = JsonConverter.getUserList();
+        public static List<UserInfo> usersinfo = JsonConverter.getUserInfoList();
         private static void newUsers(int id, string title, string password)
         {
             int[] orders = new int[0];
@@ -55,11 +56,23 @@ namespace ProjectB
             string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/users.json";
             File.WriteAllText(jsonFilePath, json);
         }
+        
+        private static void newInfo(int id, string title, string firstname, string lastname, string email)
+        {
+            UserInfo newinfo = new UserInfo(id, title, firstname, lastname, email);
+            usersinfo.Add(newinfo);
+            string json = JsonConvert.SerializeObject(usersinfo, Formatting.Indented);
+            string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/usersinfo.json";
+            File.WriteAllText(jsonFilePath, json);
+        }
         public static void registerAccount()
         {
             string username = getUsername();
             string password = getPassword();
             newUsers(users.Count, username, password);
+
+            // Create an empty list of user information for currentID
+            newInfo(users.Count-1, username, "", "", "");
         }
         private static string getPassword()
         {

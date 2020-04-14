@@ -28,6 +28,7 @@ namespace ProjectB
             Console.Clear();
             Console.WriteLine(text);
         }
+       
         static void PrintIntroductionAndOptions()
         {
             if (IsLoggedIn() && isAdmin())
@@ -118,50 +119,44 @@ namespace ProjectB
             Console.WriteLine(result);
             Console.ReadLine();
         }
-        private static void newInfo(int id, string title, string firstname, string lastname, string email)
-        {
-            UserInfo newinfo = new UserInfo(id, title, firstname, lastname, email);
-            usersinfo.Add(newinfo);
-            string json = JsonConvert.SerializeObject(usersinfo, Formatting.Indented);
-            string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/usersinfo.json";
-            File.WriteAllText(jsonFilePath, json);
-        }
+        
         public static void userinfo()
         {
-            foreach (var item in usersinfo)
+            List<UserInfo> usersinfo = JsonConverter.getUserInfoList();
+            if (usersinfo[currentId].FirstName == "")
             {
-                if (item.Id == currentId)
-                {
-                    ClearAndWrite("We already have your information!");
-                    string CurrentUserInfo = "Username   = " + item.Title + 
-                                             "\nFirst Name = " + item.FirstName +
-                                             "\nLast Name  = " + item.LastName +
-                                             "\nEmail      = " + item.Email;
-                    Console.WriteLine(CurrentUserInfo);
-                    Console.ReadLine();
-                    break;
-                }
-                else if (item.Id == currentId)
-                {
-                    ClearAndWrite("Please enter your personal information:");
-                    Console.WriteLine("First name:");
-                    string firstname = Console.ReadLine();
-                    Console.WriteLine("Last name:");
-                    string lastname = Console.ReadLine();
-                    Console.WriteLine("E-mailadres:");
-                    string email = Console.ReadLine();
-                    newInfo(users[currentId].Id, users[currentId].Title, firstname, lastname, email);
-                    string CurrentUserInfo = "Username   = " + item.Title +
-                                            "\nFirst Name = " + item.FirstName +
-                                            "\nLast Name  = " + item.LastName +
-                                            "\nEmail      = " + item.Email;
-                    Console.ReadLine();
-                    Console.WriteLine(CurrentUserInfo);
-                    break;
-                    
-                }
+                ClearAndWrite("Please enter your personal information:");
+                Console.WriteLine("First name:");
+                string firstname = Console.ReadLine();
+                usersinfo[currentId].FirstName = firstname;
+                Console.WriteLine("Last name:");
+                string lastname = Console.ReadLine();
+                usersinfo[currentId].LastName = lastname;
+                Console.WriteLine("E-mailadres:");
+                string email = Console.ReadLine();
+                usersinfo[currentId].Email = email;
+                string json = JsonConvert.SerializeObject(usersinfo, Formatting.Indented);
+                string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/usersinfo.json";
+                File.WriteAllText(jsonFilePath, json);
+                string CurrentUserInfo = "Your information:" +
+                                         "\nUsername   = " + usersinfo[currentId].Title +
+                                         "\nFirst Name = " + usersinfo[currentId].FirstName +
+                                         "\nLast Name  = " + usersinfo[currentId].LastName +
+                                         "\nEmail      = " + usersinfo[currentId].Email;
+                Console.ReadLine();
+                Console.WriteLine(CurrentUserInfo);
+                Console.ReadLine();    
             }
-            
+            else
+            {
+                ClearAndWrite("We already have your information!");
+                string CurrentUserInfo = "Username   = " + usersinfo[currentId].Title +
+                                         "\nFirst Name = " + usersinfo[currentId].FirstName +
+                                         "\nLast Name  = " + usersinfo[currentId].LastName +
+                                         "\nEmail      = " + usersinfo[currentId].Email;
+                Console.WriteLine(CurrentUserInfo);
+                Console.ReadLine();
+            }
         }
       
         
