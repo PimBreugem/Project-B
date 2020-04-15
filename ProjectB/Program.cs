@@ -1,12 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Dynamic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Permissions;
 
 namespace ProjectB
 {
@@ -46,7 +40,7 @@ namespace ProjectB
                 Console.WriteLine(
                     "--Version // Shows version of program\n" +
                     "--Exit // Exit the program\n" +
-                    "--Logout // logout\n"+
+                    "--Logout // logout\n" +
                     "--Movies // Show the list of current movies"
                 );
             }
@@ -61,7 +55,7 @@ namespace ProjectB
                 );
             }
         }
-        
+
         static void Login()
         {
             ClearAndWrite("Please enter your username:");
@@ -160,7 +154,7 @@ namespace ProjectB
                     continue;
                 }
 
-                Console.WriteLine(movies[result-1].Bio);
+                Console.WriteLine(movies[result - 1].Bio);
                 if (result > movies.Count || result < 0)
                 {
                     input = null;
@@ -169,8 +163,8 @@ namespace ProjectB
                 }
                 else
                 {
-                    Movie(result-1);
-                    Console.ReadLine();
+                    Movie(result - 1);
+                    break;
                 }
             }
         }
@@ -209,6 +203,7 @@ namespace ProjectB
                 print += "\n\t" + DateTime.UtcNow.ToString(time);
             }
             ClearAndWrite(print);
+            Console.ReadLine();
         }
 
 
