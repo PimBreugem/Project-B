@@ -49,7 +49,7 @@ namespace ProjectB
             User newuser = new User(id, title, password, false, orders);
             users.Add(newuser);
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
-            string jsonFilePath = @"C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\users.json";
+            string jsonFilePath = @"C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\users.json";
             File.WriteAllText(jsonFilePath, json);
         }
         public static void registerAccount()

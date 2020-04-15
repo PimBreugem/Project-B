@@ -31,7 +31,7 @@ namespace ProjectB
         {
             if (IsLoggedIn() && isAdmin())
             {
-                Console.WriteLine($"Reservation system (logged as admin account {GetCurrentUsername()})");
+                Console.WriteLine($"Reservation system (logged in as admin account {GetCurrentUsername()})");
                 Console.WriteLine(
                     "--Version // Shows version of program\n" +
                     "--Exit // Exit the program\n" +
@@ -42,12 +42,12 @@ namespace ProjectB
             }
             else if (IsLoggedIn())
             {
-                Console.WriteLine($"Reservation system (logged as {GetCurrentUsername()})");
+                Console.WriteLine($"Reservation system (logged in as {GetCurrentUsername()})");
                 Console.WriteLine(
                     "--Version // Shows version of program\n" +
                     "--Exit // Exit the program\n" +
                     "--Logout // logout\n"+
-                    "--Reserve // reserve"
+                    "--Movies // Show the list of current movies"
                 );
             }
             else
@@ -118,41 +118,97 @@ namespace ProjectB
             Console.WriteLine(result);
             Console.ReadLine();
         }
-        static string Reserve()
+        static void MovieOverview()
         {
-            List<string> list = new List<string>();
             Console.Clear();
             string print = "Available movies:\n";
-            int i = 0;
-            foreach (var item in movies) {
-                print += "\n" + (item.Id) + "." + (item.Title) +
+            foreach (var item in movies)
+            {
+                print += "\n" + (item.Id) + ". " + (item.Title) +
                 "\n" + "Genre: " + (item.Genre[0] + "/" + item.Genre[1]) +
                 "\n" + "Movie Length: " + (item.Length) +
                 "\n" + "Price: " + (item.Price) +
                 "\n" + (item.Screen) +
                 "\n" + "Version(s): ";
-                for (int j = 0; j < item.Version.Count(); j++)
+                for (int j = 0; j < item.Type.Count(); j++)
                 {
-                    print += item.Version[j];
-                    if (j != item.Version.Count() - 1)
+                    print += item.Type[j];
+                    if (j != item.Type.Count() - 1)
                     {
-                       print += ", ";
+                        print += ", ";
                     }
-                    
+
                 }
                 print += "\nDescription-" +
-                "\n" + (item.Bio) + "\n" ; }
-                    
+                "\n" + (item.Bio) + "\n";
+            }
+
+
             Console.WriteLine(print + "\n\nPlease enter the number of the movie:");
             while (true)
             {
-                string result = Console.ReadLine();
-                if (list.Contains(result.ToLower()))
+                string input = Console.ReadLine();
+                int result;
+                try
                 {
-                    return result;
+                    result = Int32.Parse(input);
                 }
-                else { ClearAndWrite(print + "\n\nPlease enter a valid movie name:"); }
+                catch (FormatException)
+                {
+                    input = null;
+                    ClearAndWrite(print + "\n\nPlease enter a valid movie number:");
+                    continue;
+                }
+
+                Console.WriteLine(movies[result-1].Bio);
+                if (result > movies.Count || result < 0)
+                {
+                    input = null;
+                    ClearAndWrite(print + "\n\nPlease enter a valid movie number:");
+                    continue;
+                }
+                else
+                {
+                    Movie(result-1);
+                    Console.ReadLine();
+                }
             }
+        }
+        static void Movie(int queriedId)
+        {
+            string print = "";
+            print += "\n" + (movies[queriedId].Title) +
+            "\n" + "Genre: ";
+            for (int i = 0; i < movies[queriedId].Genre.Count(); i++)
+            {
+                print += movies[queriedId].Genre[i];
+                if (i != movies[queriedId].Genre.Count() - 1)
+                {
+                    print += ", ";
+                }
+
+            }
+            print += "\n" + "Movie Length: " + (movies[queriedId].Length) +
+            "\n" + "Price: " + (movies[queriedId].Price) +
+            "\n" + (movies[queriedId].Screen) +
+            "\n" + "Version(s): ";
+            for (int j = 0; j < movies[queriedId].Type.Count(); j++)
+            {
+                print += movies[queriedId].Type[j];
+                if (j != movies[queriedId].Type.Count() - 1)
+                {
+                    print += ", ";
+                }
+
+            }
+            print += "\nDescription-" +
+            "\n" + (movies[queriedId].Bio) +
+            "\nPlaytimes:";
+            foreach (var time in movies[queriedId].PlayTimes)
+            {
+                print += "\n\t" + DateTime.UtcNow.ToString(time);
+            }
+            ClearAndWrite(print);
         }
 
 
@@ -170,9 +226,8 @@ namespace ProjectB
                     case "login": Login(); break;
                     case "logout": currentId = -1; break;
                     case "register": Register(); break;
-                    case "movies": printMovies(); break;
                     case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; }
-                    case "reserve": Reserve(); break;
+                    case "movies": MovieOverview(); break;
                 }
             }
         }

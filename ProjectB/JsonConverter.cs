@@ -10,14 +10,14 @@ namespace ProjectB
     {
         public static List<Movie> getMovieList()
         {
-            string jsonFilePath = @"C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\movies.json";
+            string jsonFilePath = @"C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\movies.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
         public static List<User> getUserList()
         {
-            string jsonFilePath = @"C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\users.json";
+            string jsonFilePath = @"C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
@@ -32,8 +32,20 @@ namespace ProjectB
         public string Length { get; set; }
         public string[] PlayTimes { get; set; }
         public string Price { get; set; }
-        public string[] Version { get; set; }
+        public string[] Type { get; set; }
         public string Screen { get; set; }
+        public Movie(int id, string title, string bio, string[] genre, string length, string[] playTimes, string price, string[] type, string screen)
+        {
+            Id = id;
+            Title = title;
+            Bio = bio;
+            Genre = genre;
+            Length = length;
+            PlayTimes = playTimes;
+            Price = price;
+            Type = type;
+            Screen = screen;
+        }
     }
     class User
     {

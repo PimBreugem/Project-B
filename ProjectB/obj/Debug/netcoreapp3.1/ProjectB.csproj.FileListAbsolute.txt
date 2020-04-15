@@ -41,3 +41,18 @@ C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreap
 C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.csproj.CopyComplete
 C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.dll
 C:\Users\tijme\OneDrive\Documenten\GitHub\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.pdb
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.exe
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.deps.json
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.runtimeconfig.json
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.runtimeconfig.dev.json
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.dll
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\bin\Debug\netcoreapp3.1\ProjectB.pdb
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.csprojAssemblyReference.cache
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.csproj.CoreCompileInputs.cache
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.AssemblyInfoInputs.cache
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.AssemblyInfo.cs
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.csproj.CopyComplete
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.dll
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.pdb
+C:\Users\freek\OneDrive\Documenten\School\Project B\Project-B\ProjectB\obj\Debug\netcoreapp3.1\ProjectB.genruntimeconfig.cache
