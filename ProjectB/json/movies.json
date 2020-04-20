@@ -1,0 +1,63 @@
+[
+  {
+    "Title": "Knifes Out",
+    "Bio": "Wanneer de bekende misdaadschrijver Harlan Thrombey (Christopher Plummer) vlak na zijn 85e verjaardag dood op zijn landgoed wordt gevonden, wordt de nieuwsgierige en charmante rechercheur Benoit Blanc (Daniel Craig) ingeschakeld om zijn dood te onderzoeken.",
+    "Genre": [ "Drama, Thriller" ],
+    "Length": 130,
+    "PlayOptions": [
+      {
+        "Id" :  1,
+        "Time": "2020-04-09T16:30:00Z",
+        "ScreenType": "Imax",
+        "Room": 3,
+        "Reserverd": []
+      },
+      {
+        "Time": "2020-04-09T18:30:00Z",
+        "ScreenType": "FullHD",
+        "Room": 3,
+        "Reserverd": []
+      }
+    ]
+  },
+  {
+    "Title": "Knifes Out",
+    "Bio": "Wanneer de bekende misdaadschrijver Harlan Thrombey (Christopher Plummer) vlak na zijn 85e verjaardag dood op zijn landgoed wordt gevonden, wordt de nieuwsgierige en charmante rechercheur Benoit Blanc (Daniel Craig) ingeschakeld om zijn dood te onderzoeken.",
+    "Genre": [ "Drama, Thriller" ],
+    "Length": 130,
+    "PlayOptions": [
+      {
+        "Time": "2020-04-09T16:30:00Z",
+        "ScreenType": "Imax",
+        "Room": 3,
+        "Reserverd": []
+      },
+      {
+        "Time": "2020-04-09T18:30:00Z",
+        "ScreenType": "FullHD",
+        "Room": 3,
+        "Reserverd": []
+      }
+    ]
+  },
+  {
+    "Title": "Knifes Out",
+    "Bio": "Wanneer de bekende misdaadschrijver Harlan Thrombey (Christopher Plummer) vlak na zijn 85e verjaardag dood op zijn landgoed wordt gevonden, wordt de nieuwsgierige en charmante rechercheur Benoit Blanc (Daniel Craig) ingeschakeld om zijn dood te onderzoeken.",
+    "Genre": [ "Drama, Thriller" ],
+    "Length": 130,
+    "PlayOptions": [
+      {
+        "Time": "2020-04-09T16:30:00Z",
+        "ScreenType": "Imax",
+        "Room": 3,
+        "Reserverd": []
+      },
+      {
+        "Time": "2020-04-09T18:30:00Z",
+        "ScreenType": "FullHD",
+        "Room": 3,
+        "Reserverd": []
+      }
+    ]
+  }
+]

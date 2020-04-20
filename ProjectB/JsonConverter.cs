@@ -10,14 +10,14 @@ namespace ProjectB
     {
         public static List<Movie> getMovieList()
         {
-            string jsonFilePath = @"C:/Users/31634/Desktop/School/ProjectB/ProjectB/ProjectB/movies.json";
+            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\movies.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
         public static List<User> getUserList()
         {
-            string jsonFilePath = @"C:/Users/31634/Desktop/School/ProjectB/ProjectB/ProjectB/users.json";
+            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
