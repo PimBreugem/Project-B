@@ -6,6 +6,7 @@ namespace ProjectB
 {
     class Program
     {
+        //test
         public static int currentId = -1;
         public static List<User> users = JsonConverter.getUserList();
         public static List<Movie> movies = JsonConverter.getMovieList();
