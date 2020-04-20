@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -10,14 +11,14 @@ namespace ProjectB
     {
         public static List<Movie> getMovieList()
         {
-            string jsonFilePath = @"C:/Users/31634/Desktop/School/ProjectB/ProjectB/ProjectB/movies.json";
+            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\movies.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
         public static List<User> getUserList()
         {
-            string jsonFilePath = @"C:/Users/31634/Desktop/School/ProjectB/ProjectB/ProjectB/users.json";
+            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
@@ -30,7 +31,8 @@ namespace ProjectB
         public string Bio { get; set; }
         public string[] Genre { get; set; }
         public int Length { get; set; }
-        public string[] PlayTimes { get; set; }
+        public PlayOptions[] PlayOptions { get; set; }
+
     }
     class User
     {
@@ -47,5 +49,13 @@ namespace ProjectB
             Admin = admin;
             Orderlist = orderlist;
         }
+    }
+    class PlayOptions
+    {
+        public int SubId { get; set; }
+        public DateTime Time { get; set; }
+        public string ScreenType { get; set; }
+        public int Room { get; set; }
+        public int[] Reserved { get; set; }
     }
 }
