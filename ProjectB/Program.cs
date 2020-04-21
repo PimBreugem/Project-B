@@ -12,7 +12,7 @@ namespace ProjectB
 {
     class Program
     {
-        public static int currentId = -1;
+        public static int currentId = 0;
         public static List<User> users = JsonConverter.getUserList();
         public static List<Movie> movies = JsonConverter.getMovieList();
 
@@ -37,7 +37,6 @@ namespace ProjectB
                     "--Exit // Exit the program\n" +
                     "--Logout // logout\n" +
                     "--NewMovie // Create a new movie (not working)"
-
                 );
             }
             else if (IsLoggedIn())
@@ -87,7 +86,7 @@ namespace ProjectB
             users = JsonConverter.getUserList();
             currentId = Program.users.Count - 1;
         }
-        static void printMovies()
+        static void PrintMovies()
         {
             ClearAndWrite("Enter Genre, movie title or all:");
             string search = Console.ReadLine();
@@ -102,10 +101,10 @@ namespace ProjectB
                     {
                         result += ", " + item.Genre[i];
                     }
-                    result += "\n" + item.Bio;
-                    foreach (var time in item.PlayTimes)
+                    result += "\n\n" + item.Bio + "\n";
+                    foreach (var option in item.PlayOptions)
                     {
-                        result += "\n" + DateTime.UtcNow.ToString(time);
+                        result += "\n" + option.Time.ToString("yyyy/MM/dd HH:mm") + " (" + option.ScreenType + ")";
                     }
                     result += "\n";
                 }
@@ -170,9 +169,8 @@ namespace ProjectB
                     case "login": Login(); break;
                     case "logout": currentId = -1; break;
                     case "register": Register(); break;
-                    case "movies": printMovies(); break;
-                    case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; }
-                    case "reserve": Reserve(); break;
+                    case "movies": PrintMovies(); break;
+                    case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; } 
                 }
             }
         }

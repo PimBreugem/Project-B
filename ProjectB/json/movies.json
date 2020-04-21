@@ -1,0 +1,71 @@
+[
+  {
+    "Id" :  0,
+    "Title": "Knifes Out",
+    "Bio": "Wanneer de bekende misdaadschrijver Harlan Thrombey (Christopher Plummer) vlak na zijn 85e verjaardag dood op zijn landgoed wordt gevonden, wordt de nieuwsgierige en charmante rechercheur Benoit Blanc (Daniel Craig) ingeschakeld om zijn dood te onderzoeken.",
+    "Genre": [ "Drama", "Thriller" ],
+    "Length": 130,
+    "PlayOptions": [
+      {
+        "subId": 0,
+        "Time": "2020-04-09T16:30:00Z",
+        "ScreenType": "Imax",
+        "Room": 3,
+        "Reserverd": []
+      },
+      {
+        "subId": 1,
+        "Time": "2020-04-09T18:30:00Z",
+        "ScreenType": "FullHD",
+        "Room": 1,
+        "Reserverd": []
+      }
+    ]
+  },
+  {
+    "Id" :  1,
+    "Title": "Escape from Pretoria",
+    "Bio": "In hun strijd tegen de apartheid verspreiden Tim Jenkin (Daniel Radcliff) en Stephan Lee (Daniel Webber) illegale ANC pamfletten onder de Zuid Afrikaanse bevolking. Ze worden op heterdaad betrapt en veroordeeld tot een jarenlange gevangenisstraf in Pretoria Central Prison. Eenmaal onder de vleugels van politiek activist Denis Goldberg besluiten ze om, samen met medegevangene Alex Moumbaris, een ingenieus plan te bedenken om te ontsnappen. Al snel blijkt de uitvoering een stuk ingewikkelder dan gedacht, en moeten er nog vele hindernissen genomen worden... Het zenuwslopend spannende Escape From Pretoria is gebaseerd op het waargebeurde verhaal van Tim Jenkin uit 1979 en houdt de kijker van begin tot einde op het puntje van de stoel. ",
+    "Genre": [ "Drama", "Thriller" ],
+    "Length": 106,
+    "PlayOptions": [
+      {
+        "subId": 0,
+        "Time": "2020-04-09T16:30:00Z",
+        "ScreenType": "Imax",
+        "Room": 2,
+        "Reserverd": []
+      },
+      {
+        "subId": 1,
+        "Time": "2020-04-09T18:30:00Z",
+        "ScreenType": "FullHD",
+        "Room": 5,
+        "Reserverd": []
+      }
+    ]
+  },
+  {
+    "Id" :  2,
+    "Title": "Mulan",
+    "Bio": "Wanneer de keizer van China besluit dat één man per gezin moet dienen in het keizerlijke leger, om het land te kunnen verdedigen tegen indringers uit het Noorden, neemt Hua Mulan, de oudste dochter van een respectabele krijger, de in het geheim de plaats van haar zieke vader in.",
+    "Genre": [ "Drama", "Thriller" ],
+    "Length": 115,
+    "PlayOptions": [
+      {
+        "subId": 0,
+        "Time": "2020-04-09T16:30:00Z",
+        "ScreenType": "Imax",
+        "Room": 6,
+        "Reserverd": [0]
+      },
+      {
+        "subId": 1,
+        "Time": "2020-04-09T18:30:00Z",
+        "ScreenType": "FullHD",
+        "Room": 4,
+        "Reserverd": [0]
+      }
+    ]
+  }
+]

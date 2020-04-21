@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -34,6 +35,7 @@ namespace ProjectB
         public string Price { get; set; }
         public string[] Version { get; set; }
         public string Screen { get; set; }
+        public PlayOptions[] PlayOptions { get; set; }
     }
     class User
     {
@@ -50,5 +52,13 @@ namespace ProjectB
             Admin = admin;
             Orderlist = orderlist;
         }
+    }
+    class PlayOptions
+    {
+        public int SubId { get; set; }
+        public DateTime Time { get; set; }
+        public string ScreenType { get; set; }
+        public int Room { get; set; }
+        public int[] Reserved { get; set; }
     }
 }
