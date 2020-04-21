@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Text;
+using System.Xml.XPath;
 using Newtonsoft.Json;
 
 namespace ProjectB
@@ -59,7 +60,7 @@ namespace ProjectB
             Console.Clear();
             Console.WriteLine(text);
         }
-        private static List<Movie> movies = JsonConverter.getMovieList();
+        private static List<Movie> movies = JsonConverter.GetMovieList();
         private static int SelectMovie()
         {
             List<string> list = new List<string>();
@@ -103,7 +104,7 @@ namespace ProjectB
             while (true)
             {
                 Console.Clear();
-                EreaAssembler.Assembler(not, selected);
+                EreaAssembler.Assembler(not, selected); //TODO not value to be the reservered int array from json / class
                 Console.WriteLine(print);
                 string input = Console.ReadLine();
 
@@ -148,26 +149,56 @@ namespace ProjectB
         {
             return (char)ushort.Parse(hex, System.Globalization.NumberStyles.HexNumber);
         }
+        private static List<Order> orders = JsonConverter.GetOrderList();
         public static void newReservation()
         {
             int selectedMovie = SelectMovie();
             int time = GetPlayTimes(selectedMovie);
             int[] stoelen = getSeats(selectedMovie, time);
-            int total = 0;
+            int total = 0, adult = 0, child = 0, disabled = 0;
+            float pricetotal = 0.00f;
             while (total != stoelen.Length)
             {
-                int adult = GetSeatAmount("Adult", 14.99f);
-                int child = GetSeatAmount("Child", 9.99f);
-                int disabled = GetSeatAmount("disabled", 4.99f);
+                adult = GetSeatAmount("Adult", 14.99f);
+                child = GetSeatAmount("Child", 9.99f);
+                disabled = GetSeatAmount("disabled", 4.99f);
                 total = adult + child + disabled;
+                pricetotal = adult * 14.99f + child * 9.99f + disabled * 4.99f; //TODO create a function for totalprice as it will be used more often in the program
             }
-            
+            bool paid = false;
+            ClearAndWrite("Your order is almost complete, your total is " + HexToChar("20AC") + pricetotal + "\nWould you like to pay online or at the cinema."); //FIX max float is unlimited, need to be 2
+            Console.WriteLine("Online / Cinema:");
+            string result = "";
+            while (true)
+            {
+                string input = Console.ReadLine().ToLower();
+                if (input == "online")
+                {
+                    paid = true;
+                    result = "You have succesfully paid!";
+                    break;
+                }
+                else if (input == "cinema")
+                {
+                    paid = false;
+                    result = "Be aware that you have to be around 15 minutes early to validate you ticket(s).";
+                    break;
+                }
+            }
+            ClearAndWrite("Order succesfully, check my orders for order details\n" + result);
             string wait = Console.ReadLine();
+            //TODO create module to update to json
+            int[] seatamount = new int[4] { total, adult, child, disabled };
+            Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, pricetotal, "today", paid);
+            orders.Add(neworder);
+            string json = JsonConvert.SerializeObject(orders, Formatting.Indented);
+            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
+            File.WriteAllText(jsonFilePath, json);
         }
     }
     class RegisterAccount
     {
-        private static List<User> users = JsonConverter.getUserList();
+        private static List<User> users = JsonConverter.GetUserList();
         private static void newUsers(int id, string title, string password)
         {
             int[] orders = new int[0];

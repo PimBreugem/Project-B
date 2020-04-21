@@ -9,19 +9,48 @@ namespace ProjectB
 {
     class JsonConverter
     {
-        public static List<Movie> getMovieList()
+        //TODO create error handler if json file is not found
+        //TODO get path without full path
+        public static List<Movie> GetMovieList()
         {
             string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\movies.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
-        public static List<User> getUserList()
+        public static List<User> GetUserList()
         {
             string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
+        }
+        public static List<Order> GetOrderList()
+        {
+            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
+            string json = File.ReadAllText(jsonFilePath);
+            List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(json);
+            return orders;
+        }
+    }
+    class Order
+    {
+        public int Id { get; set; }
+        public int MovieTitle { get; set; }
+        public int MoviePlaytimeId { get; set; }    
+        public int[] SeatAmount { get; set; } //Int Array with 4 values -> total seats, Adult seats, child seats & disabled seats
+        public float TotalPrice { get; set; }
+        public string OrderDate { get; set; } //TODO create function to get todays day.
+        public bool Paid { get; set; }
+        public Order(int id, int movietitle, int movieplaytimeid, int[] seatamount, float totalPrice, string orderdate, bool paid)
+        {
+            Id = id;
+            MovieTitle = movietitle;
+            MoviePlaytimeId = movieplaytimeid;
+            SeatAmount = seatamount;
+            TotalPrice = totalPrice;
+            OrderDate = orderdate;
+            Paid = paid;
         }
     }
     class Movie
