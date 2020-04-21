@@ -120,45 +120,125 @@ namespace ProjectB
             Console.ReadLine();
         }
         
+        public static void payment()
+        {
+            ClearAndWrite("INFORMATION AND PAYEMENT\n");
+            
+            double TotalPrice = 14.99;
+            string YourPrice = "Your total price = " + TotalPrice;
+            Console.WriteLine(YourPrice);
+            string paybill = "";
+            bool answer = false;
+            while (answer != true)
+            {
+                Console.WriteLine("\nEnter 'pay' to pay for your tickets");
+                paybill = Console.ReadLine();
+                if (paybill == "pay")
+                {
+                    answer = true;
+                }
+                else
+                {
+                    Console.WriteLine("Payment failed!");
+                }
+            }
+            ClearAndWrite("Payment Succesful!");
+            int ReservationID = 1;
+            Console.WriteLine("Your reservation number is " + ReservationID + ".");
+            Console.WriteLine("An Email is sent to: '" + usersinfo[currentId].Email + "' with an activation code.\n" +
+                "Show this code at the counter to activate your tickets for the movie.");
+            Console.WriteLine("\n\nThank you for visiting 'Patat!' and have fun at the movies!!!");
+            Console.WriteLine("Press any button to continue...");
+            Console.ReadLine();
+
+        }
         public static void userinfo()
         {
             List<UserInfo> usersinfo = JsonConverter.getUserInfoList();
             if (usersinfo[currentId].FirstName == "")
             {
-                ClearAndWrite("Please enter your personal information:");
-                Console.WriteLine("First name:");
+                ClearAndWrite("INFORMATION AND PAYMENT\n");
+                Console.WriteLine("Please enter your personal information right below:");
+                Console.WriteLine("Enter First name:");
                 string firstname = Console.ReadLine();
-                usersinfo[currentId].FirstName = firstname;
-                Console.WriteLine("Last name:");
+                
+                Console.WriteLine("Enter Last name:");
                 string lastname = Console.ReadLine();
-                usersinfo[currentId].LastName = lastname;
-                Console.WriteLine("E-mailadres:");
+                
+                Console.WriteLine("Enter E-mailadres:");
                 string email = Console.ReadLine();
-                usersinfo[currentId].Email = email;
-                string json = JsonConvert.SerializeObject(usersinfo, Formatting.Indented);
-                string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/usersinfo.json";
-                File.WriteAllText(jsonFilePath, json);
-                string CurrentUserInfo = "Your information:" +
-                                         "\nUsername   = " + usersinfo[currentId].Title +
-                                         "\nFirst Name = " + usersinfo[currentId].FirstName +
-                                         "\nLast Name  = " + usersinfo[currentId].LastName +
-                                         "\nEmail      = " + usersinfo[currentId].Email;
-                Console.ReadLine();
-                Console.WriteLine(CurrentUserInfo);
-                Console.ReadLine();    
+                // @... Put this information (firstname, lastname, email) inside reservation order 
+                ClearAndWrite("INFORMATION AND PAYMENT\n");
+                string InputUserInfo = "Your information:" +
+                                   "\nFirst Name = " + firstname +
+                                   "\nLast Name  = " + lastname +
+                                   "\nEmail      = " + email;
+                Console.WriteLine(InputUserInfo);
+                
+                Console.WriteLine("\nThanks for filling in the information form!\n" +
+                   "\nDo you want us to save this information for next time?");
+                string saveinfo = "";
+                bool answer = false;
+                while (answer != true)
+                {
+                    Console.WriteLine("Enter 'yes' or 'no' to continue...");
+                    saveinfo = Console.ReadLine();
+                    if(saveinfo == "yes" || saveinfo == "no")
+                    {
+                        answer = true;
+                    }
+                }
+                if(saveinfo == "yes")
+                {
+                    Console.WriteLine("Your information will be saved for next time.");
+                    Console.WriteLine("Press any button to continue...");
+                    Console.ReadLine();
+                    usersinfo[currentId].FirstName = firstname;
+                    usersinfo[currentId].LastName = lastname;
+                    usersinfo[currentId].Email = email;
+                    string json = JsonConvert.SerializeObject(usersinfo, Formatting.Indented);
+                    string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/usersinfo.json";
+                    File.WriteAllText(jsonFilePath, json);  
+                }
+                else if(saveinfo == "no")
+                {
+                    Console.WriteLine("Your information will not be saved.");
+                    Console.ReadLine();     
+                }
             }
             else
             {
-                ClearAndWrite("We already have your information!");
-                string CurrentUserInfo = "Username   = " + usersinfo[currentId].Title +
-                                         "\nFirst Name = " + usersinfo[currentId].FirstName +
-                                         "\nLast Name  = " + usersinfo[currentId].LastName +
-                                         "\nEmail      = " + usersinfo[currentId].Email;
+                ClearAndWrite("INFORMATION AND PAYMENT\n");
+                string CurrentUserInfo = "We already have your information:" +
+                                    "\nUsername   = " + usersinfo[currentId].Title +
+                                    "\nFirst Name = " + usersinfo[currentId].FirstName +
+                                    "\nLast Name  = " + usersinfo[currentId].LastName +
+                                    "\nEmail      = " + usersinfo[currentId].Email;
                 Console.WriteLine(CurrentUserInfo);
-                Console.ReadLine();
-            }
-        }
-      
+                Console.WriteLine("\nDo you want to change your information?");
+                string ChangeInfo = "";
+                bool answer = false;
+                while (answer != true)
+                {
+                    Console.WriteLine("Enter 'yes' or 'no' to continue...");
+                    ChangeInfo = Console.ReadLine();
+                    if (ChangeInfo == "yes" || ChangeInfo == "no")
+                    {
+                        answer = true;
+                    }
+                }
+                if(ChangeInfo == "yes")
+                {
+                    usersinfo[currentId].FirstName = "";
+                    usersinfo[currentId].LastName = "";
+                    usersinfo[currentId].Email = "";
+                    string json = JsonConvert.SerializeObject(usersinfo, Formatting.Indented);
+                    string jsonFilePath = @"C:/Users/Diedv/Desktop/ProjectB/ProjectB/usersinfo.json";
+                    File.WriteAllText(jsonFilePath, json);
+                    userinfo();
+                }
+            }               
+        } 
         
         static void Main()
         {
@@ -177,7 +257,7 @@ namespace ProjectB
                     case "register": Register(); break;
                     case "movies": printMovies(); break;
                     case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; }
-                    case "userinfo": if (IsLoggedIn()) { userinfo(); break; } else { break; }
+                    case "userinfo": if (IsLoggedIn()) { userinfo(); payment(); break; } else { break; }
                 }
             }
         }
