@@ -123,7 +123,7 @@ namespace ProjectB
         public static void payment()
         {
             ClearAndWrite("INFORMATION AND PAYEMENT\n");
-            
+            //@ Get TotalPrice from reservation 
             double TotalPrice = 14.99;
             string YourPrice = "Your total price = " + TotalPrice;
             Console.WriteLine(YourPrice);
@@ -143,6 +143,7 @@ namespace ProjectB
                 }
             }
             ClearAndWrite("Payment Succesful!");
+            //@ Get Reservation number from Reservation
             int ReservationID = 1;
             Console.WriteLine("Your reservation number is " + ReservationID + ".");
             Console.WriteLine("An Email is sent to: '" + usersinfo[currentId].Email + "' with an activation code.\n" +
