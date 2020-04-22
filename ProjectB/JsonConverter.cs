@@ -41,9 +41,9 @@ namespace ProjectB
         public int[] SeatAmount { get; set; } //Int Array with 4 values -> total seats, Adult seats, child seats & disabled seats
         public int[] MySeats { get; set; }
         public float TotalPrice { get; set; }
-        public string OrderDate { get; set; } //TODO create function to get todays day.
+        public DateTime OrderDate { get; set; } //TODO create function to get todays day.
         public bool Paid { get; set; }
-        public Order(int id, int movietitle, int movieplaytimeid, int[] seatamount, int[] myseats, float totalPrice, string orderdate, bool paid)
+        public Order(int id, int movietitle, int movieplaytimeid, int[] seatamount, int[] myseats, float totalPrice, DateTime orderdate, bool paid)
         {
             Id = id;
             MovieTitle = movietitle;

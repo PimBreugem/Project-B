@@ -188,7 +188,7 @@ namespace ProjectB
             ClearAndWrite("Order succesfully, check my orders for order details\n" + result);
             string wait = Console.ReadLine();
             int[] seatamount = new int[4] { total, adult, child, disabled };
-            Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, seats, pricetotal, "today", paid);
+            Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, seats, pricetotal, DateTime.Now, paid);
             orders.Add(neworder);
             string json = JsonConvert.SerializeObject(orders, Formatting.Indented);
             string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
