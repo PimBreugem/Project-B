@@ -104,7 +104,7 @@ namespace ProjectB
             while (true)
             {
                 Console.Clear();
-                EreaAssembler.Assembler(not, selected); //TODO not value to be the reservered int array from json / class
+                EreaAssembler.Assembler(not, selected); //BUG not value to be the reservered int array from json / class
                 Console.WriteLine(print);
                 string input = Console.ReadLine();
 
@@ -154,16 +154,16 @@ namespace ProjectB
         {
             int selectedMovie = SelectMovie();
             int time = GetPlayTimes(selectedMovie);
-            int[] stoelen = getSeats(selectedMovie, time);
+            int[] seats = getSeats(selectedMovie, time);
             int total = 0, adult = 0, child = 0, disabled = 0;
             float pricetotal = 0.00f;
-            while (total != stoelen.Length)
+            while (total != seats.Length)
             {
                 adult = GetSeatAmount("Adult", 14.99f);
                 child = GetSeatAmount("Child", 9.99f);
                 disabled = GetSeatAmount("disabled", 4.99f);
                 total = adult + child + disabled;
-                pricetotal = adult * 14.99f + child * 9.99f + disabled * 4.99f; //TODO create a function for totalprice as it will be used more often in the program
+                pricetotal = adult * 14.99f + child * 9.99f + disabled * 4.99f; 
             }
             bool paid = false;
             ClearAndWrite("Your order is almost complete, your total is " + HexToChar("20AC") + pricetotal + "\nWould you like to pay online or at the cinema."); //FIX max float is unlimited, need to be 2
@@ -187,13 +187,13 @@ namespace ProjectB
             }
             ClearAndWrite("Order succesfully, check my orders for order details\n" + result);
             string wait = Console.ReadLine();
-            //TODO create module to update to json
             int[] seatamount = new int[4] { total, adult, child, disabled };
-            Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, pricetotal, "today", paid);
+            Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, seats, pricetotal, "today", paid);
             orders.Add(neworder);
             string json = JsonConvert.SerializeObject(orders, Formatting.Indented);
             string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
             File.WriteAllText(jsonFilePath, json);
+            //update de gereserveerde stoelen van een film
         }
     }
     class RegisterAccount

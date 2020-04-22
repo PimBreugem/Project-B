@@ -5,25 +5,18 @@
     "MoviePlaytimeId": 1,
     "SeatAmount": [
       5,
-      3,
-      1,
-      1
-    ],
-    "TotalPrice": 59.949997,
-    "OrderDate": "today",
-    "Paid": true
-  },
-  {
-    "Id": 1,
-    "MovieTitle": 2,
-    "MoviePlaytimeId": 0,
-    "SeatAmount": [
       5,
-      4,
-      1,
+      0,
       0
     ],
-    "TotalPrice": 69.95,
+    "MySeats": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "TotalPrice": 74.95,
     "OrderDate": "today",
     "Paid": false
   }
