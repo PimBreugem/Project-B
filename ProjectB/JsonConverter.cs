@@ -10,24 +10,24 @@ namespace ProjectB
     class JsonConverter
     {
         //TODO create error handler if json file is not found
-        //TODO get path without full path
-        public static List<Movie> GetMovieList()
+        private static readonly string root = Environment.CurrentDirectory + @"\..\..\..\";
+        public static List<Movie> getMovieList()
         {
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\movies.json";
+            string jsonFilePath = root + @"json\movies.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
         public static List<User> GetUserList()
         {
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\users.json";
+            string jsonFilePath = root + @"json\users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
         }
         public static List<Order> GetOrderList()
         {
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
+            string jsonFilePath = root + @"json\orders.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(json);
             return orders;
@@ -61,9 +61,24 @@ namespace ProjectB
         public string Title { get; set; }
         public string Bio { get; set; }
         public string[] Genre { get; set; }
-        public int Length { get; set; }
         public PlayOptions[] PlayOptions { get; set; }
-
+        public string Length { get; set; }
+        public string[] PlayTimes { get; set; }
+        public string Price { get; set; }
+        public string[] Type { get; set; }
+        public string Screen { get; set; }
+        public Movie(int id, string title, string bio, string[] genre, string length, string[] playTimes, string price, string[] type, string screen)
+        {
+            Id = id;
+            Title = title;
+            Bio = bio;
+            Genre = genre;
+            Length = length;
+            PlayTimes = playTimes;
+            Price = price;
+            Type = type;
+            Screen = screen;
+        }
     }
     class User
     {
