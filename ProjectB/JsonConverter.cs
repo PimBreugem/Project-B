@@ -9,7 +9,6 @@ namespace ProjectB
 {
     class JsonConverter
     {
-        //TODO get path without full path
         //TODO create error handler if json file is not found
         private static readonly string root = Environment.CurrentDirectory + @"\..\..\..\";
         public static List<Movie> getMovieList()
@@ -28,7 +27,7 @@ namespace ProjectB
         }
         public static List<Order> GetOrderList()
         {
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
+            string jsonFilePath = root + @"json\orders.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(json);
             return orders;

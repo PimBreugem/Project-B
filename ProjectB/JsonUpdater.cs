@@ -53,6 +53,7 @@ namespace ProjectB
             Console.WriteLine(result);
         }
     }
+    
     class Reservation
     {
         static void ClearAndWrite(string text)
@@ -60,41 +61,9 @@ namespace ProjectB
             Console.Clear();
             Console.WriteLine(text);
         }
-        private static List<Movie> movies = JsonConverter.GetMovieList();
-        private static int SelectMovie()
-        {
-            List<string> list = new List<string>();
-            Console.Clear();
-            string print = "Available movies:\n";
-            foreach(var item in movies) { print += "\n" + (item.Title); list.Add(item.Title.ToLower()); }
-            Console.WriteLine(print + "\n\nPlease enter a movie:");
-            while (true)
-            {
-                string result = Console.ReadLine();
-                if(list.Contains(result.ToLower()))
-                {
-                    foreach(var item in movies) { if(result.ToLower() == item.Title.ToLower()) { return item.Id; } } 
-                }
-                else { ClearAndWrite(print + "\n\nPlease enter a valid movie name:"); }
-            }
-        }
-        public static int GetPlayTimes(int MovieId)
-        {
-            string Resultstring = "";
-            foreach (var item in movies[MovieId].PlayOptions)
-            {
-                Resultstring += item.SubId + ". " + item.Time + "(" + item.Room + ")"  + "\n";
-            }
-            Console.WriteLine(Resultstring + "\nPlease enter wanted time.");
-            while (true)
-            {
-                switch (Console.ReadLine())
-                {
-                    case "0": return 0;
-                    case "1": return 1;
-                }
-            }
-        }
+        private static List<Movie> movies = JsonConverter.getMovieList();
+        
+        
         public static int[] getSeats(int movie, int playtime)
         {
             int[] not = movies[movie].PlayOptions[playtime].Reserved;
@@ -150,10 +119,11 @@ namespace ProjectB
             return (char)ushort.Parse(hex, System.Globalization.NumberStyles.HexNumber);
         }
         private static List<Order> orders = JsonConverter.GetOrderList();
-        public static void newReservation()
+        public static void NewReservation()
         {
-            int selectedMovie = SelectMovie();
-            int time = GetPlayTimes(selectedMovie);
+            Tuple<int, int> tuple = MovieFunctions.MovieOverviewReserve();
+            int selectedMovie = tuple.Item1;
+            int time = tuple.Item2;
             int[] seats = getSeats(selectedMovie, time);
             int total = 0, adult = 0, child = 0, disabled = 0;
             float pricetotal = 0.00f;
@@ -163,7 +133,7 @@ namespace ProjectB
                 child = GetSeatAmount("Child", 9.99f);
                 disabled = GetSeatAmount("disabled", 4.99f);
                 total = adult + child + disabled;
-                pricetotal = adult * 14.99f + child * 9.99f + disabled * 4.99f; 
+                pricetotal = (adult * 14.99f) + (child * 9.99f) + (disabled * 4.99f);
             }
             bool paid = false;
             ClearAndWrite("Your order is almost complete, your total is " + HexToChar("20AC") + pricetotal + "\nWould you like to pay online or at the cinema."); //FIX max float is unlimited, need to be 2
@@ -191,7 +161,7 @@ namespace ProjectB
             Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, seats, pricetotal, DateTime.Now, paid);
             orders.Add(neworder);
             string json = JsonConvert.SerializeObject(orders, Formatting.Indented);
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
+            string jsonFilePath = Environment.CurrentDirectory + @"\..\..\..\json\orders.json";
             File.WriteAllText(jsonFilePath, json);
             //update de gereserveerde stoelen van een film
         }
