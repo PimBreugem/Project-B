@@ -9,6 +9,8 @@ namespace ProjectB
 {
     class JsonConverter
     {
+        //TODO get path without full path
+        //TODO create error handler if json file is not found
         private static readonly string root = Environment.CurrentDirectory + @"\..\..\..\";
         public static List<Movie> getMovieList()
         {
@@ -17,12 +19,41 @@ namespace ProjectB
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
-        public static List<User> getUserList()
+        public static List<User> GetUserList()
         {
             string jsonFilePath = root + @"json\users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
+        }
+        public static List<Order> GetOrderList()
+        {
+            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
+            string json = File.ReadAllText(jsonFilePath);
+            List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(json);
+            return orders;
+        }
+    }
+    class Order
+    {
+        public int Id { get; set; }
+        public int MovieTitle { get; set; }
+        public int MoviePlaytimeId { get; set; }    
+        public int[] SeatAmount { get; set; } //Int Array with 4 values -> total seats, Adult seats, child seats & disabled seats
+        public int[] MySeats { get; set; }
+        public float TotalPrice { get; set; }
+        public DateTime OrderDate { get; set; } //TODO create function to get todays day.
+        public bool Paid { get; set; }
+        public Order(int id, int movietitle, int movieplaytimeid, int[] seatamount, int[] myseats, float totalPrice, DateTime orderdate, bool paid)
+        {
+            Id = id;
+            MovieTitle = movietitle;
+            MoviePlaytimeId = movieplaytimeid;
+            SeatAmount = seatamount;
+            MySeats = myseats;
+            TotalPrice = totalPrice;
+            OrderDate = orderdate;
+            Paid = paid;
         }
     }
     class Movie

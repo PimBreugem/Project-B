@@ -7,8 +7,8 @@ namespace ProjectB
     class Program
     {
         public static int currentId = 0;
-        public static List<User> users = JsonConverter.getUserList();
-        public static List<Movie> movies = JsonConverter.getMovieList();
+        public static List<User> users = JsonConverter.GetUserList();
+        public static List<Movie> movies = JsonConverter.GetMovieList();
 
         static bool isAdmin() => users[currentId].Admin;
         static bool IsLoggedIn() => currentId >= 0;
@@ -77,7 +77,7 @@ namespace ProjectB
         static void Register()
         {
             RegisterAccount.registerAccount();
-            users = JsonConverter.getUserList();
+            users = JsonConverter.GetUserList();
             currentId = Program.users.Count - 1;
         }
         static void PrintMovies()
