@@ -8,6 +8,110 @@ using Newtonsoft.Json;
 
 namespace ProjectB
 {
+    class Data
+    {
+        static void ClearAndWrite(string text)
+        {
+            Console.Clear();
+            Console.WriteLine(text);
+        }
+        
+        private static List<Order> orders = JsonConverter.GetOrderList();
+
+        public static void GetData(string inputdate)
+        {
+            ClearAndWrite("ADMIN INFORMATION\n");
+            Console.WriteLine("Date of choice: " + inputdate);
+            int OrdersCountToday = 0;
+            float TotalPriceToday = 0.00f;
+
+            foreach (var item in orders)
+            {
+                if (item.OrderDate == inputdate)
+                {
+                    OrdersCountToday += 1;
+                    TotalPriceToday += item.TotalPrice;
+                }
+            }
+            TotalPriceToday = (float)Math.Round(TotalPriceToday * 100f) / 100f;
+            Console.WriteLine("\nAmount of orders on " + inputdate + ": " + OrdersCountToday);
+            Console.WriteLine("Revenue on " + inputdate + ": " + TotalPriceToday);
+       
+            Console.WriteLine("\nPress any button to go back.");
+            Console.ReadLine();
+                
+            
+        }
+        
+            
+        
+        public static void GetDataToday()
+        {
+            
+            DateTime Date = DateTime.Now;
+            string DateNow = Date.ToString("d");
+            string CompleteDate = Date.ToString("F");
+            ClearAndWrite("ADMIN INFORMATION\n");
+            
+            Console.WriteLine("Today's date: " + CompleteDate);
+            int OrdersCountToday = 0;
+            float TotalPriceToday = 0.00f;
+            
+            foreach(var item in orders)
+            {
+                if(item.OrderDate == DateNow)
+                {
+                    OrdersCountToday += 1;
+                    TotalPriceToday += item.TotalPrice;
+                }
+            }
+            TotalPriceToday = (float)Math.Round(TotalPriceToday * 100f) / 100f;
+            Console.WriteLine("\nAmount of Today's orders: " + OrdersCountToday);
+            Console.WriteLine("Revenue of Today: " + TotalPriceToday);
+            string answer = "";
+            while (answer != "quit" || answer != "next")
+            {
+                Console.WriteLine("\nEnter 'quit' to go back or 'next' to find other dates");
+                answer = Console.ReadLine();
+
+                if (answer == "next")
+                {
+                    ClearAndWrite("ADMIN INFORMATION\n");
+                    string InputDate = "";
+                    bool DateCheck = false;
+                    while (DateCheck != true)
+                    {
+                        Console.WriteLine("Please enter a valid date: ('dd.MM.yyyy' 'dd-MM-yyyy' 'dd/MM/yyyy')");
+                        var dateFormats = new[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy" };
+                        InputDate = Console.ReadLine();
+
+                        foreach (string myDateFormat in dateFormats)
+                        {
+                            DateTime dateValue;
+                            if (DateTime.TryParse(InputDate, out dateValue))
+                            {
+                                DateCheck = true;
+                            }
+                        }
+
+                        if (DateCheck == false)
+                        {
+                            Console.WriteLine("Sorry this is not a valid date");
+                        }
+                    }
+                    
+                    DateTime date = Convert.ToDateTime(InputDate);
+                    string inputformat = date.ToString("d");
+                    GetData(inputformat);
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
     class EreaAssembler
     {
         public static bool IntContains(int[] list, int input)
@@ -150,6 +254,11 @@ namespace ProjectB
             return (char)ushort.Parse(hex, System.Globalization.NumberStyles.HexNumber);
         }
         private static List<Order> orders = JsonConverter.GetOrderList();
+        
+        
+        
+        
+        
         public static void newReservation()
         {
             int selectedMovie = SelectMovie();
@@ -188,10 +297,12 @@ namespace ProjectB
             ClearAndWrite("Order succesfully, check my orders for order details\n" + result);
             string wait = Console.ReadLine();
             int[] seatamount = new int[4] { total, adult, child, disabled };
-            Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, seats, pricetotal, DateTime.Now, paid);
+            DateTime Date = DateTime.Now;
+            string DateNow = Date.ToString("d"); 
+            Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, seats, pricetotal, DateNow, paid);
             orders.Add(neworder);
             string json = JsonConvert.SerializeObject(orders, Formatting.Indented);
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
+            string jsonFilePath = @"C:\Users\Diedv\Desktop\Project-B-PimBreugem-Update\ProjectB\json\orders.json";
             File.WriteAllText(jsonFilePath, json);
             //update de gereserveerde stoelen van een film
         }
@@ -205,7 +316,7 @@ namespace ProjectB
             User newuser = new User(id, title, password, false, orders);
             users.Add(newuser);
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\users.json";
+            string jsonFilePath = @"C:\Users\Diedv\Desktop\Project-B-PimBreugem-Update\ProjectB\json\users.json";
             File.WriteAllText(jsonFilePath, json);
         }
         public static void registerAccount()

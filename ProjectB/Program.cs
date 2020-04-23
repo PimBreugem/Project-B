@@ -36,7 +36,8 @@ namespace ProjectB
                     "--Version // Shows version of program\n" +
                     "--Exit // Exit the program\n" +
                     "--Logout // logout\n" +
-                    "--NewMovie // Create a new movie (not working)"
+                    "--Data // Data information\n" +
+                    "--NewMovie // Create a new movie (not working)" 
                 );
             }
             else if (IsLoggedIn())
@@ -131,7 +132,8 @@ namespace ProjectB
                     case "logout": currentId = -1; break;
                     case "register": Register(); break;
                     case "movies": PrintMovies(); break;
-                    case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; } 
+                    case "reservation": if (IsLoggedIn()) { Reservation.newReservation(); break; } else { break; }
+                    case "data": if (isAdmin() && IsLoggedIn()) { Data.GetDataToday(); break; } else { break; }
                 }
             }
         }

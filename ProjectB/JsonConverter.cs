@@ -13,21 +13,21 @@ namespace ProjectB
         //TODO get path without full path
         public static List<Movie> GetMovieList()
         {
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\movies.json";
+            string jsonFilePath = @"C:\Users\Diedv\Desktop\Project-B-PimBreugem-Update\ProjectB\json\movies.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
             return movies;
         }
         public static List<User> GetUserList()
         {
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\users.json";
+            string jsonFilePath = @"C:\Users\Diedv\Desktop\Project-B-PimBreugem-Update\ProjectB\json\users.json";
             string json = File.ReadAllText(jsonFilePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
         }
         public static List<Order> GetOrderList()
         {
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\orders.json";
+            string jsonFilePath = @"C:\Users\Diedv\Desktop\Project-B-PimBreugem-Update\ProjectB\json\orders.json";
             string json = File.ReadAllText(jsonFilePath);
             List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(json);
             return orders;
@@ -41,9 +41,9 @@ namespace ProjectB
         public int[] SeatAmount { get; set; } //Int Array with 4 values -> total seats, Adult seats, child seats & disabled seats
         public int[] MySeats { get; set; }
         public float TotalPrice { get; set; }
-        public DateTime OrderDate { get; set; } //TODO create function to get todays day.
+        public string OrderDate { get; set; } //TODO create function to get todays day.
         public bool Paid { get; set; }
-        public Order(int id, int movietitle, int movieplaytimeid, int[] seatamount, int[] myseats, float totalPrice, DateTime orderdate, bool paid)
+        public Order(int id, int movietitle, int movieplaytimeid, int[] seatamount, int[] myseats, float totalPrice, string orderdate, bool paid)
         {
             Id = id;
             MovieTitle = movietitle;
