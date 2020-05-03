@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Text;
+using System.Xml.XPath;
 using Newtonsoft.Json;
 
 namespace ProjectB
@@ -52,6 +53,7 @@ namespace ProjectB
             Console.WriteLine(result);
         }
     }
+    
     class Reservation
     {
         static void ClearAndWrite(string text)
@@ -60,40 +62,8 @@ namespace ProjectB
             Console.WriteLine(text);
         }
         private static List<Movie> movies = JsonConverter.getMovieList();
-        private static int SelectMovie()
-        {
-            List<string> list = new List<string>();
-            Console.Clear();
-            string print = "Available movies:\n";
-            foreach(var item in movies) { print += "\n" + (item.Title); list.Add(item.Title.ToLower()); }
-            Console.WriteLine(print + "\n\nPlease enter a movie:");
-            while (true)
-            {
-                string result = Console.ReadLine();
-                if(list.Contains(result.ToLower()))
-                {
-                    foreach(var item in movies) { if(result.ToLower() == item.Title.ToLower()) { return item.Id; } } 
-                }
-                else { ClearAndWrite(print + "\n\nPlease enter a valid movie name:"); }
-            }
-        }
-        public static int GetPlayTimes(int MovieId)
-        {
-            string Resultstring = "";
-            foreach (var item in movies[MovieId].PlayOptions)
-            {
-                Resultstring += item.SubId + ". " + item.Time + "(" + item.Room + ")"  + "\n";
-            }
-            Console.WriteLine(Resultstring + "\nPlease enter wanted time.");
-            while (true)
-            {
-                switch (Console.ReadLine())
-                {
-                    case "0": return 0;
-                    case "1": return 1;
-                }
-            }
-        }
+        
+        
         public static int[] getSeats(int movie, int playtime)
         {
             int[] not = movies[movie].PlayOptions[playtime].Reserved;
@@ -103,7 +73,7 @@ namespace ProjectB
             while (true)
             {
                 Console.Clear();
-                EreaAssembler.Assembler(not, selected);
+                EreaAssembler.Assembler(not, selected); //BUG not value to be the reservered int array from json / class
                 Console.WriteLine(print);
                 string input = Console.ReadLine();
 
@@ -148,33 +118,64 @@ namespace ProjectB
         {
             return (char)ushort.Parse(hex, System.Globalization.NumberStyles.HexNumber);
         }
-        public static void newReservation()
+        private static List<Order> orders = JsonConverter.GetOrderList();
+        public static void NewReservation()
         {
-            int selectedMovie = SelectMovie();
-            int time = GetPlayTimes(selectedMovie);
-            int[] stoelen = getSeats(selectedMovie, time);
-            int total = 0;
-            while (total != stoelen.Length)
+            Tuple<int, int> tuple = MovieFunctions.MovieOverviewReserve();
+            int selectedMovie = tuple.Item1;
+            int time = tuple.Item2;
+            int[] seats = getSeats(selectedMovie, time);
+            int total = 0, adult = 0, child = 0, disabled = 0;
+            float pricetotal = 0.00f;
+            while (total != seats.Length)
             {
-                int adult = GetSeatAmount("Adult", 14.99f);
-                int child = GetSeatAmount("Child", 9.99f);
-                int disabled = GetSeatAmount("disabled", 4.99f);
+                adult = GetSeatAmount("Adult", 14.99f);
+                child = GetSeatAmount("Child", 9.99f);
+                disabled = GetSeatAmount("disabled", 4.99f);
                 total = adult + child + disabled;
+                pricetotal = (adult * 14.99f) + (child * 9.99f) + (disabled * 4.99f);
             }
-            
+            bool paid = false;
+            ClearAndWrite("Your order is almost complete, your total is " + HexToChar("20AC") + pricetotal + "\nWould you like to pay online or at the cinema."); //FIX max float is unlimited, need to be 2
+            Console.WriteLine("Online / Cinema:");
+            string result = "";
+            while (true)
+            {
+                string input = Console.ReadLine().ToLower();
+                if (input == "online")
+                {
+                    paid = true;
+                    result = "You have succesfully paid!";
+                    break;
+                }
+                else if (input == "cinema")
+                {
+                    paid = false;
+                    result = "Be aware that you have to be around 15 minutes early to validate you ticket(s).";
+                    break;
+                }
+            }
+            ClearAndWrite("Order succesfully, check my orders for order details\n" + result);
             string wait = Console.ReadLine();
+            int[] seatamount = new int[4] { total, adult, child, disabled };
+            Order neworder = new Order(orders.Count, selectedMovie, time, seatamount, seats, pricetotal, DateTime.Now, paid);
+            orders.Add(neworder);
+            string json = JsonConvert.SerializeObject(orders, Formatting.Indented);
+            string jsonFilePath = Environment.CurrentDirectory + @"\..\..\..\json\orders.json";
+            File.WriteAllText(jsonFilePath, json);
+            //update de gereserveerde stoelen van een film
         }
     }
     class RegisterAccount
     {
-        private static List<User> users = JsonConverter.getUserList();
+        private static List<User> users = JsonConverter.GetUserList();
         private static void newUsers(int id, string title, string password)
         {
             int[] orders = new int[0];
             User newuser = new User(id, title, password, false, orders);
             users.Add(newuser);
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
-            string jsonFilePath = @"C:\Users\31634\Desktop\ProjectBtoGit\ProjectB\json\users.json";
+            string jsonFilePath = Environment.CurrentDirectory + @"\..\..\..\json\users.json";
             File.WriteAllText(jsonFilePath, json);
         }
         public static void registerAccount()
