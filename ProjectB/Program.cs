@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace ProjectB
@@ -219,9 +220,10 @@ namespace ProjectB
     }
     static class Program
     {
-        public static int currentId = 0;
+        public static int currentId = -1;
         public static List<User> users = JsonConverter.GetUserList();
         public static List<Movie> movies = JsonConverter.getMovieList();
+        public static List<Order> orders = JsonConverter.GetOrderList();
 
         static bool IsAdmin() => users[currentId].Admin;
         static bool IsLoggedIn() => currentId >= 0;
@@ -240,11 +242,13 @@ namespace ProjectB
             {
                 Console.WriteLine($"Reservation system (logged in as admin account {GetCurrentUsername()})");
                 Console.WriteLine(
-                    "--Version // Shows version of program\n" +
+                      "--Version // Shows version of program\n" +
                     "--Exit // Exit the program\n" +
                     "--Logout // logout\n" +
-                    "--NewMovie // Create a new movie (not working)\n"+
-                    "--Movies //Show the list of current movies"
+                    "--Movies // Show the list of current movies\n" +
+                    "--Reservation //reserve seats for a movie\n" +
+                    "--Orders // View your orders\n" +
+                    "--Data // View all the sales"
                 );
             }
             else if (IsLoggedIn())
@@ -254,8 +258,9 @@ namespace ProjectB
                     "--Version // Shows version of program\n" +
                     "--Exit // Exit the program\n" +
                     "--Logout // logout\n" +
+                    "--Movies // Show the list of current movies\n" +
                     "--Reservation //reserve seats for a movie\n" +
-                    "--Movies // Show the list of current movies"
+                    "--Orders // View your orders"
                 );
             }
             else
@@ -296,6 +301,35 @@ namespace ProjectB
             users = JsonConverter.GetUserList();
             currentId = Program.users.Count - 1;
         }
+        static void Orders()
+        {
+            int[] userOrders = users[currentId].Orderlist;
+            Console.Clear();
+            for(int i = 0; i < orders.Count; i++)
+            {
+                if (userOrders.Contains(i))
+                {
+                    Console.WriteLine("------------------------------------------------------------------------\n" +
+                        movies[orders[i].MovieTitle].Title + "\n" +
+                        movies[orders[i].MovieTitle].PlayOptions[orders[i].MoviePlaytimeId].Time + "\n" +
+                        "Total seats: " + orders[i].SeatAmount[0] + " (Adult: " + orders[i].SeatAmount[1] + " , Kids: " + orders[i].SeatAmount[2] + " , Disabled: " + orders[i].SeatAmount[3] + ")"
+                        );
+                    if (orders[i].Paid)
+                    {
+                        Console.WriteLine("Bill is succesfully paid\n------------------------------------------------------------------------");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Bill is not paid, open amount: " + orders[i].TotalPrice + "\n" + "------------------------------------------------------------------------");
+                    }
+                    
+                }
+            }
+            Console.WriteLine("press enter to return");
+            Console.ReadLine();
+
+
+        }
 
         static void Main()
         {
@@ -314,6 +348,7 @@ namespace ProjectB
                     case "reservation": if (IsLoggedIn()) { Reservation.NewReservation(); break; } else { break; }
                     case "movies": MovieFunctions.MovieOverview(); break;
                     case "data": if (IsAdmin() && IsLoggedIn()) { Data.GetDataToday(); break; } else { break; }
+                    case "orders": if (IsLoggedIn()) { Orders(); break; } else { break; }
                 }
             }
         }
