@@ -9,7 +9,7 @@ namespace ProjectB
 {
     class JsonConverter
     {
-        //TODO create error handler if json file is not found
+        //TODO create error handler if json file is not found (fixed not implemented yet)
         private static readonly string root = Environment.CurrentDirectory + @"\..\..\..\";
         public static List<Movie> getMovieList()
         {
@@ -41,7 +41,7 @@ namespace ProjectB
         public int[] SeatAmount { get; set; } //Int Array with 4 values -> total seats, Adult seats, child seats & disabled seats
         public int[] MySeats { get; set; }
         public float TotalPrice { get; set; }
-        public DateTime OrderDate { get; set; } //TODO create function to get todays day.
+        public DateTime OrderDate { get; set; }
         public bool Paid { get; set; }
         public Order(int id, int movietitle, int movieplaytimeid, int[] seatamount, int[] myseats, float totalPrice, DateTime orderdate, bool paid)
         {
@@ -61,24 +61,9 @@ namespace ProjectB
         public string Title { get; set; }
         public string Bio { get; set; }
         public string[] Genre { get; set; }
+        public int Length { get; set; }
         public PlayOptions[] PlayOptions { get; set; }
-        public string Length { get; set; }
-        public string[] PlayTimes { get; set; }
-        public string Price { get; set; }
-        public string[] Type { get; set; }
-        public string Screen { get; set; }
-        public Movie(int id, string title, string bio, string[] genre, string length, string[] playTimes, string price, string[] type, string screen)
-        {
-            Id = id;
-            Title = title;
-            Bio = bio;
-            Genre = genre;
-            Length = length;
-            PlayTimes = playTimes;
-            Price = price;
-            Type = type;
-            Screen = screen;
-        }
+
     }
     class User
     {

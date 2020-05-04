@@ -53,8 +53,6 @@ namespace ProjectB
                 print += "\n" + (item.Id + 1) + ". " + (item.Title) +
                 "\nGenre: " + (item.Genre[0] + "/" + item.Genre[1]) +
                 "\nMovie Length: " + (item.Length) +
-                "\nPrice: " + (item.Price) +
-                "\n" + (item.Screen) +
                 "\nVersion(s): ";
                 for (int j = 0; j < item.PlayOptions.Count(); j++)
                 {
@@ -109,8 +107,8 @@ namespace ProjectB
 
             }
             print += "\nMovie Length: " + (movies[queriedId].Length) +
-            "\nPrice: " + (movies[queriedId].Price) +
-            "\n" + (movies[queriedId].Screen) +
+            "\nPrice: 7.50" +
+            "\n" + (movies[queriedId]) +
             "\nDescription-" +
             "\n" + (movies[queriedId].Bio) +
             "\nPlaytimes:";
@@ -131,8 +129,6 @@ namespace ProjectB
                 print += "\n" + (item.Id + 1) + ". " + (item.Title) +
                 "\nGenre: " + (item.Genre[0] + "/" + item.Genre[1]) +
                 "\nMovie Length: " + (item.Length) +
-                "\nPrice: " + (item.Price) +
-                "\n" + (item.Screen) +
                 "\nVersion(s): ";
                 for (int j = 0; j < item.PlayOptions.Count(); j++)
                 {
@@ -187,8 +183,6 @@ namespace ProjectB
 
             }
             print += "\nMovie Length: " + (movies[queriedId].Length) +
-            "\nPrice: " + (movies[queriedId].Price) +
-            "\n" + (movies[queriedId].Screen) +
             "\nDescription-" +
             "\n" + (movies[queriedId].Bio) +
             "\nPlaytimes:";
@@ -234,7 +228,7 @@ namespace ProjectB
         static string GetCurrentUsername() => currentId >= 0 ? GetUsername(currentId) : "";
         static string GetUsername(int index) => users[index].Title;
         static string GetPassword(int index) => users[index].Password;
-        static string GetVersion() => "0.4";
+        static string GetVersion() => "0.6";
         static void ClearAndWrite(string text)
         {
             Console.Clear();
@@ -319,6 +313,7 @@ namespace ProjectB
                     case "register": Register(); break;
                     case "reservation": if (IsLoggedIn()) { Reservation.NewReservation(); break; } else { break; }
                     case "movies": MovieFunctions.MovieOverview(); break;
+                    case "data": if (IsAdmin() && IsLoggedIn()) { Data.GetDataToday(); break; } else { break; }
                 }
             }
         }

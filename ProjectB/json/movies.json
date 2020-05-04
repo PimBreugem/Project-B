@@ -11,14 +11,14 @@
         "Time": "2020-04-09T16:30:00Z",
         "ScreenType": "Imax",
         "Room": 3,
-        "Reserverd": []
+        "Reserverd": [1, 5, 6]
       },
       {
         "subId": 1,
         "Time": "2020-04-09T18:30:00Z",
         "ScreenType": "FullHD",
         "Room": 1,
-        "Reserverd": []
+        "Reserverd": [0]
       }
     ]
   },
@@ -34,14 +34,14 @@
         "Time": "2020-04-09T16:30:00Z",
         "ScreenType": "Imax",
         "Room": 2,
-        "Reserverd": []
+        "Reserverd": [0]
       },
       {
         "subId": 1,
         "Time": "2020-04-09T18:30:00Z",
         "ScreenType": "FullHD",
         "Room": 5,
-        "Reserverd": []
+        "Reserverd": [0]
       }
     ]
   },
