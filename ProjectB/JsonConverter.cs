@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
+using System.Transactions;
 
 namespace ProjectB
 {
@@ -31,6 +32,23 @@ namespace ProjectB
             string json = File.ReadAllText(jsonFilePath);
             List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(json);
             return orders;
+        }
+        private static List<User> users = JsonConverter.GetUserList();
+        public static void OrderUpdate(int NewOrder)
+        {
+            int user = Program.currentId;
+
+            int[] update = new int[users[user].Orderlist.Length + 1];
+            for(int i = 0; i < users[user].Orderlist.Length; i++)
+            {
+                update[i] = users[user].Orderlist[i];
+            }
+            update[users[user].Orderlist.Length] = NewOrder;
+
+            users[user].Orderlist = update;
+            string json = JsonConvert.SerializeObject(users, Formatting.Indented);
+            string jsonFilePath = Environment.CurrentDirectory + @"\..\..\..\json\users.json";
+            File.WriteAllText(jsonFilePath, json);
         }
     }
     class Order
