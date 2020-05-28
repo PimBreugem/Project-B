@@ -11,9 +11,24 @@ namespace Proejct_B
         [STAThread]
         static void Main()
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //weet niet wat deze shit doet
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Patat());
         }
     }
 }
