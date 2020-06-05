@@ -47,17 +47,19 @@
             this.TimePage = new System.Windows.Forms.TabPage();
             this.Time_ToTickets_Button = new System.Windows.Forms.Button();
             this.Time_Panel2 = new System.Windows.Forms.Panel();
-            this.Time_InfoSelectedMovie_TextBox = new System.Windows.Forms.TextBox();
             this.Time_PicSelectedMovie_PictureBox = new System.Windows.Forms.PictureBox();
             this.Time_BackToMenu_link = new System.Windows.Forms.LinkLabel();
             this.Time_panel1 = new System.Windows.Forms.Panel();
-            this.Time_TitleSelectedMovie_Label = new System.Windows.Forms.Label();
-            this.Time_TitleTijd_Label = new System.Windows.Forms.Label();
+            this.TitleSelectedMovie_Label = new System.Windows.Forms.Label();
             this.SeatsPage = new System.Windows.Forms.TabPage();
+            this.Seats_ToPayment_Button = new System.Windows.Forms.Button();
             this.Seats_BackToTicket_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.Seats_Panel1 = new System.Windows.Forms.Panel();
             this.Seats_Title_Label = new System.Windows.Forms.Label();
             this.PaymentPage = new System.Windows.Forms.TabPage();
+            this.Payment_BackToSeats_LinkLabel = new System.Windows.Forms.LinkLabel();
+            this.Payment_Panel1 = new System.Windows.Forms.Panel();
+            this.Payment_Title_Label = new System.Windows.Forms.Label();
             this.Pay_Button = new System.Windows.Forms.Button();
             this.Bank_Label = new System.Windows.Forms.Label();
             this.Bank_Combobox = new System.Windows.Forms.ComboBox();
@@ -117,10 +119,10 @@
             this.Ticket_BackToTime_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.Ticket_Panel1 = new System.Windows.Forms.Panel();
             this.Ticket_Title_Label = new System.Windows.Forms.Label();
-            this.Payment_Panel1 = new System.Windows.Forms.Panel();
-            this.Payment_Title_Label = new System.Windows.Forms.Label();
-            this.Payment_BackToSeats_LinkLabel = new System.Windows.Forms.LinkLabel();
-            this.Seats_ToPayment_Button = new System.Windows.Forms.Button();
+            this.Menu_Movie_Label = new System.Windows.Forms.Label();
+            this.Movie_Description_Label = new System.Windows.Forms.Label();
+            this.Movie_Playtime_Label = new System.Windows.Forms.Label();
+            this.Movie_Genre_Label = new System.Windows.Forms.Label();
             this.PatatTabControl.SuspendLayout();
             this.MenuPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Menu_Right_PictureBox)).BeginInit();
@@ -135,6 +137,7 @@
             this.SeatsPage.SuspendLayout();
             this.Seats_Panel1.SuspendLayout();
             this.PaymentPage.SuspendLayout();
+            this.Payment_Panel1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.Login_Panel2.SuspendLayout();
             this.Login_Panel1.SuspendLayout();
@@ -148,7 +151,6 @@
             this.TicketPage.SuspendLayout();
             this.Ticket_panel2.SuspendLayout();
             this.Ticket_Panel1.SuspendLayout();
-            this.Payment_Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PatatTabControl
@@ -176,6 +178,7 @@
             // 
             this.MenuPage.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.MenuPage.BackColor = System.Drawing.Color.White;
+            this.MenuPage.Controls.Add(this.Menu_Movie_Label);
             this.MenuPage.Controls.Add(this.Menu_Next_Button);
             this.MenuPage.Controls.Add(this.Menu_Prev_Button);
             this.MenuPage.Controls.Add(this.Menu_Right_PictureBox);
@@ -195,6 +198,7 @@
             // Menu_Next_Button
             // 
             this.Menu_Next_Button.BackColor = System.Drawing.Color.Orange;
+            this.Menu_Next_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Next_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Next_Button.Location = new System.Drawing.Point(796, 448);
             this.Menu_Next_Button.Margin = new System.Windows.Forms.Padding(2);
@@ -208,6 +212,7 @@
             // Menu_Prev_Button
             // 
             this.Menu_Prev_Button.BackColor = System.Drawing.Color.Orange;
+            this.Menu_Prev_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Prev_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Prev_Button.Location = new System.Drawing.Point(32, 448);
             this.Menu_Prev_Button.Margin = new System.Windows.Forms.Padding(2);
@@ -221,19 +226,20 @@
             // Menu_Right_PictureBox
             // 
             this.Menu_Right_PictureBox.Image = global::Proejct_B.Properties.Resources.Bloodshot;
-            this.Menu_Right_PictureBox.Location = new System.Drawing.Point(755, 143);
+            this.Menu_Right_PictureBox.Location = new System.Drawing.Point(765, 143);
             this.Menu_Right_PictureBox.Name = "Menu_Right_PictureBox";
-            this.Menu_Right_PictureBox.Size = new System.Drawing.Size(240, 300);
+            this.Menu_Right_PictureBox.Size = new System.Drawing.Size(200, 300);
             this.Menu_Right_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Menu_Right_PictureBox.TabIndex = 16;
             this.Menu_Right_PictureBox.TabStop = false;
             // 
             // Menu_Center_PictureBox
             // 
+            this.Menu_Center_PictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Center_PictureBox.Image = global::Proejct_B.Properties.Resources.Bloodshot;
-            this.Menu_Center_PictureBox.Location = new System.Drawing.Point(356, 118);
+            this.Menu_Center_PictureBox.Location = new System.Drawing.Point(379, 110);
             this.Menu_Center_PictureBox.Name = "Menu_Center_PictureBox";
-            this.Menu_Center_PictureBox.Size = new System.Drawing.Size(300, 360);
+            this.Menu_Center_PictureBox.Size = new System.Drawing.Size(234, 351);
             this.Menu_Center_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Menu_Center_PictureBox.TabIndex = 15;
             this.Menu_Center_PictureBox.TabStop = false;
@@ -242,9 +248,9 @@
             // Menu_Left_PictureBox
             // 
             this.Menu_Left_PictureBox.Image = global::Proejct_B.Properties.Resources.Bloodshot;
-            this.Menu_Left_PictureBox.Location = new System.Drawing.Point(4, 143);
+            this.Menu_Left_PictureBox.Location = new System.Drawing.Point(48, 143);
             this.Menu_Left_PictureBox.Name = "Menu_Left_PictureBox";
-            this.Menu_Left_PictureBox.Size = new System.Drawing.Size(240, 300);
+            this.Menu_Left_PictureBox.Size = new System.Drawing.Size(200, 300);
             this.Menu_Left_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Menu_Left_PictureBox.TabIndex = 14;
             this.Menu_Left_PictureBox.TabStop = false;
@@ -264,6 +270,7 @@
             // Menu_Admin_Button
             // 
             this.Menu_Admin_Button.BackColor = System.Drawing.Color.Orange;
+            this.Menu_Admin_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Admin_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Admin_Button.Location = new System.Drawing.Point(207, 27);
             this.Menu_Admin_Button.Margin = new System.Windows.Forms.Padding(2);
@@ -277,6 +284,7 @@
             // Menu_Orders_Button
             // 
             this.Menu_Orders_Button.BackColor = System.Drawing.Color.DarkOrange;
+            this.Menu_Orders_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Orders_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Orders_Button.Location = new System.Drawing.Point(389, 27);
             this.Menu_Orders_Button.Margin = new System.Windows.Forms.Padding(2);
@@ -290,6 +298,7 @@
             // Menu_Exit_Button
             // 
             this.Menu_Exit_Button.BackColor = System.Drawing.Color.DarkOrange;
+            this.Menu_Exit_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Exit_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Exit_Button.Location = new System.Drawing.Point(571, 27);
             this.Menu_Exit_Button.Margin = new System.Windows.Forms.Padding(2);
@@ -304,6 +313,7 @@
             // 
             this.Menu_Login_Link.ActiveLinkColor = System.Drawing.Color.OrangeRed;
             this.Menu_Login_Link.AutoSize = true;
+            this.Menu_Login_Link.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.Menu_Login_Link.Dock = System.Windows.Forms.DockStyle.Right;
             this.Menu_Login_Link.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
             this.Menu_Login_Link.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -333,11 +343,11 @@
             // 
             this.Menu_Title_Label.AutoSize = true;
             this.Menu_Title_Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Menu_Title_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Menu_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Title_Label.ForeColor = System.Drawing.Color.Black;
             this.Menu_Title_Label.Location = new System.Drawing.Point(0, 0);
             this.Menu_Title_Label.Name = "Menu_Title_Label";
-            this.Menu_Title_Label.Size = new System.Drawing.Size(590, 69);
+            this.Menu_Title_Label.Size = new System.Drawing.Size(529, 65);
             this.Menu_Title_Label.TabIndex = 9;
             this.Menu_Title_Label.Text = "Welkom Bij PATAT";
             this.Menu_Title_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -357,11 +367,11 @@
             // 
             this.TimePage.BackColor = System.Drawing.Color.White;
             this.TimePage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TimePage.Controls.Add(this.Movie_Description_Label);
             this.TimePage.Controls.Add(this.Time_ToTickets_Button);
             this.TimePage.Controls.Add(this.Time_Panel2);
             this.TimePage.Controls.Add(this.Time_BackToMenu_link);
             this.TimePage.Controls.Add(this.Time_panel1);
-            this.TimePage.Controls.Add(this.Time_TitleTijd_Label);
             this.TimePage.Location = new System.Drawing.Point(4, 22);
             this.TimePage.Margin = new System.Windows.Forms.Padding(2);
             this.TimePage.Name = "TimePage";
@@ -385,28 +395,20 @@
             // 
             this.Time_Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Time_Panel2.BackColor = System.Drawing.Color.Yellow;
-            this.Time_Panel2.Controls.Add(this.Time_InfoSelectedMovie_TextBox);
+            this.Time_Panel2.Controls.Add(this.Movie_Genre_Label);
+            this.Time_Panel2.Controls.Add(this.Movie_Playtime_Label);
             this.Time_Panel2.Controls.Add(this.Time_PicSelectedMovie_PictureBox);
             this.Time_Panel2.Location = new System.Drawing.Point(0, 25);
             this.Time_Panel2.Name = "Time_Panel2";
             this.Time_Panel2.Size = new System.Drawing.Size(271, 526);
             this.Time_Panel2.TabIndex = 45;
             // 
-            // Time_InfoSelectedMovie_TextBox
-            // 
-            this.Time_InfoSelectedMovie_TextBox.Location = new System.Drawing.Point(10, 312);
-            this.Time_InfoSelectedMovie_TextBox.Multiline = true;
-            this.Time_InfoSelectedMovie_TextBox.Name = "Time_InfoSelectedMovie_TextBox";
-            this.Time_InfoSelectedMovie_TextBox.Size = new System.Drawing.Size(248, 79);
-            this.Time_InfoSelectedMovie_TextBox.TabIndex = 48;
-            this.Time_InfoSelectedMovie_TextBox.Text = resources.GetString("Time_InfoSelectedMovie_TextBox.Text");
-            // 
             // Time_PicSelectedMovie_PictureBox
             // 
             this.Time_PicSelectedMovie_PictureBox.Image = global::Proejct_B.Properties.Resources.Bloodshot;
-            this.Time_PicSelectedMovie_PictureBox.Location = new System.Drawing.Point(10, 10);
+            this.Time_PicSelectedMovie_PictureBox.Location = new System.Drawing.Point(17, 10);
             this.Time_PicSelectedMovie_PictureBox.Name = "Time_PicSelectedMovie_PictureBox";
-            this.Time_PicSelectedMovie_PictureBox.Size = new System.Drawing.Size(248, 288);
+            this.Time_PicSelectedMovie_PictureBox.Size = new System.Drawing.Size(234, 351);
             this.Time_PicSelectedMovie_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Time_PicSelectedMovie_PictureBox.TabIndex = 47;
             this.Time_PicSelectedMovie_PictureBox.TabStop = false;
@@ -434,35 +436,25 @@
             // 
             this.Time_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Time_panel1.BackColor = System.Drawing.Color.Yellow;
-            this.Time_panel1.Controls.Add(this.Time_TitleSelectedMovie_Label);
+            this.Time_panel1.Controls.Add(this.TitleSelectedMovie_Label);
             this.Time_panel1.Location = new System.Drawing.Point(277, 25);
             this.Time_panel1.Name = "Time_panel1";
             this.Time_panel1.Size = new System.Drawing.Size(723, 74);
             this.Time_panel1.TabIndex = 44;
             // 
-            // Time_TitleSelectedMovie_Label
+            // TitleSelectedMovie_Label
             // 
-            this.Time_TitleSelectedMovie_Label.AutoSize = true;
-            this.Time_TitleSelectedMovie_Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Time_TitleSelectedMovie_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_TitleSelectedMovie_Label.ForeColor = System.Drawing.Color.Black;
-            this.Time_TitleSelectedMovie_Label.Location = new System.Drawing.Point(0, 0);
-            this.Time_TitleSelectedMovie_Label.Name = "Time_TitleSelectedMovie_Label";
-            this.Time_TitleSelectedMovie_Label.Size = new System.Drawing.Size(345, 69);
-            this.Time_TitleSelectedMovie_Label.TabIndex = 9;
-            this.Time_TitleSelectedMovie_Label.Text = "BloodShot";
-            this.Time_TitleSelectedMovie_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Time_TitleTijd_Label
-            // 
-            this.Time_TitleTijd_Label.AutoSize = true;
-            this.Time_TitleTijd_Label.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.Time_TitleTijd_Label.Location = new System.Drawing.Point(285, 114);
-            this.Time_TitleTijd_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Time_TitleTijd_Label.Name = "Time_TitleTijd_Label";
-            this.Time_TitleTijd_Label.Size = new System.Drawing.Size(162, 21);
-            this.Time_TitleTijd_Label.TabIndex = 22;
-            this.Time_TitleTijd_Label.Text = "Selecteer een tijd";
+            this.TitleSelectedMovie_Label.AutoSize = true;
+            this.TitleSelectedMovie_Label.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TitleSelectedMovie_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleSelectedMovie_Label.ForeColor = System.Drawing.Color.Black;
+            this.TitleSelectedMovie_Label.Location = new System.Drawing.Point(0, 0);
+            this.TitleSelectedMovie_Label.MaximumSize = new System.Drawing.Size(700, 0);
+            this.TitleSelectedMovie_Label.Name = "TitleSelectedMovie_Label";
+            this.TitleSelectedMovie_Label.Size = new System.Drawing.Size(313, 42);
+            this.TitleSelectedMovie_Label.TabIndex = 9;
+            this.TitleSelectedMovie_Label.Text = "Placeholder Title";
+            this.TitleSelectedMovie_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // SeatsPage
             // 
@@ -477,6 +469,18 @@
             this.SeatsPage.Size = new System.Drawing.Size(1000, 575);
             this.SeatsPage.TabIndex = 0;
             this.SeatsPage.Text = "SeatsPage";
+            // 
+            // Seats_ToPayment_Button
+            // 
+            this.Seats_ToPayment_Button.BackColor = System.Drawing.Color.Orange;
+            this.Seats_ToPayment_Button.Location = new System.Drawing.Point(810, 502);
+            this.Seats_ToPayment_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Seats_ToPayment_Button.Name = "Seats_ToPayment_Button";
+            this.Seats_ToPayment_Button.Size = new System.Drawing.Size(169, 49);
+            this.Seats_ToPayment_Button.TabIndex = 48;
+            this.Seats_ToPayment_Button.Text = "Naar Tickets (Tijdelijk to containers met klikbare tijden erzijn)";
+            this.Seats_ToPayment_Button.UseVisualStyleBackColor = false;
+            this.Seats_ToPayment_Button.Click += new System.EventHandler(this.Seats_ToPayment_Button_Click);
             // 
             // Seats_BackToTicket_LinkLabel
             // 
@@ -511,11 +515,11 @@
             // 
             this.Seats_Title_Label.AutoSize = true;
             this.Seats_Title_Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Seats_Title_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Seats_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Seats_Title_Label.ForeColor = System.Drawing.Color.Black;
             this.Seats_Title_Label.Location = new System.Drawing.Point(0, 0);
             this.Seats_Title_Label.Name = "Seats_Title_Label";
-            this.Seats_Title_Label.Size = new System.Drawing.Size(450, 69);
+            this.Seats_Title_Label.Size = new System.Drawing.Size(362, 65);
             this.Seats_Title_Label.TabIndex = 9;
             this.Seats_Title_Label.Text = "Kies Stoelen";
             this.Seats_Title_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -542,6 +546,48 @@
             this.PaymentPage.Size = new System.Drawing.Size(1000, 575);
             this.PaymentPage.TabIndex = 1;
             this.PaymentPage.Text = "PaymentPage";
+            // 
+            // Payment_BackToSeats_LinkLabel
+            // 
+            this.Payment_BackToSeats_LinkLabel.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.Payment_BackToSeats_LinkLabel.AutoSize = true;
+            this.Payment_BackToSeats_LinkLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Payment_BackToSeats_LinkLabel.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
+            this.Payment_BackToSeats_LinkLabel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Payment_BackToSeats_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.Payment_BackToSeats_LinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.Payment_BackToSeats_LinkLabel.Location = new System.Drawing.Point(806, 2);
+            this.Payment_BackToSeats_LinkLabel.Name = "Payment_BackToSeats_LinkLabel";
+            this.Payment_BackToSeats_LinkLabel.Size = new System.Drawing.Size(192, 21);
+            this.Payment_BackToSeats_LinkLabel.TabIndex = 48;
+            this.Payment_BackToSeats_LinkLabel.TabStop = true;
+            this.Payment_BackToSeats_LinkLabel.Text = "Klik om terug tegaan";
+            this.Payment_BackToSeats_LinkLabel.UseWaitCursor = true;
+            this.Payment_BackToSeats_LinkLabel.VisitedLinkColor = System.Drawing.Color.Black;
+            this.Payment_BackToSeats_LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Payment_BackToSeats_LinkLabel_LinkClicked);
+            // 
+            // Payment_Panel1
+            // 
+            this.Payment_Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Payment_Panel1.BackColor = System.Drawing.Color.Yellow;
+            this.Payment_Panel1.Controls.Add(this.Payment_Title_Label);
+            this.Payment_Panel1.Location = new System.Drawing.Point(0, 25);
+            this.Payment_Panel1.Name = "Payment_Panel1";
+            this.Payment_Panel1.Size = new System.Drawing.Size(1000, 74);
+            this.Payment_Panel1.TabIndex = 46;
+            // 
+            // Payment_Title_Label
+            // 
+            this.Payment_Title_Label.AutoSize = true;
+            this.Payment_Title_Label.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Payment_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Payment_Title_Label.ForeColor = System.Drawing.Color.Black;
+            this.Payment_Title_Label.Location = new System.Drawing.Point(0, 0);
+            this.Payment_Title_Label.Name = "Payment_Title_Label";
+            this.Payment_Title_Label.Size = new System.Drawing.Size(545, 65);
+            this.Payment_Title_Label.TabIndex = 9;
+            this.Payment_Title_Label.Text = "Bestelling Afronden";
+            this.Payment_Title_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Pay_Button
             // 
@@ -779,10 +825,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Login_Title_Label.AutoSize = true;
-            this.Login_Title_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold);
+            this.Login_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold);
             this.Login_Title_Label.Location = new System.Drawing.Point(395, 5);
             this.Login_Title_Label.Name = "Login_Title_Label";
-            this.Login_Title_Label.Size = new System.Drawing.Size(205, 69);
+            this.Login_Title_Label.Size = new System.Drawing.Size(174, 65);
             this.Login_Title_Label.TabIndex = 10;
             this.Login_Title_Label.Text = "Login";
             // 
@@ -933,10 +979,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Register_Title_Label.AutoSize = true;
-            this.Register_Title_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold);
+            this.Register_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold);
             this.Register_Title_Label.Location = new System.Drawing.Point(319, 5);
             this.Register_Title_Label.Name = "Register_Title_Label";
-            this.Register_Title_Label.Size = new System.Drawing.Size(380, 69);
+            this.Register_Title_Label.Size = new System.Drawing.Size(303, 65);
             this.Register_Title_Label.TabIndex = 10;
             this.Register_Title_Label.Text = "Registreer";
             // 
@@ -984,11 +1030,11 @@
             // 
             this.Order_Title_Label.AutoSize = true;
             this.Order_Title_Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Order_Title_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Order_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Order_Title_Label.ForeColor = System.Drawing.Color.Black;
             this.Order_Title_Label.Location = new System.Drawing.Point(0, 0);
             this.Order_Title_Label.Name = "Order_Title_Label";
-            this.Order_Title_Label.Size = new System.Drawing.Size(800, 69);
+            this.Order_Title_Label.Size = new System.Drawing.Size(622, 65);
             this.Order_Title_Label.TabIndex = 9;
             this.Order_Title_Label.Text = "Overzicht Bestellingen";
             this.Order_Title_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1037,11 +1083,11 @@
             // 
             this.Admin_Title_Label.AutoSize = true;
             this.Admin_Title_Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Admin_Title_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Admin_Title_Label.ForeColor = System.Drawing.Color.Black;
             this.Admin_Title_Label.Location = new System.Drawing.Point(0, 0);
             this.Admin_Title_Label.Name = "Admin_Title_Label";
-            this.Admin_Title_Label.Size = new System.Drawing.Size(415, 69);
+            this.Admin_Title_Label.Size = new System.Drawing.Size(363, 65);
             this.Admin_Title_Label.TabIndex = 9;
             this.Admin_Title_Label.Text = "Admin Panel";
             this.Admin_Title_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1294,68 +1340,57 @@
             // 
             this.Ticket_Title_Label.AutoSize = true;
             this.Ticket_Title_Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Ticket_Title_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ticket_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ticket_Title_Label.ForeColor = System.Drawing.Color.Black;
             this.Ticket_Title_Label.Location = new System.Drawing.Point(0, 0);
             this.Ticket_Title_Label.Name = "Ticket_Title_Label";
-            this.Ticket_Title_Label.Size = new System.Drawing.Size(660, 69);
+            this.Ticket_Title_Label.Size = new System.Drawing.Size(540, 65);
             this.Ticket_Title_Label.TabIndex = 9;
             this.Ticket_Title_Label.Text = "Kaartjes en Snacks";
             this.Ticket_Title_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Payment_Panel1
+            // Menu_Movie_Label
             // 
-            this.Payment_Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Payment_Panel1.BackColor = System.Drawing.Color.Yellow;
-            this.Payment_Panel1.Controls.Add(this.Payment_Title_Label);
-            this.Payment_Panel1.Location = new System.Drawing.Point(0, 25);
-            this.Payment_Panel1.Name = "Payment_Panel1";
-            this.Payment_Panel1.Size = new System.Drawing.Size(1000, 74);
-            this.Payment_Panel1.TabIndex = 46;
+            this.Menu_Movie_Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Menu_Movie_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Menu_Movie_Label.Location = new System.Drawing.Point(381, 469);
+            this.Menu_Movie_Label.Name = "Menu_Movie_Label";
+            this.Menu_Movie_Label.Size = new System.Drawing.Size(234, 29);
+            this.Menu_Movie_Label.TabIndex = 18;
+            this.Menu_Movie_Label.Text = "Placeholder Title";
+            this.Menu_Movie_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Payment_Title_Label
+            // Movie_Description_Label
             // 
-            this.Payment_Title_Label.AutoSize = true;
-            this.Payment_Title_Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Payment_Title_Label.Font = new System.Drawing.Font("Unispace", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Payment_Title_Label.ForeColor = System.Drawing.Color.Black;
-            this.Payment_Title_Label.Location = new System.Drawing.Point(0, 0);
-            this.Payment_Title_Label.Name = "Payment_Title_Label";
-            this.Payment_Title_Label.Size = new System.Drawing.Size(695, 69);
-            this.Payment_Title_Label.TabIndex = 9;
-            this.Payment_Title_Label.Text = "Bestelling Afronden";
-            this.Payment_Title_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Movie_Description_Label.AutoSize = true;
+            this.Movie_Description_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Movie_Description_Label.Location = new System.Drawing.Point(280, 109);
+            this.Movie_Description_Label.MaximumSize = new System.Drawing.Size(700, 0);
+            this.Movie_Description_Label.Name = "Movie_Description_Label";
+            this.Movie_Description_Label.Size = new System.Drawing.Size(126, 20);
+            this.Movie_Description_Label.TabIndex = 46;
+            this.Movie_Description_Label.Text = "Placeholder Text";
             // 
-            // Payment_BackToSeats_LinkLabel
+            // Movie_Playtime_Label
             // 
-            this.Payment_BackToSeats_LinkLabel.ActiveLinkColor = System.Drawing.Color.OrangeRed;
-            this.Payment_BackToSeats_LinkLabel.AutoSize = true;
-            this.Payment_BackToSeats_LinkLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Payment_BackToSeats_LinkLabel.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.Payment_BackToSeats_LinkLabel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Payment_BackToSeats_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.Payment_BackToSeats_LinkLabel.LinkColor = System.Drawing.Color.Black;
-            this.Payment_BackToSeats_LinkLabel.Location = new System.Drawing.Point(806, 2);
-            this.Payment_BackToSeats_LinkLabel.Name = "Payment_BackToSeats_LinkLabel";
-            this.Payment_BackToSeats_LinkLabel.Size = new System.Drawing.Size(192, 21);
-            this.Payment_BackToSeats_LinkLabel.TabIndex = 48;
-            this.Payment_BackToSeats_LinkLabel.TabStop = true;
-            this.Payment_BackToSeats_LinkLabel.Text = "Klik om terug tegaan";
-            this.Payment_BackToSeats_LinkLabel.UseWaitCursor = true;
-            this.Payment_BackToSeats_LinkLabel.VisitedLinkColor = System.Drawing.Color.Black;
-            this.Payment_BackToSeats_LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Payment_BackToSeats_LinkLabel_LinkClicked);
+            this.Movie_Playtime_Label.AutoSize = true;
+            this.Movie_Playtime_Label.Location = new System.Drawing.Point(14, 364);
+            this.Movie_Playtime_Label.MaximumSize = new System.Drawing.Size(351, 20);
+            this.Movie_Playtime_Label.Name = "Movie_Playtime_Label";
+            this.Movie_Playtime_Label.Size = new System.Drawing.Size(89, 13);
+            this.Movie_Playtime_Label.TabIndex = 48;
+            this.Movie_Playtime_Label.Text = "Placeholder Time";
             // 
-            // Seats_ToPayment_Button
+            // Movie_Genre_Label
             // 
-            this.Seats_ToPayment_Button.BackColor = System.Drawing.Color.Orange;
-            this.Seats_ToPayment_Button.Location = new System.Drawing.Point(810, 502);
-            this.Seats_ToPayment_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Seats_ToPayment_Button.Name = "Seats_ToPayment_Button";
-            this.Seats_ToPayment_Button.Size = new System.Drawing.Size(169, 49);
-            this.Seats_ToPayment_Button.TabIndex = 48;
-            this.Seats_ToPayment_Button.Text = "Naar Tickets (Tijdelijk to containers met klikbare tijden erzijn)";
-            this.Seats_ToPayment_Button.UseVisualStyleBackColor = false;
-            this.Seats_ToPayment_Button.Click += new System.EventHandler(this.Seats_ToPayment_Button_Click);
+            this.Movie_Genre_Label.AutoSize = true;
+            this.Movie_Genre_Label.Location = new System.Drawing.Point(14, 380);
+            this.Movie_Genre_Label.MaximumSize = new System.Drawing.Size(351, 20);
+            this.Movie_Genre_Label.Name = "Movie_Genre_Label";
+            this.Movie_Genre_Label.Size = new System.Drawing.Size(95, 13);
+            this.Movie_Genre_Label.TabIndex = 49;
+            this.Movie_Genre_Label.Text = "Placeholder Genre";
             // 
             // Patat
             // 
@@ -1391,6 +1426,8 @@
             this.Seats_Panel1.PerformLayout();
             this.PaymentPage.ResumeLayout(false);
             this.PaymentPage.PerformLayout();
+            this.Payment_Panel1.ResumeLayout(false);
+            this.Payment_Panel1.PerformLayout();
             this.LoginPage.ResumeLayout(false);
             this.LoginPage.PerformLayout();
             this.Login_Panel2.ResumeLayout(false);
@@ -1417,8 +1454,6 @@
             this.Ticket_panel2.PerformLayout();
             this.Ticket_Panel1.ResumeLayout(false);
             this.Ticket_Panel1.PerformLayout();
-            this.Payment_Panel1.ResumeLayout(false);
-            this.Payment_Panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1469,7 +1504,6 @@
         private System.Windows.Forms.TextBox Register_Username_TextBox;
         private System.Windows.Forms.RichTextBox Register_Message_RichTextBox;
         private System.Windows.Forms.RichTextBox Login_Message_RichTextBox;
-        private System.Windows.Forms.Label Time_TitleTijd_Label;
         private System.Windows.Forms.Panel Menu_Panel1;
         private System.Windows.Forms.Panel Login_Panel2;
         private System.Windows.Forms.Button Login_Register_Button;
@@ -1488,10 +1522,9 @@
         private System.Windows.Forms.Button Menu_Prev_Button;
         private System.Windows.Forms.LinkLabel Time_BackToMenu_link;
         private System.Windows.Forms.Panel Time_panel1;
-        private System.Windows.Forms.Label Time_TitleSelectedMovie_Label;
+        private System.Windows.Forms.Label TitleSelectedMovie_Label;
         private System.Windows.Forms.Panel Time_Panel2;
         private System.Windows.Forms.PictureBox Time_PicSelectedMovie_PictureBox;
-        private System.Windows.Forms.TextBox Time_InfoSelectedMovie_TextBox;
         private System.Windows.Forms.LinkLabel Order_BackToMenu_LinkLabel;
         private System.Windows.Forms.Panel Order_Panel1;
         private System.Windows.Forms.Label Order_Title_Label;
@@ -1526,6 +1559,10 @@
         private System.Windows.Forms.Label Payment_Title_Label;
         private System.Windows.Forms.LinkLabel Payment_BackToSeats_LinkLabel;
         private System.Windows.Forms.Button Seats_ToPayment_Button;
+        private System.Windows.Forms.Label Menu_Movie_Label;
+        private System.Windows.Forms.Label Movie_Description_Label;
+        private System.Windows.Forms.Label Movie_Genre_Label;
+        private System.Windows.Forms.Label Movie_Playtime_Label;
     }
 }
 
