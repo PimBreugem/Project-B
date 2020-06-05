@@ -14,10 +14,17 @@ namespace Proejct_B
         int tickets_Volwassenen = 0;
         int tickets_Kinderen = 0;
         int tickets_Gehandicapten = 0;
-        double volwassen_prijs = 13.95;
-        double kinderen_prijs = 8.95;
-        double gehandicapten_prijs = 5.95;
+        double volwassen_prijs = 13.50;
+        double kinderen_prijs = 8.50;
+        double gehandicapten_prijs = 5.50;
         double totaal_prijs = 0.0;
+        double popcorn_Prijs = 3.50;
+        double frisdrank_Prijs = 1.50;
+        double snoep_Prijs = 1.0;
+        double totaal_Prijs_Snacks = 0.0;
+        int popcorn_Aantal = 0;
+        int frisdrank_Aantal = 0;
+        int snoep_Aantal = 0;
         
         //dit is tijdelijk wordt niet gebruikt though
         string[] film_Tijden = new string[5]
@@ -254,13 +261,10 @@ namespace Proejct_B
         }
         private void Ticket_MinVolwassenen_Button_Click(object sender, EventArgs e)
         {
-            if (tickets_Volwassenen > 0)
-            {
-                tickets_Volwassenen -= 1;
-                Aantal_volwassenen.Text = tickets_Volwassenen.ToString();
-                totaal_prijs -= volwassen_prijs;
-                Prijs_Totaal.Text = totaal_prijs.ToString();
-            }
+            tickets_Volwassenen += 1;
+            Aantal_volwassenen.Text = tickets_Volwassenen.ToString();
+            totaal_prijs += volwassen_prijs;
+            Prijs_Totaal.Text = totaal_prijs.ToString();
         }
         private void Ticket_MinKinderen_Button_Click(object sender, EventArgs e)
         {
@@ -291,10 +295,13 @@ namespace Proejct_B
         }
         private void Ticket_PlusVolwassen_Button_Click(object sender, EventArgs e)
         {
-            tickets_Volwassenen += 1;
-            Aantal_volwassenen.Text = tickets_Volwassenen.ToString();
-            totaal_prijs += volwassen_prijs;
-            Prijs_Totaal.Text = totaal_prijs.ToString();
+            if (tickets_Volwassenen > 0)
+            {
+                tickets_Volwassenen -= 1;
+                Aantal_volwassenen.Text = tickets_Volwassenen.ToString();
+                totaal_prijs -= volwassen_prijs;
+                Prijs_Totaal.Text = totaal_prijs.ToString();
+            }
         }
         private void Ticket_PlusGehandicapten_Button_Click(object sender, EventArgs e)
         {
@@ -307,10 +314,62 @@ namespace Proejct_B
         {
             PatatTabControl.SelectedTab = TimePage;
         }
+        private void Plus_Popcorn_Button_Click(object sender, EventArgs e)
+        {
+            popcorn_Aantal += 1;
+            Popcorn_Aantal_Label.Text = popcorn_Aantal.ToString();
+            totaal_Prijs_Snacks += popcorn_Prijs;
+            Totaal_Snacks_Label.Text = totaal_Prijs_Snacks.ToString();
+        }
+        private void Plus_Frisdrank_Button_Click(object sender, EventArgs e)
+        {
+            frisdrank_Aantal += 1;
+            Frisdrank_Aantal_Label.Text = frisdrank_Aantal.ToString();
+            totaal_Prijs_Snacks += frisdrank_Prijs;
+            Totaal_Snacks_Label.Text = totaal_Prijs_Snacks.ToString();
+        }
+        private void Plus_Snoep_Button_Click(object sender, EventArgs e)
+        {
+            snoep_Aantal += 1;
+            Snoep_Aantal_Label.Text = snoep_Aantal.ToString();
+            totaal_Prijs_Snacks += snoep_Prijs;
+            Totaal_Snacks_Label.Text = totaal_Prijs_Snacks.ToString();
+        }
+        private void Min_Popcorn_Button_Click(object sender, EventArgs e)
+        {
+            if(popcorn_Aantal > 0)
+            {
+                popcorn_Aantal -= 1;
+                Popcorn_Aantal_Label.Text = popcorn_Aantal.ToString();
+                totaal_Prijs_Snacks -= popcorn_Prijs;
+                Totaal_Snacks_Label.Text = totaal_Prijs_Snacks.ToString();
+            }
+        }
+        private void Min_Frisdrank_Button_Click(object sender, EventArgs e)
+        {
+            if(frisdrank_Aantal > 0)
+            {
+                frisdrank_Aantal -= 1;
+                Frisdrank_Aantal_Label.Text = frisdrank_Aantal.ToString();
+                totaal_Prijs_Snacks -= frisdrank_Prijs;
+                Totaal_Snacks_Label.Text = totaal_Prijs_Snacks.ToString();
+            }
+        }
+        private void Min_Snoep_Button_Click(object sender, EventArgs e)
+        {
+            if (snoep_Aantal > 0)
+            {
+                snoep_Aantal -= 1;
+                Snoep_Aantal_Label.Text = snoep_Aantal.ToString();
+                totaal_Prijs_Snacks -= snoep_Prijs;
+                Totaal_Snacks_Label.Text = totaal_Prijs_Snacks.ToString();
+            }
+        }
+
         //---------- Einde Tickets select Scherm----------//
 
 
-  
+
 
 
         //----------Seats select Scherm----------//
@@ -322,12 +381,13 @@ namespace Proejct_B
         private void Seats_ToPayment_Button_Click(object sender, EventArgs e)
         {
             PatatTabControl.SelectedTab = PaymentPage;
+            Totaal_Prijs_Alles_Label.Text = (totaal_Prijs_Snacks + totaal_prijs).ToString();
         }
         //----------Einde Seats select Scherm----------//
 
 
         //----------Payment Scherm----------//
-        //Oude Code Thijmen weet niet of het nog iets belangrijks doet
+        //Oude Code Tijmen weet niet of het nog iets belangrijks doet
         private void Pay_Button_Click(object sender, EventArgs e)
         {
             //https://www.youtube.com/watch?v=sRBAv4-G0iw
@@ -342,6 +402,8 @@ namespace Proejct_B
         {
             PatatTabControl.SelectedTab = TicketPage;
         }
+
+
         //----------Einde Payment Scherm----------//
 
 
