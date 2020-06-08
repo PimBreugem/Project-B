@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -35,6 +37,152 @@ namespace Proejct_B
         }
         //----------End No Clue----------//
 
+        //----------Start JsonConverter Class----------//
+        class JsonConverter
+        {
+            private static readonly string root = Environment.CurrentDirectory + @"\..\..\..\";
+
+            public static List<Order> GetOrderList()
+            {
+                // Dont forget to add projectname to path
+                string jsonFilePath = root + @"json\orders.json";
+                string json = File.ReadAllText(jsonFilePath);
+                List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(json);
+                return orders;
+            }
+            public static List<Movie> getMovieList()
+            {
+                string jsonFilePath = root + @"json\movies.json";
+                string json = File.ReadAllText(jsonFilePath);
+                List<Movie> movies = JsonConvert.DeserializeObject<List<Movie>>(json);
+                return movies;
+            }
+            private static List<Order> orders = GetOrderList();
+            private static List<Movie> movies = getMovieList();
+
+            public static Tuple<string, string, string, Tuple<string, string, string>> GetData(string inputdate)
+            {
+                int OrdersCountToday = 0;
+                int TicketsCountToday = 0;
+                float TotalPriceToday = 0.00f;
+                int Movie1 = 0;
+                int Movie2 = 0;
+                int Movie3 = 0;
+
+                foreach (var item in orders)
+                {
+                    if (item.OrderDate.ToString("d") == inputdate)
+                    {
+                        OrdersCountToday += 1;
+                        TotalPriceToday += item.TotalPrice;
+                        TicketsCountToday += item.SeatAmount[0];
+                        if (item.MovieTitle == 0)
+                        {
+                            Movie1 += 1;
+                        }
+                        else if (item.MovieTitle == 1)
+                        {
+                            Movie2 += 1;
+                        }
+                        else if (item.MovieTitle == 2)
+                        {
+                            Movie3 += 1;
+                        }
+                    }
+                }
+                var DifferentMovies = Tuple.Create(Movie1.ToString(), Movie2.ToString(), Movie3.ToString());
+
+                TotalPriceToday = (float)Math.Round(TotalPriceToday * 100f) / 100f;
+                var DataOrder = Tuple.Create(TotalPriceToday.ToString(), OrdersCountToday.ToString(), TicketsCountToday.ToString(), DifferentMovies);
+                return DataOrder;
+            }
+
+            public static Tuple<string, string, string> GetMovie()
+            {
+                string movie1 = "";
+                string movie2 = "";
+                string movie3 = "";
+
+                foreach (var item in movies)
+                {
+                    if (item.Id == 0)
+                    {
+                        movie1 = item.Title;
+                    }
+                    else if (item.Id == 1)
+                    {
+                        movie2 = item.Title;
+                    }
+                    else if (item.Id == 2)
+                    {
+                        movie3 = item.Title;
+                    }
+                }
+                var MovieList = Tuple.Create(movie1, movie2, movie3);
+                return MovieList;
+            }
+
+            public static Tuple<string, string, string> GetSortTickets(string inputdate)
+            {
+                int Adult = 0;
+                int Child = 0;
+                int Disabled = 0;
+
+                foreach (var item in orders)
+                {
+                    if (item.OrderDate.ToString("d") == inputdate)
+                    {
+                        Adult += item.SeatAmount[1];
+                        Child += item.SeatAmount[2];
+                        Disabled += item.SeatAmount[3];
+                    }
+                }
+
+                var SortTickets = Tuple.Create(Adult.ToString(), Child.ToString(), Disabled.ToString());
+                return SortTickets;
+            }
+        }
+
+        class Order
+        {
+            public int Id { get; set; }
+            public int MovieTitle { get; set; }
+            public int MoviePlaytimeId { get; set; }
+            public int[] SeatAmount { get; set; } //Int Array with 4 values -> total seats, Adult seats, child seats & disabled seats
+            public int[] MySeats { get; set; }
+            public float TotalPrice { get; set; }
+            public DateTime OrderDate { get; set; }
+            public bool Paid { get; set; }
+            public Order(int id, int movietitle, int movieplaytimeid, int[] seatamount, int[] myseats, float totalPrice, DateTime orderdate, bool paid)
+            {
+                Id = id;
+                MovieTitle = movietitle;
+                MoviePlaytimeId = movieplaytimeid;
+                SeatAmount = seatamount;
+                MySeats = myseats;
+                TotalPrice = totalPrice;
+                OrderDate = orderdate;
+                Paid = paid;
+            }
+        }
+        class Movie
+        {
+            public int Id { get; set; }
+            public string Title { get; set; }
+            public string Bio { get; set; }
+            public string[] Genre { get; set; }
+            public int Length { get; set; }
+            public PlayOptions[] PlayOptions { get; set; }
+        }
+        class PlayOptions
+        {
+            public int SubId { get; set; }
+            public DateTime Time { get; set; }
+            public string ScreenType { get; set; }
+            public int Room { get; set; }
+            public int[] Reserved { get; set; }
+        }
+        //----------Start JsonConverter Class----------//
 
         //----------Menu Scherm----------//
         private void Menu_Login_Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -342,10 +490,66 @@ namespace Proejct_B
         {
             PatatTabControl.SelectedTab = TicketPage;
         }
+
         //----------Einde Payment Scherm----------//
+       
+        //----------Begin Admin Scherm------------//
+
+        
+
+        private void Calender_Data_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateSelected_Textbox.Text = Calender_Data.SelectionStart.ToShortDateString();
+        }
+
+        private void SearchDate_Button_Click_1(object sender, EventArgs e)
+        {
+            if (DateSelected_Textbox.Text != "")
+            {
+                PatatTabControl.SelectedTab = AdminPage2;
+                DateSelectedText.Text = DateSelected_Textbox.Text;
+                string dateselect = DateSelected_Textbox.Text;
+                Tuple<string, string, string, Tuple<string, string, string>> revenue = JsonConverter.GetData(dateselect);
+                AmountOrders.Text = revenue.Item2;
+                AmountTickets.Text = revenue.Item3;
+                Revenue.Text = "€ " + revenue.Item1;
+            }
+            else
+            {
+                MessageBox.Show("Kies een datum");
+            }
+        }
+
+        private void Admin2_BacktoMenu_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PatatTabControl.SelectedTab = MenuPage;
+        }
+
+        private void OtherDate_Button_Click(object sender, EventArgs e)
+        {
+            PatatTabControl.SelectedTab = AdminPage;
+        }
+
+        private void AmountOrdersInfo_Click(object sender, EventArgs e)
+        {
+            Tuple<string, string, string> MovieList = JsonConverter.GetMovie();
+            string dateselect = DateSelected_Textbox.Text;
+            Tuple<string, string, string, Tuple<string, string, string>> revenue = JsonConverter.GetData(dateselect);
+            MessageBox.Show(MovieList.Item1 + " = " + revenue.Item4.Item1 + "\n" +
+                            MovieList.Item2 + " = " + revenue.Item4.Item2 + "\n" +
+                            MovieList.Item3 + " = " + revenue.Item4.Item3);
+        }
+
+        private void AmountTicketsInfo_Click(object sender, EventArgs e)
+        {
+            string dateselect = DateSelected_Textbox.Text;
+            Tuple<string, string, string> SortTickets = JsonConverter.GetSortTickets(dateselect);
+            MessageBox.Show("Adult tickets: " + SortTickets.Item1 + "\n" +
+                            "Child tickets: " + SortTickets.Item2 + "\n" +
+                            "Disabled tickets: " + SortTickets.Item3);
+        }
 
 
-
-
+        //----------Einde Admin Scherm------------//
     }
 }
