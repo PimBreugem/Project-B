@@ -3,36 +3,24 @@
     "Id": 0,
     "Username": "PimBreugem",
     "Password": "Test1234",
-    "Email": "Pim@gmail.com",
+    "Email": "PimBreugem@gmail.com",
     "Admin": true,
-    "OrderArray": [
-      0,
-      1,
-      2
-    ]
+    "OrderArray": [ 0 ]
   },
   {
     "Id": 1,
+    "Title": "Test1",
     "Username": "123",
-    "Password": "123",
-    "Email": "@gmail",
+    "Email": "Test1@gmail.com",
     "Admin": false,
-    "OrderArray": [ 0 ]
+    "OrderArray": []
   },
   {
     "Id": 2,
     "Username": "Gebruiker1",
     "Password": "Gebruiker1",
-    "Email": "@gmail",
+    "Email": "Gebruiker1@gmail.com",
     "Admin": false,
-    "OrderArray": []
-  },
-  {
-    "Id": 3,
-    "Username": "Test2",
-    "Password": null,
-    "Email": null,
-    "Admin": false,
-    "OrderArray": []
+    "OrderArray": [ 1 ]
   }
 ]

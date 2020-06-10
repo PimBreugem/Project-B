@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -18,7 +19,10 @@ namespace Proejct_B
         double kinderen_prijs = 8.95;
         double gehandicapten_prijs = 5.95;
         double totaal_prijs = 0.0;
-        
+        private static readonly string root = Environment.CurrentDirectory + @"\..\..\";
+        public static List<Movie> movies = JsonToObjectLists.GetMovieList();
+        private int currentImage = 1;
+
         //dit is tijdelijk wordt niet gebruikt though
         string[] film_Tijden = new string[5]
         {
@@ -32,6 +36,10 @@ namespace Proejct_B
         public Patat()
         {
             InitializeComponent();
+            Menu_Movie_Label.Text = movies[currentImage].Title;
+            Menu_Left_PictureBox.Image = Image.FromFile(root + movies[currentImage - 1].PosterLocation);
+            Menu_Center_PictureBox.Image = Image.FromFile(root + movies[currentImage].PosterLocation);
+            Menu_Right_PictureBox.Image = Image.FromFile(root + movies[currentImage + 1].PosterLocation);
         }
         //----------End No Clue----------//
 
@@ -60,15 +68,74 @@ namespace Proejct_B
         private void Menu_Center_PictureBox_Click(object sender, EventArgs e)
         {
             //Select center movie to go to order
+            int quirriedId = currentImage;
+            Time_PicSelectedMovie_PictureBox.Image = Image.FromFile(root + movies[quirriedId].PosterLocation);
+            TitleSelectedMovie_Label.Text = movies[quirriedId].Title;
+            Movie_Playtime_Label.Text = "Speeltijd: " + movies[quirriedId].Length + " minuten";
+            string genres = "Genres: ";
+            for (int i = 0; i < movies[quirriedId].Genre.Length; i++)
+            {
+                genres += movies[quirriedId].Genre[i] + " ";
+            }
+            Movie_Genre_Label.Text = genres;
+            Movie_Description_Label.Text = movies[quirriedId].Bio;
             PatatTabControl.SelectedTab = TimePage;
         }
         private void Menu_Next_Button_Click(object sender, EventArgs e)
         {
             //choose next movie
+            currentImage++;
+            switch (currentImage)
+            {
+                case 1:
+                    Menu_Left_PictureBox.Image = Image.FromFile(root + movies[currentImage - 1].PosterLocation);
+                    Menu_Center_PictureBox.Image = Image.FromFile(root + movies[currentImage].PosterLocation);
+                    Menu_Right_PictureBox.Image = Image.FromFile(root + movies[currentImage + 1].PosterLocation);
+                    Menu_Movie_Label.Text = movies[currentImage].Title;
+                    break;
+                case 2:
+                    Menu_Left_PictureBox.Image = Image.FromFile(root + movies[currentImage - 1].PosterLocation);
+                    Menu_Center_PictureBox.Image = Image.FromFile(root + movies[currentImage].PosterLocation);
+                    Menu_Right_PictureBox.Image = Image.FromFile(root + movies[0].PosterLocation);
+                    Menu_Movie_Label.Text = movies[currentImage].Title;
+                    break;
+                case 3:
+                    currentImage = 0;
+                    Menu_Left_PictureBox.Image = Image.FromFile(root + movies[movies.Count - 1].PosterLocation);
+                    Menu_Center_PictureBox.Image = Image.FromFile(root + movies[currentImage].PosterLocation);
+                    Menu_Right_PictureBox.Image = Image.FromFile(root + movies[currentImage + 1].PosterLocation);
+                    Menu_Movie_Label.Text = movies[currentImage].Title;
+                    break;
+            }
+            GC.Collect();
         }
         private void Menu_Prev_Button_Click(object sender, EventArgs e)
         {
             //choose prev movie
+            currentImage--;
+            switch (currentImage)
+            {
+                case -1:
+                    currentImage = movies.Count - 1;
+                    Menu_Left_PictureBox.Image = Image.FromFile(root + movies[currentImage - 1].PosterLocation);
+                    Menu_Center_PictureBox.Image = Image.FromFile(root + movies[currentImage].PosterLocation);
+                    Menu_Right_PictureBox.Image = Image.FromFile(root + movies[0].PosterLocation);
+                    Menu_Movie_Label.Text = movies[currentImage].Title;
+                    break;
+                case 0:
+                    Menu_Left_PictureBox.Image = Image.FromFile(root + movies[movies.Count - 1].PosterLocation);
+                    Menu_Center_PictureBox.Image = Image.FromFile(root + movies[currentImage].PosterLocation);
+                    Menu_Right_PictureBox.Image = Image.FromFile(root + movies[currentImage + 1].PosterLocation);
+                    Menu_Movie_Label.Text = movies[currentImage].Title;
+                    break;
+                case 1:
+                    Menu_Left_PictureBox.Image = Image.FromFile(root + movies[currentImage - 1].PosterLocation);
+                    Menu_Center_PictureBox.Image = Image.FromFile(root + movies[currentImage].PosterLocation);
+                    Menu_Right_PictureBox.Image = Image.FromFile(root + movies[currentImage + 1].PosterLocation);
+                    Menu_Movie_Label.Text = movies[currentImage].Title;
+                    break;
+            }
+            GC.Collect();
         }
         //----------Einde Menu Scherm----------//
 

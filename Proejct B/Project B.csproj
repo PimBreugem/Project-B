@@ -64,14 +64,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Json.cs" />
     <Compile Include="PatatApplicatie.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PatatApplicatie.Designer.cs">
       <DependentUpon>PatatApplicatie.cs</DependentUpon>
     </Compile>
-    <Compile Include="JsonConverter.cs" />
-    <Compile Include="JsonUpdater.cs" />
     <Compile Include="RegisterCheck.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,56 +1,59 @@
 [
   {
-    "Id" :  0,
-    "Title": "Knifes Out",
+    "Id": 0,
+    "Title": "Bloodshot",
     "Bio": "Wanneer de bekende misdaadschrijver Harlan Thrombey (Christopher Plummer) vlak na zijn 85e verjaardag dood op zijn landgoed wordt gevonden, wordt de nieuwsgierige en charmante rechercheur Benoit Blanc (Daniel Craig) ingeschakeld om zijn dood te onderzoeken.",
     "Genre": [ "Drama", "Thriller" ],
     "Length": 130,
+    "PosterLocation": "Resources/bloodshotPoster.jpg",
     "PlayOptions": [
       {
         "subId": 0,
         "Time": "2020-04-09T16:30:00Z",
         "ScreenType": "Imax",
         "Room": 3,
-        "Reserverd": [1, 5, 6]
+        "Reserverd": [ 1, 5, 6 ]
       },
       {
         "subId": 1,
         "Time": "2020-04-09T18:30:00Z",
         "ScreenType": "FullHD",
         "Room": 1,
-        "Reserverd": [0]
+        "Reserverd": [ 0 ]
       }
     ]
   },
   {
-    "Id" :  1,
-    "Title": "Escape from Pretoria",
+    "Id": 1,
+    "Title": "James Bond: No Time To Die",
     "Bio": "In hun strijd tegen de apartheid verspreiden Tim Jenkin (Daniel Radcliff) en Stephan Lee (Daniel Webber) illegale ANC pamfletten onder de Zuid Afrikaanse bevolking. Ze worden op heterdaad betrapt en veroordeeld tot een jarenlange gevangenisstraf in Pretoria Central Prison. Eenmaal onder de vleugels van politiek activist Denis Goldberg besluiten ze om, samen met medegevangene Alex Moumbaris, een ingenieus plan te bedenken om te ontsnappen. Al snel blijkt de uitvoering een stuk ingewikkelder dan gedacht, en moeten er nog vele hindernissen genomen worden... Het zenuwslopend spannende Escape From Pretoria is gebaseerd op het waargebeurde verhaal van Tim Jenkin uit 1979 en houdt de kijker van begin tot einde op het puntje van de stoel. ",
     "Genre": [ "Drama", "Thriller" ],
     "Length": 106,
+    "PosterLocation": "Resources/noTimeToDiePoster.jpg",
     "PlayOptions": [
       {
         "subId": 0,
         "Time": "2020-04-09T16:30:00Z",
         "ScreenType": "Imax",
         "Room": 2,
-        "Reserverd": [0]
+        "Reserverd": [ 0 ]
       },
       {
         "subId": 1,
         "Time": "2020-04-09T18:30:00Z",
         "ScreenType": "FullHD",
         "Room": 5,
-        "Reserverd": [0]
+        "Reserverd": [ 0 ]
       }
     ]
   },
   {
     "Id" :  2,
-    "Title": "Mulan",
-    "Bio": "Wanneer de keizer van China besluit dat één man per gezin moet dienen in het keizerlijke leger, om het land te kunnen verdedigen tegen indringers uit het Noorden, neemt Hua Mulan, de oudste dochter van een respectabele krijger, de in het geheim de plaats van haar zieke vader in.",
+    "Title": "I See You",
+    "Bio": "Wanneer de keizer van China besluit dat ï¿½ï¿½n man per gezin moet dienen in het keizerlijke leger, om het land te kunnen verdedigen tegen indringers uit het Noorden, neemt Hua Mulan, de oudste dochter van een respectabele krijger, de in het geheim de plaats van haar zieke vader in.",
     "Genre": [ "Drama", "Thriller" ],
     "Length": 115,
+    "PosterLocation":  "Resources/iSeeYouPoster.jpg",
     "PlayOptions": [
       {
         "subId": 0,

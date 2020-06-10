@@ -168,6 +168,7 @@ namespace Proejct_B
 
         public int GetId() { return Id; }
         public string GetTitle() { return Title; }
+        public string PosterLocation { get; set; }
     }
     public class PlayOptions
     {
