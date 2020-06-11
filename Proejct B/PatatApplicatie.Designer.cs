@@ -61,6 +61,8 @@
             this.Seats_Panel1 = new System.Windows.Forms.Panel();
             this.Seats_Title_Label = new System.Windows.Forms.Label();
             this.PaymentPage = new System.Windows.Forms.TabPage();
+            this.Totaal_Prijs_Alles_Label = new System.Windows.Forms.Label();
+            this.Totaal_Prijs_Alles_Label1 = new System.Windows.Forms.Label();
             this.Payment_BackToSeats_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.Payment_Panel1 = new System.Windows.Forms.Panel();
             this.Payment_Title_Label = new System.Windows.Forms.Label();
@@ -129,6 +131,24 @@
             this.Admin2_Title_Label = new System.Windows.Forms.Label();
             this.TicketPage = new System.Windows.Forms.TabPage();
             this.Ticket_panel2 = new System.Windows.Forms.Panel();
+            this.Totaal_Snacks_Label1 = new System.Windows.Forms.Label();
+            this.Totaal_Snacks_Label = new System.Windows.Forms.Label();
+            this.Snoep_Aantal_Label = new System.Windows.Forms.Label();
+            this.Plus_Snoep_Button = new System.Windows.Forms.Button();
+            this.Frisdrank_Aantal_Label = new System.Windows.Forms.Label();
+            this.Min_Snoep_Button = new System.Windows.Forms.Button();
+            this.Min_Popcorn_Button = new System.Windows.Forms.Button();
+            this.Popcorn_Aantal_Label = new System.Windows.Forms.Label();
+            this.Plus_Frisdrank_Button = new System.Windows.Forms.Button();
+            this.Plus_Popcorn_Button = new System.Windows.Forms.Button();
+            this.Min_Frisdrank_Button = new System.Windows.Forms.Button();
+            this.Snacks_Prijs_Aantal_Label = new System.Windows.Forms.Label();
+            this.Snoep_Prijs_Label = new System.Windows.Forms.Label();
+            this.Frisdrank_Prijs_Label = new System.Windows.Forms.Label();
+            this.Popcorn_Prijs_Label = new System.Windows.Forms.Label();
+            this.Snoep_Label = new System.Windows.Forms.Label();
+            this.Frisdrank_Label = new System.Windows.Forms.Label();
+            this.Popcorn_Label = new System.Windows.Forms.Label();
             this.Ticket_Label2 = new System.Windows.Forms.Label();
             this.Ticket_ToSeats_Button = new System.Windows.Forms.Button();
             this.Ticket_label1 = new System.Windows.Forms.Label();
@@ -196,7 +216,7 @@
             this.PatatTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PatatTabControl.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.PatatTabControl.Location = new System.Drawing.Point(0, 0);
-            this.PatatTabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PatatTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.PatatTabControl.Multiline = true;
             this.PatatTabControl.Name = "PatatTabControl";
             this.PatatTabControl.SelectedIndex = 0;
@@ -218,7 +238,7 @@
             this.MenuPage.Controls.Add(this.Menu_Panel1);
             this.MenuPage.Controls.Add(this.Menu_Info_Label);
             this.MenuPage.Location = new System.Drawing.Point(4, 22);
-            this.MenuPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuPage.Margin = new System.Windows.Forms.Padding(2);
             this.MenuPage.Name = "MenuPage";
             this.MenuPage.Size = new System.Drawing.Size(1000, 575);
             this.MenuPage.TabIndex = 3;
@@ -229,10 +249,9 @@
             this.Menu_Movie_Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Menu_Movie_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Menu_Movie_Label.Location = new System.Drawing.Point(254, 305);
-            this.Menu_Movie_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Menu_Movie_Label.Location = new System.Drawing.Point(381, 469);
             this.Menu_Movie_Label.Name = "Menu_Movie_Label";
-            this.Menu_Movie_Label.Size = new System.Drawing.Size(156, 19);
+            this.Menu_Movie_Label.Size = new System.Drawing.Size(234, 29);
             this.Menu_Movie_Label.TabIndex = 18;
             this.Menu_Movie_Label.Text = "Placeholder Title";
             this.Menu_Movie_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,8 +261,8 @@
             this.Menu_Next_Button.BackColor = System.Drawing.Color.Orange;
             this.Menu_Next_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Next_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Menu_Next_Button.Location = new System.Drawing.Point(796, 448);
-            this.Menu_Next_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menu_Next_Button.Location = new System.Drawing.Point(787, 448);
+            this.Menu_Next_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Menu_Next_Button.Name = "Menu_Next_Button";
             this.Menu_Next_Button.Size = new System.Drawing.Size(178, 40);
             this.Menu_Next_Button.TabIndex = 17;
@@ -256,8 +275,8 @@
             this.Menu_Prev_Button.BackColor = System.Drawing.Color.Orange;
             this.Menu_Prev_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Prev_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Menu_Prev_Button.Location = new System.Drawing.Point(32, 448);
-            this.Menu_Prev_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menu_Prev_Button.Location = new System.Drawing.Point(48, 448);
+            this.Menu_Prev_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Menu_Prev_Button.Name = "Menu_Prev_Button";
             this.Menu_Prev_Button.Size = new System.Drawing.Size(178, 40);
             this.Menu_Prev_Button.TabIndex = 9;
@@ -268,10 +287,9 @@
             // Menu_Right_PictureBox
             // 
             this.Menu_Right_PictureBox.Image = global::Proejct_B.Properties.Resources.Bloodshot;
-            this.Menu_Right_PictureBox.Location = new System.Drawing.Point(510, 93);
-            this.Menu_Right_PictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menu_Right_PictureBox.Location = new System.Drawing.Point(765, 143);
             this.Menu_Right_PictureBox.Name = "Menu_Right_PictureBox";
-            this.Menu_Right_PictureBox.Size = new System.Drawing.Size(133, 195);
+            this.Menu_Right_PictureBox.Size = new System.Drawing.Size(200, 300);
             this.Menu_Right_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Menu_Right_PictureBox.TabIndex = 16;
             this.Menu_Right_PictureBox.TabStop = false;
@@ -280,10 +298,9 @@
             // 
             this.Menu_Center_PictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Center_PictureBox.Image = global::Proejct_B.Properties.Resources.Bloodshot;
-            this.Menu_Center_PictureBox.Location = new System.Drawing.Point(253, 71);
-            this.Menu_Center_PictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menu_Center_PictureBox.Location = new System.Drawing.Point(379, 110);
             this.Menu_Center_PictureBox.Name = "Menu_Center_PictureBox";
-            this.Menu_Center_PictureBox.Size = new System.Drawing.Size(156, 228);
+            this.Menu_Center_PictureBox.Size = new System.Drawing.Size(234, 351);
             this.Menu_Center_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Menu_Center_PictureBox.TabIndex = 15;
             this.Menu_Center_PictureBox.TabStop = false;
@@ -292,10 +309,10 @@
             // Menu_Left_PictureBox
             // 
             this.Menu_Left_PictureBox.Image = global::Proejct_B.Properties.Resources.Bloodshot;
-            this.Menu_Left_PictureBox.Location = new System.Drawing.Point(32, 93);
-            this.Menu_Left_PictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menu_Left_PictureBox.Location = new System.Drawing.Point(48, 143);
+            this.Menu_Left_PictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.Menu_Left_PictureBox.Name = "Menu_Left_PictureBox";
-            this.Menu_Left_PictureBox.Size = new System.Drawing.Size(133, 195);
+            this.Menu_Left_PictureBox.Size = new System.Drawing.Size(200, 300);
             this.Menu_Left_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Menu_Left_PictureBox.TabIndex = 14;
             this.Menu_Left_PictureBox.TabStop = false;
@@ -318,7 +335,7 @@
             this.Menu_Admin_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Admin_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Admin_Button.Location = new System.Drawing.Point(207, 27);
-            this.Menu_Admin_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menu_Admin_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Menu_Admin_Button.Name = "Menu_Admin_Button";
             this.Menu_Admin_Button.Size = new System.Drawing.Size(178, 40);
             this.Menu_Admin_Button.TabIndex = 7;
@@ -328,11 +345,11 @@
             // 
             // Menu_Orders_Button
             // 
-            this.Menu_Orders_Button.BackColor = System.Drawing.Color.DarkOrange;
+            this.Menu_Orders_Button.BackColor = System.Drawing.Color.Orange;
             this.Menu_Orders_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Orders_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Orders_Button.Location = new System.Drawing.Point(389, 27);
-            this.Menu_Orders_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menu_Orders_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Menu_Orders_Button.Name = "Menu_Orders_Button";
             this.Menu_Orders_Button.Size = new System.Drawing.Size(178, 40);
             this.Menu_Orders_Button.TabIndex = 6;
@@ -342,11 +359,11 @@
             // 
             // Menu_Exit_Button
             // 
-            this.Menu_Exit_Button.BackColor = System.Drawing.Color.DarkOrange;
+            this.Menu_Exit_Button.BackColor = System.Drawing.Color.Orange;
             this.Menu_Exit_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menu_Exit_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Exit_Button.Location = new System.Drawing.Point(571, 27);
-            this.Menu_Exit_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menu_Exit_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Menu_Exit_Button.Name = "Menu_Exit_Button";
             this.Menu_Exit_Button.Size = new System.Drawing.Size(178, 40);
             this.Menu_Exit_Button.TabIndex = 8;
@@ -394,7 +411,7 @@
             this.Menu_Title_Label.Name = "Menu_Title_Label";
             this.Menu_Title_Label.Size = new System.Drawing.Size(529, 65);
             this.Menu_Title_Label.TabIndex = 9;
-            this.Menu_Title_Label.Text = "Welkom Bij PATAT";
+            this.Menu_Title_Label.Text = "Welkom Bij PATÁT";
             this.Menu_Title_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Menu_Info_Label
@@ -418,7 +435,7 @@
             this.TimePage.Controls.Add(this.Time_BackToMenu_link);
             this.TimePage.Controls.Add(this.Time_panel1);
             this.TimePage.Location = new System.Drawing.Point(4, 22);
-            this.TimePage.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TimePage.Margin = new System.Windows.Forms.Padding(1);
             this.TimePage.Name = "TimePage";
             this.TimePage.Size = new System.Drawing.Size(1000, 575);
             this.TimePage.TabIndex = 2;
@@ -428,9 +445,9 @@
             // 
             this.Movie_Description_Label.AutoSize = true;
             this.Movie_Description_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Movie_Description_Label.Location = new System.Drawing.Point(187, 71);
+            this.Movie_Description_Label.Location = new System.Drawing.Point(280, 109);
             this.Movie_Description_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Movie_Description_Label.MaximumSize = new System.Drawing.Size(467, 0);
+            this.Movie_Description_Label.MaximumSize = new System.Drawing.Size(700, 0);
             this.Movie_Description_Label.Name = "Movie_Description_Label";
             this.Movie_Description_Label.Size = new System.Drawing.Size(126, 20);
             this.Movie_Description_Label.TabIndex = 46;
@@ -440,7 +457,7 @@
             // 
             this.Time_ToTickets_Button.BackColor = System.Drawing.Color.Orange;
             this.Time_ToTickets_Button.Location = new System.Drawing.Point(812, 497);
-            this.Time_ToTickets_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Time_ToTickets_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Time_ToTickets_Button.Name = "Time_ToTickets_Button";
             this.Time_ToTickets_Button.Size = new System.Drawing.Size(169, 54);
             this.Time_ToTickets_Button.TabIndex = 0;
@@ -463,9 +480,9 @@
             // Movie_Genre_Label
             // 
             this.Movie_Genre_Label.AutoSize = true;
-            this.Movie_Genre_Label.Location = new System.Drawing.Point(9, 247);
+            this.Movie_Genre_Label.Location = new System.Drawing.Point(14, 380);
             this.Movie_Genre_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Movie_Genre_Label.MaximumSize = new System.Drawing.Size(234, 13);
+            this.Movie_Genre_Label.MaximumSize = new System.Drawing.Size(351, 20);
             this.Movie_Genre_Label.Name = "Movie_Genre_Label";
             this.Movie_Genre_Label.Size = new System.Drawing.Size(95, 13);
             this.Movie_Genre_Label.TabIndex = 49;
@@ -474,9 +491,9 @@
             // Movie_Playtime_Label
             // 
             this.Movie_Playtime_Label.AutoSize = true;
-            this.Movie_Playtime_Label.Location = new System.Drawing.Point(9, 237);
+            this.Movie_Playtime_Label.Location = new System.Drawing.Point(14, 364);
             this.Movie_Playtime_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Movie_Playtime_Label.MaximumSize = new System.Drawing.Size(234, 13);
+            this.Movie_Playtime_Label.MaximumSize = new System.Drawing.Size(351, 20);
             this.Movie_Playtime_Label.Name = "Movie_Playtime_Label";
             this.Movie_Playtime_Label.Size = new System.Drawing.Size(89, 13);
             this.Movie_Playtime_Label.TabIndex = 48;
@@ -485,10 +502,10 @@
             // Time_PicSelectedMovie_PictureBox
             // 
             this.Time_PicSelectedMovie_PictureBox.Image = global::Proejct_B.Properties.Resources.Bloodshot;
-            this.Time_PicSelectedMovie_PictureBox.Location = new System.Drawing.Point(11, 6);
-            this.Time_PicSelectedMovie_PictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Time_PicSelectedMovie_PictureBox.Location = new System.Drawing.Point(8, 5);
+            this.Time_PicSelectedMovie_PictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.Time_PicSelectedMovie_PictureBox.Name = "Time_PicSelectedMovie_PictureBox";
-            this.Time_PicSelectedMovie_PictureBox.Size = new System.Drawing.Size(156, 228);
+            this.Time_PicSelectedMovie_PictureBox.Size = new System.Drawing.Size(234, 351);
             this.Time_PicSelectedMovie_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Time_PicSelectedMovie_PictureBox.TabIndex = 47;
             this.Time_PicSelectedMovie_PictureBox.TabStop = false;
@@ -517,8 +534,8 @@
             this.Time_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Time_panel1.BackColor = System.Drawing.Color.Yellow;
             this.Time_panel1.Controls.Add(this.TitleSelectedMovie_Label);
-            this.Time_panel1.Location = new System.Drawing.Point(185, 16);
-            this.Time_panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Time_panel1.Location = new System.Drawing.Point(277, 25);
+            this.Time_panel1.Margin = new System.Windows.Forms.Padding(2);
             this.Time_panel1.Name = "Time_panel1";
             this.Time_panel1.Size = new System.Drawing.Size(723, 74);
             this.Time_panel1.TabIndex = 44;
@@ -531,7 +548,7 @@
             this.TitleSelectedMovie_Label.ForeColor = System.Drawing.Color.Black;
             this.TitleSelectedMovie_Label.Location = new System.Drawing.Point(0, 0);
             this.TitleSelectedMovie_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TitleSelectedMovie_Label.MaximumSize = new System.Drawing.Size(467, 0);
+            this.TitleSelectedMovie_Label.MaximumSize = new System.Drawing.Size(700, 0);
             this.TitleSelectedMovie_Label.Name = "TitleSelectedMovie_Label";
             this.TitleSelectedMovie_Label.Size = new System.Drawing.Size(313, 42);
             this.TitleSelectedMovie_Label.TabIndex = 9;
@@ -545,9 +562,9 @@
             this.SeatsPage.Controls.Add(this.Seats_BackToTicket_LinkLabel);
             this.SeatsPage.Controls.Add(this.Seats_Panel1);
             this.SeatsPage.Location = new System.Drawing.Point(4, 22);
-            this.SeatsPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SeatsPage.Margin = new System.Windows.Forms.Padding(2);
             this.SeatsPage.Name = "SeatsPage";
-            this.SeatsPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SeatsPage.Padding = new System.Windows.Forms.Padding(2);
             this.SeatsPage.Size = new System.Drawing.Size(1000, 575);
             this.SeatsPage.TabIndex = 0;
             this.SeatsPage.Text = "SeatsPage";
@@ -555,10 +572,10 @@
             // Seats_ToPayment_Button
             // 
             this.Seats_ToPayment_Button.BackColor = System.Drawing.Color.Orange;
-            this.Seats_ToPayment_Button.Location = new System.Drawing.Point(540, 326);
-            this.Seats_ToPayment_Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Seats_ToPayment_Button.Location = new System.Drawing.Point(810, 502);
+            this.Seats_ToPayment_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Seats_ToPayment_Button.Name = "Seats_ToPayment_Button";
-            this.Seats_ToPayment_Button.Size = new System.Drawing.Size(113, 32);
+            this.Seats_ToPayment_Button.Size = new System.Drawing.Size(169, 49);
             this.Seats_ToPayment_Button.TabIndex = 48;
             this.Seats_ToPayment_Button.Text = "Naar Tickets (Tijdelijk to containers met klikbare tijden erzijn)";
             this.Seats_ToPayment_Button.UseVisualStyleBackColor = false;
@@ -609,6 +626,8 @@
             // PaymentPage
             // 
             this.PaymentPage.BackColor = System.Drawing.Color.White;
+            this.PaymentPage.Controls.Add(this.Totaal_Prijs_Alles_Label);
+            this.PaymentPage.Controls.Add(this.Totaal_Prijs_Alles_Label1);
             this.PaymentPage.Controls.Add(this.Payment_BackToSeats_LinkLabel);
             this.PaymentPage.Controls.Add(this.Payment_Panel1);
             this.PaymentPage.Controls.Add(this.Pay_Button);
@@ -622,12 +641,34 @@
             this.PaymentPage.Controls.Add(this.Firstname_Label);
             this.PaymentPage.Controls.Add(this.Hoeveelheid_tickets_label);
             this.PaymentPage.Location = new System.Drawing.Point(4, 22);
-            this.PaymentPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PaymentPage.Margin = new System.Windows.Forms.Padding(2);
             this.PaymentPage.Name = "PaymentPage";
-            this.PaymentPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PaymentPage.Padding = new System.Windows.Forms.Padding(2);
             this.PaymentPage.Size = new System.Drawing.Size(1000, 575);
             this.PaymentPage.TabIndex = 1;
             this.PaymentPage.Text = "PaymentPage";
+            // 
+            // Totaal_Prijs_Alles_Label
+            // 
+            this.Totaal_Prijs_Alles_Label.AutoSize = true;
+            this.Totaal_Prijs_Alles_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Totaal_Prijs_Alles_Label.Location = new System.Drawing.Point(457, 359);
+            this.Totaal_Prijs_Alles_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Totaal_Prijs_Alles_Label.Name = "Totaal_Prijs_Alles_Label";
+            this.Totaal_Prijs_Alles_Label.Size = new System.Drawing.Size(19, 20);
+            this.Totaal_Prijs_Alles_Label.TabIndex = 50;
+            this.Totaal_Prijs_Alles_Label.Text = "0";
+            // 
+            // Totaal_Prijs_Alles_Label1
+            // 
+            this.Totaal_Prijs_Alles_Label1.AutoSize = true;
+            this.Totaal_Prijs_Alles_Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Totaal_Prijs_Alles_Label1.Location = new System.Drawing.Point(356, 359);
+            this.Totaal_Prijs_Alles_Label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Totaal_Prijs_Alles_Label1.Name = "Totaal_Prijs_Alles_Label1";
+            this.Totaal_Prijs_Alles_Label1.Size = new System.Drawing.Size(64, 20);
+            this.Totaal_Prijs_Alles_Label1.TabIndex = 49;
+            this.Totaal_Prijs_Alles_Label1.Text = "Totaal:";
             // 
             // Payment_BackToSeats_LinkLabel
             // 
@@ -639,7 +680,6 @@
             this.Payment_BackToSeats_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.Payment_BackToSeats_LinkLabel.LinkColor = System.Drawing.Color.Black;
             this.Payment_BackToSeats_LinkLabel.Location = new System.Drawing.Point(806, 2);
-            this.Payment_BackToSeats_LinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Payment_BackToSeats_LinkLabel.Name = "Payment_BackToSeats_LinkLabel";
             this.Payment_BackToSeats_LinkLabel.Size = new System.Drawing.Size(192, 21);
             this.Payment_BackToSeats_LinkLabel.TabIndex = 48;
@@ -654,10 +694,9 @@
             this.Payment_Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Payment_Panel1.BackColor = System.Drawing.Color.Yellow;
             this.Payment_Panel1.Controls.Add(this.Payment_Title_Label);
-            this.Payment_Panel1.Location = new System.Drawing.Point(0, 16);
-            this.Payment_Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Payment_Panel1.Location = new System.Drawing.Point(0, 25);
             this.Payment_Panel1.Name = "Payment_Panel1";
-            this.Payment_Panel1.Size = new System.Drawing.Size(667, 48);
+            this.Payment_Panel1.Size = new System.Drawing.Size(1000, 74);
             this.Payment_Panel1.TabIndex = 46;
             // 
             // Payment_Title_Label
@@ -667,7 +706,6 @@
             this.Payment_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Payment_Title_Label.ForeColor = System.Drawing.Color.Black;
             this.Payment_Title_Label.Location = new System.Drawing.Point(0, 0);
-            this.Payment_Title_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Payment_Title_Label.Name = "Payment_Title_Label";
             this.Payment_Title_Label.Size = new System.Drawing.Size(545, 65);
             this.Payment_Title_Label.TabIndex = 9;
@@ -676,21 +714,22 @@
             // 
             // Pay_Button
             // 
+            this.Pay_Button.BackColor = System.Drawing.Color.Orange;
             this.Pay_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.Pay_Button.Location = new System.Drawing.Point(398, 376);
-            this.Pay_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pay_Button.Location = new System.Drawing.Point(396, 381);
+            this.Pay_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Pay_Button.Name = "Pay_Button";
             this.Pay_Button.Size = new System.Drawing.Size(169, 27);
             this.Pay_Button.TabIndex = 22;
             this.Pay_Button.Text = "Betaal";
-            this.Pay_Button.UseVisualStyleBackColor = true;
+            this.Pay_Button.UseVisualStyleBackColor = false;
             this.Pay_Button.Click += new System.EventHandler(this.Pay_Button_Click);
             // 
             // Bank_Label
             // 
             this.Bank_Label.AutoSize = true;
             this.Bank_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bank_Label.Location = new System.Drawing.Point(354, 318);
+            this.Bank_Label.Location = new System.Drawing.Point(356, 318);
             this.Bank_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Bank_Label.Name = "Bank_Label";
             this.Bank_Label.Size = new System.Drawing.Size(50, 20);
@@ -705,32 +744,32 @@
             "ABN AMRO",
             "IDEAL",
             "PAYPAL"});
-            this.Bank_Combobox.Location = new System.Drawing.Point(444, 318);
-            this.Bank_Combobox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bank_Combobox.Location = new System.Drawing.Point(452, 317);
+            this.Bank_Combobox.Margin = new System.Windows.Forms.Padding(2);
             this.Bank_Combobox.Name = "Bank_Combobox";
             this.Bank_Combobox.Size = new System.Drawing.Size(92, 21);
             this.Bank_Combobox.TabIndex = 8;
             // 
             // Emailadres_Textbox
             // 
-            this.Emailadres_Textbox.Location = new System.Drawing.Point(444, 295);
-            this.Emailadres_Textbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Emailadres_Textbox.Location = new System.Drawing.Point(452, 288);
+            this.Emailadres_Textbox.Margin = new System.Windows.Forms.Padding(2);
             this.Emailadres_Textbox.Name = "Emailadres_Textbox";
             this.Emailadres_Textbox.Size = new System.Drawing.Size(167, 20);
             this.Emailadres_Textbox.TabIndex = 7;
             // 
             // Lastname_Textbook
             // 
-            this.Lastname_Textbook.Location = new System.Drawing.Point(444, 264);
-            this.Lastname_Textbook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Lastname_Textbook.Location = new System.Drawing.Point(452, 261);
+            this.Lastname_Textbook.Margin = new System.Windows.Forms.Padding(2);
             this.Lastname_Textbook.Name = "Lastname_Textbook";
             this.Lastname_Textbook.Size = new System.Drawing.Size(167, 20);
             this.Lastname_Textbook.TabIndex = 6;
             // 
             // Firstname_Textbox
             // 
-            this.Firstname_Textbox.Location = new System.Drawing.Point(441, 235);
-            this.Firstname_Textbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Firstname_Textbox.Location = new System.Drawing.Point(452, 234);
+            this.Firstname_Textbox.Margin = new System.Windows.Forms.Padding(2);
             this.Firstname_Textbox.Name = "Firstname_Textbox";
             this.Firstname_Textbox.Size = new System.Drawing.Size(167, 20);
             this.Firstname_Textbox.TabIndex = 5;
@@ -739,7 +778,7 @@
             // 
             this.Emailadres_Label.AutoSize = true;
             this.Emailadres_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Emailadres_Label.Location = new System.Drawing.Point(354, 292);
+            this.Emailadres_Label.Location = new System.Drawing.Point(356, 288);
             this.Emailadres_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Emailadres_Label.Name = "Emailadres_Label";
             this.Emailadres_Label.Size = new System.Drawing.Size(92, 20);
@@ -750,7 +789,7 @@
             // 
             this.Lastname_Label.AutoSize = true;
             this.Lastname_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lastname_Label.Location = new System.Drawing.Point(354, 261);
+            this.Lastname_Label.Location = new System.Drawing.Point(356, 261);
             this.Lastname_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lastname_Label.Name = "Lastname_Label";
             this.Lastname_Label.Size = new System.Drawing.Size(84, 20);
@@ -761,7 +800,7 @@
             // 
             this.Firstname_Label.AutoSize = true;
             this.Firstname_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Firstname_Label.Location = new System.Drawing.Point(354, 234);
+            this.Firstname_Label.Location = new System.Drawing.Point(356, 234);
             this.Firstname_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Firstname_Label.Name = "Firstname_Label";
             this.Firstname_Label.Size = new System.Drawing.Size(84, 20);
@@ -786,7 +825,7 @@
             this.LoginPage.Controls.Add(this.Login_Panel2);
             this.LoginPage.Controls.Add(this.Login_Panel1);
             this.LoginPage.Location = new System.Drawing.Point(4, 22);
-            this.LoginPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LoginPage.Margin = new System.Windows.Forms.Padding(2);
             this.LoginPage.Name = "LoginPage";
             this.LoginPage.Size = new System.Drawing.Size(1000, 575);
             this.LoginPage.TabIndex = 4;
@@ -830,7 +869,7 @@
             this.Login_Username_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.Login_Username_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Login_Username_TextBox.Location = new System.Drawing.Point(37, 36);
-            this.Login_Username_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Login_Username_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.Login_Username_TextBox.Multiline = true;
             this.Login_Username_TextBox.Name = "Login_Username_TextBox";
             this.Login_Username_TextBox.Size = new System.Drawing.Size(434, 40);
@@ -844,7 +883,7 @@
             this.Login_Password_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.Login_Password_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Login_Password_TextBox.Location = new System.Drawing.Point(37, 108);
-            this.Login_Password_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Login_Password_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.Login_Password_TextBox.Multiline = true;
             this.Login_Password_TextBox.Name = "Login_Password_TextBox";
             this.Login_Password_TextBox.PasswordChar = '*';
@@ -859,7 +898,7 @@
             this.Login_Register_Button.BackColor = System.Drawing.Color.Orange;
             this.Login_Register_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_Register_Button.Location = new System.Drawing.Point(37, 326);
-            this.Login_Register_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Login_Register_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Login_Register_Button.Name = "Login_Register_Button";
             this.Login_Register_Button.Size = new System.Drawing.Size(200, 40);
             this.Login_Register_Button.TabIndex = 24;
@@ -886,7 +925,7 @@
             this.Login_Login_Button.BackColor = System.Drawing.Color.Orange;
             this.Login_Login_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
             this.Login_Login_Button.Location = new System.Drawing.Point(271, 326);
-            this.Login_Login_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Login_Login_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Login_Login_Button.Name = "Login_Login_Button";
             this.Login_Login_Button.Size = new System.Drawing.Size(200, 40);
             this.Login_Login_Button.TabIndex = 5;
@@ -911,7 +950,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Login_Title_Label.AutoSize = true;
             this.Login_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold);
-            this.Login_Title_Label.Location = new System.Drawing.Point(263, 3);
+            this.Login_Title_Label.Location = new System.Drawing.Point(197, 2);
             this.Login_Title_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Login_Title_Label.Name = "Login_Title_Label";
             this.Login_Title_Label.Size = new System.Drawing.Size(174, 65);
@@ -970,7 +1009,7 @@
             this.Register_Username_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Register_Username_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Register_Username_TextBox.Location = new System.Drawing.Point(44, 27);
-            this.Register_Username_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Register_Username_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.Register_Username_TextBox.Name = "Register_Username_TextBox";
             this.Register_Username_TextBox.Size = new System.Drawing.Size(434, 38);
             this.Register_Username_TextBox.TabIndex = 13;
@@ -984,7 +1023,7 @@
             this.Register_Password_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.Register_Password_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Register_Password_TextBox.Location = new System.Drawing.Point(44, 91);
-            this.Register_Password_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Register_Password_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.Register_Password_TextBox.Name = "Register_Password_TextBox";
             this.Register_Password_TextBox.PasswordChar = '*';
             this.Register_Password_TextBox.Size = new System.Drawing.Size(434, 38);
@@ -1012,7 +1051,7 @@
             this.Register_Register_Button.BackColor = System.Drawing.Color.Orange;
             this.Register_Register_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
             this.Register_Register_Button.Location = new System.Drawing.Point(44, 360);
-            this.Register_Register_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Register_Register_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Register_Register_Button.Name = "Register_Register_Button";
             this.Register_Register_Button.Size = new System.Drawing.Size(434, 40);
             this.Register_Register_Button.TabIndex = 14;
@@ -1026,7 +1065,7 @@
             this.Register_PasswordCheck_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.Register_PasswordCheck_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Register_PasswordCheck_TextBox.Location = new System.Drawing.Point(44, 152);
-            this.Register_PasswordCheck_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Register_PasswordCheck_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.Register_PasswordCheck_TextBox.Name = "Register_PasswordCheck_TextBox";
             this.Register_PasswordCheck_TextBox.PasswordChar = '*';
             this.Register_PasswordCheck_TextBox.Size = new System.Drawing.Size(434, 38);
@@ -1041,7 +1080,7 @@
             this.Register_Email_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.Register_Email_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Register_Email_TextBox.Location = new System.Drawing.Point(44, 218);
-            this.Register_Email_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Register_Email_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.Register_Email_TextBox.Name = "Register_Email_TextBox";
             this.Register_Email_TextBox.Size = new System.Drawing.Size(434, 38);
             this.Register_Email_TextBox.TabIndex = 19;
@@ -1066,7 +1105,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Register_Title_Label.AutoSize = true;
             this.Register_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold);
-            this.Register_Title_Label.Location = new System.Drawing.Point(213, 3);
+            this.Register_Title_Label.Location = new System.Drawing.Point(160, 2);
             this.Register_Title_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Register_Title_Label.Name = "Register_Title_Label";
             this.Register_Title_Label.Size = new System.Drawing.Size(303, 65);
@@ -1147,10 +1186,10 @@
             this.DateBox.Controls.Add(this.SearchDate_Button);
             this.DateBox.Controls.Add(this.Calender_Data);
             this.DateBox.Controls.Add(this.DateSelected_Textbox);
-            this.DateBox.Location = new System.Drawing.Point(367, 214);
-            this.DateBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DateBox.Location = new System.Drawing.Point(221, 154);
+            this.DateBox.Margin = new System.Windows.Forms.Padding(2);
             this.DateBox.Name = "DateBox";
-            this.DateBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DateBox.Padding = new System.Windows.Forms.Padding(2);
             this.DateBox.Size = new System.Drawing.Size(582, 337);
             this.DateBox.TabIndex = 36;
             this.DateBox.TabStop = false;
@@ -1159,7 +1198,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(57, 90);
+            this.label2.Location = new System.Drawing.Point(43, 73);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 21);
@@ -1170,7 +1209,7 @@
             // 
             this.DataLabel.AutoSize = true;
             this.DataLabel.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.DataLabel.Location = new System.Drawing.Point(4, 14);
+            this.DataLabel.Location = new System.Drawing.Point(3, 11);
             this.DataLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DataLabel.Name = "DataLabel";
             this.DataLabel.Size = new System.Drawing.Size(111, 21);
@@ -1181,7 +1220,7 @@
             // 
             this.DateSelected_Label.AutoSize = true;
             this.DateSelected_Label.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.DateSelected_Label.Location = new System.Drawing.Point(305, 90);
+            this.DateSelected_Label.Location = new System.Drawing.Point(229, 73);
             this.DateSelected_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DateSelected_Label.Name = "DateSelected_Label";
             this.DateSelected_Label.Size = new System.Drawing.Size(193, 21);
@@ -1192,8 +1231,8 @@
             // 
             this.SearchDate_Button.BackColor = System.Drawing.Color.Orange;
             this.SearchDate_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.SearchDate_Button.Location = new System.Drawing.Point(309, 245);
-            this.SearchDate_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SearchDate_Button.Location = new System.Drawing.Point(232, 199);
+            this.SearchDate_Button.Margin = new System.Windows.Forms.Padding(2);
             this.SearchDate_Button.Name = "SearchDate_Button";
             this.SearchDate_Button.Size = new System.Drawing.Size(200, 40);
             this.SearchDate_Button.TabIndex = 35;
@@ -1204,19 +1243,19 @@
             // Calender_Data
             // 
             this.Calender_Data.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Calender_Data.Location = new System.Drawing.Point(61, 133);
-            this.Calender_Data.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Calender_Data.Location = new System.Drawing.Point(46, 108);
+            this.Calender_Data.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Calender_Data.Name = "Calender_Data";
             this.Calender_Data.TabIndex = 33;
             this.Calender_Data.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.Calender_Data_DateChanged);
             // 
             // DateSelected_Textbox
             // 
-            this.DateSelected_Textbox.Location = new System.Drawing.Point(309, 133);
-            this.DateSelected_Textbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DateSelected_Textbox.Location = new System.Drawing.Point(232, 108);
+            this.DateSelected_Textbox.Margin = new System.Windows.Forms.Padding(2);
             this.DateSelected_Textbox.Name = "DateSelected_Textbox";
             this.DateSelected_Textbox.ReadOnly = true;
-            this.DateSelected_Textbox.Size = new System.Drawing.Size(113, 20);
+            this.DateSelected_Textbox.Size = new System.Drawing.Size(86, 20);
             this.DateSelected_Textbox.TabIndex = 32;
             this.DateSelected_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1268,9 +1307,9 @@
             this.AdminPage2.Controls.Add(this.Admin2_BackToMenu_LinkLabel);
             this.AdminPage2.Controls.Add(this.Admin_Panel2);
             this.AdminPage2.Location = new System.Drawing.Point(4, 22);
-            this.AdminPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdminPage2.Margin = new System.Windows.Forms.Padding(2);
             this.AdminPage2.Name = "AdminPage2";
-            this.AdminPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdminPage2.Padding = new System.Windows.Forms.Padding(2);
             this.AdminPage2.Size = new System.Drawing.Size(1000, 575);
             this.AdminPage2.TabIndex = 10;
             this.AdminPage2.Text = "AdminPage2";
@@ -1291,10 +1330,10 @@
             this.groupBox1.Controls.Add(this.OtherDate_Button);
             this.groupBox1.Controls.Add(this.DateSelectedText);
             this.groupBox1.Controls.Add(this.DateSelectedLabel2);
-            this.groupBox1.Location = new System.Drawing.Point(367, 214);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(221, 154);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(582, 337);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
@@ -1303,7 +1342,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(11, 14);
+            this.label1.Location = new System.Drawing.Point(8, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 21);
@@ -1314,8 +1353,8 @@
             // 
             this.AmountOrdersInfo.BackColor = System.Drawing.Color.Orange;
             this.AmountOrdersInfo.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Bold);
-            this.AmountOrdersInfo.Location = new System.Drawing.Point(306, 182);
-            this.AmountOrdersInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AmountOrdersInfo.Location = new System.Drawing.Point(371, 151);
+            this.AmountOrdersInfo.Margin = new System.Windows.Forms.Padding(2);
             this.AmountOrdersInfo.Name = "AmountOrdersInfo";
             this.AmountOrdersInfo.Size = new System.Drawing.Size(91, 26);
             this.AmountOrdersInfo.TabIndex = 74;
@@ -1327,8 +1366,8 @@
             // 
             this.AmountTicketsInfo.BackColor = System.Drawing.Color.Orange;
             this.AmountTicketsInfo.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Bold);
-            this.AmountTicketsInfo.Location = new System.Drawing.Point(306, 218);
-            this.AmountTicketsInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AmountTicketsInfo.Location = new System.Drawing.Point(371, 181);
+            this.AmountTicketsInfo.Margin = new System.Windows.Forms.Padding(2);
             this.AmountTicketsInfo.Name = "AmountTicketsInfo";
             this.AmountTicketsInfo.Size = new System.Drawing.Size(91, 26);
             this.AmountTicketsInfo.TabIndex = 73;
@@ -1338,31 +1377,31 @@
             // 
             // AmountTickets
             // 
-            this.AmountTickets.Location = new System.Drawing.Point(229, 218);
-            this.AmountTickets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AmountTickets.Location = new System.Drawing.Point(317, 186);
+            this.AmountTickets.Margin = new System.Windows.Forms.Padding(2);
             this.AmountTickets.Name = "AmountTickets";
             this.AmountTickets.ReadOnly = true;
-            this.AmountTickets.Size = new System.Drawing.Size(66, 20);
+            this.AmountTickets.Size = new System.Drawing.Size(50, 20);
             this.AmountTickets.TabIndex = 71;
             this.AmountTickets.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // AmountOrders
             // 
-            this.AmountOrders.Location = new System.Drawing.Point(229, 186);
-            this.AmountOrders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AmountOrders.Location = new System.Drawing.Point(317, 156);
+            this.AmountOrders.Margin = new System.Windows.Forms.Padding(2);
             this.AmountOrders.Name = "AmountOrders";
             this.AmountOrders.ReadOnly = true;
-            this.AmountOrders.Size = new System.Drawing.Size(66, 20);
+            this.AmountOrders.Size = new System.Drawing.Size(50, 20);
             this.AmountOrders.TabIndex = 70;
             this.AmountOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Revenue
             // 
-            this.Revenue.Location = new System.Drawing.Point(229, 153);
-            this.Revenue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Revenue.Location = new System.Drawing.Point(317, 122);
+            this.Revenue.Margin = new System.Windows.Forms.Padding(2);
             this.Revenue.Name = "Revenue";
             this.Revenue.ReadOnly = true;
-            this.Revenue.Size = new System.Drawing.Size(66, 20);
+            this.Revenue.Size = new System.Drawing.Size(50, 20);
             this.Revenue.TabIndex = 69;
             this.Revenue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1370,7 +1409,7 @@
             // 
             this.DataTicket_Label.AutoSize = true;
             this.DataTicket_Label.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.DataTicket_Label.Location = new System.Drawing.Point(71, 215);
+            this.DataTicket_Label.Location = new System.Drawing.Point(158, 186);
             this.DataTicket_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DataTicket_Label.Name = "DataTicket_Label";
             this.DataTicket_Label.Size = new System.Drawing.Size(139, 21);
@@ -1381,7 +1420,7 @@
             // 
             this.DataOrder_Label.AutoSize = true;
             this.DataOrder_Label.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.DataOrder_Label.Location = new System.Drawing.Point(75, 182);
+            this.DataOrder_Label.Location = new System.Drawing.Point(158, 156);
             this.DataOrder_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DataOrder_Label.Name = "DataOrder_Label";
             this.DataOrder_Label.Size = new System.Drawing.Size(135, 21);
@@ -1392,7 +1431,7 @@
             // 
             this.DataRevenue_Label.AutoSize = true;
             this.DataRevenue_Label.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.DataRevenue_Label.Location = new System.Drawing.Point(135, 149);
+            this.DataRevenue_Label.Location = new System.Drawing.Point(222, 122);
             this.DataRevenue_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DataRevenue_Label.Name = "DataRevenue_Label";
             this.DataRevenue_Label.Size = new System.Drawing.Size(71, 21);
@@ -1403,8 +1442,8 @@
             // 
             this.OtherDate_Button.BackColor = System.Drawing.Color.Orange;
             this.OtherDate_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.OtherDate_Button.Location = new System.Drawing.Point(369, 285);
-            this.OtherDate_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OtherDate_Button.Location = new System.Drawing.Point(371, 286);
+            this.OtherDate_Button.Margin = new System.Windows.Forms.Padding(2);
             this.OtherDate_Button.Name = "OtherDate_Button";
             this.OtherDate_Button.Size = new System.Drawing.Size(200, 40);
             this.OtherDate_Button.TabIndex = 65;
@@ -1416,7 +1455,7 @@
             // 
             this.DateSelectedText.AutoSize = true;
             this.DateSelectedText.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.DateSelectedText.Location = new System.Drawing.Point(225, 117);
+            this.DateSelectedText.Location = new System.Drawing.Point(169, 95);
             this.DateSelectedText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DateSelectedText.Name = "DateSelectedText";
             this.DateSelectedText.Size = new System.Drawing.Size(0, 21);
@@ -1426,7 +1465,7 @@
             // 
             this.DateSelectedLabel2.AutoSize = true;
             this.DateSelectedLabel2.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.DateSelectedLabel2.Location = new System.Drawing.Point(20, 117);
+            this.DateSelectedLabel2.Location = new System.Drawing.Point(100, 95);
             this.DateSelectedLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DateSelectedLabel2.Name = "DateSelectedLabel2";
             this.DateSelectedLabel2.Size = new System.Drawing.Size(193, 21);
@@ -1443,6 +1482,7 @@
             this.Admin2_BackToMenu_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.Admin2_BackToMenu_LinkLabel.LinkColor = System.Drawing.Color.Black;
             this.Admin2_BackToMenu_LinkLabel.Location = new System.Drawing.Point(806, 2);
+            this.Admin2_BackToMenu_LinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Admin2_BackToMenu_LinkLabel.Name = "Admin2_BackToMenu_LinkLabel";
             this.Admin2_BackToMenu_LinkLabel.Size = new System.Drawing.Size(192, 21);
             this.Admin2_BackToMenu_LinkLabel.TabIndex = 29;
@@ -1457,7 +1497,8 @@
             this.Admin_Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Admin_Panel2.BackColor = System.Drawing.Color.Yellow;
             this.Admin_Panel2.Controls.Add(this.Admin2_Title_Label);
-            this.Admin_Panel2.Location = new System.Drawing.Point(1, 25);
+            this.Admin_Panel2.Location = new System.Drawing.Point(0, 25);
+            this.Admin_Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.Admin_Panel2.Name = "Admin_Panel2";
             this.Admin_Panel2.Size = new System.Drawing.Size(1000, 74);
             this.Admin_Panel2.TabIndex = 13;
@@ -1469,6 +1510,7 @@
             this.Admin2_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Admin2_Title_Label.ForeColor = System.Drawing.Color.Black;
             this.Admin2_Title_Label.Location = new System.Drawing.Point(0, 0);
+            this.Admin2_Title_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Admin2_Title_Label.Name = "Admin2_Title_Label";
             this.Admin2_Title_Label.Size = new System.Drawing.Size(363, 65);
             this.Admin2_Title_Label.TabIndex = 9;
@@ -1482,7 +1524,7 @@
             this.TicketPage.Controls.Add(this.Ticket_Panel1);
             this.TicketPage.Location = new System.Drawing.Point(4, 22);
             this.TicketPage.Name = "TicketPage";
-            this.TicketPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TicketPage.Padding = new System.Windows.Forms.Padding(2);
             this.TicketPage.Size = new System.Drawing.Size(1000, 575);
             this.TicketPage.TabIndex = 9;
             this.TicketPage.Text = "TicketPage";
@@ -1492,6 +1534,24 @@
             // 
             this.Ticket_panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Ticket_panel2.BackColor = System.Drawing.Color.Yellow;
+            this.Ticket_panel2.Controls.Add(this.Totaal_Snacks_Label1);
+            this.Ticket_panel2.Controls.Add(this.Totaal_Snacks_Label);
+            this.Ticket_panel2.Controls.Add(this.Snoep_Aantal_Label);
+            this.Ticket_panel2.Controls.Add(this.Plus_Snoep_Button);
+            this.Ticket_panel2.Controls.Add(this.Frisdrank_Aantal_Label);
+            this.Ticket_panel2.Controls.Add(this.Min_Snoep_Button);
+            this.Ticket_panel2.Controls.Add(this.Min_Popcorn_Button);
+            this.Ticket_panel2.Controls.Add(this.Popcorn_Aantal_Label);
+            this.Ticket_panel2.Controls.Add(this.Plus_Frisdrank_Button);
+            this.Ticket_panel2.Controls.Add(this.Plus_Popcorn_Button);
+            this.Ticket_panel2.Controls.Add(this.Min_Frisdrank_Button);
+            this.Ticket_panel2.Controls.Add(this.Snacks_Prijs_Aantal_Label);
+            this.Ticket_panel2.Controls.Add(this.Snoep_Prijs_Label);
+            this.Ticket_panel2.Controls.Add(this.Frisdrank_Prijs_Label);
+            this.Ticket_panel2.Controls.Add(this.Popcorn_Prijs_Label);
+            this.Ticket_panel2.Controls.Add(this.Snoep_Label);
+            this.Ticket_panel2.Controls.Add(this.Frisdrank_Label);
+            this.Ticket_panel2.Controls.Add(this.Popcorn_Label);
             this.Ticket_panel2.Controls.Add(this.Ticket_Label2);
             this.Ticket_panel2.Controls.Add(this.Ticket_ToSeats_Button);
             this.Ticket_panel2.Controls.Add(this.Ticket_label1);
@@ -1509,14 +1569,221 @@
             this.Ticket_panel2.Controls.Add(this.Ticket_Label4);
             this.Ticket_panel2.Location = new System.Drawing.Point(303, 105);
             this.Ticket_panel2.Name = "Ticket_panel2";
-            this.Ticket_panel2.Size = new System.Drawing.Size(431, 400);
+            this.Ticket_panel2.Size = new System.Drawing.Size(433, 470);
             this.Ticket_panel2.TabIndex = 46;
+            // 
+            // Totaal_Snacks_Label1
+            // 
+            this.Totaal_Snacks_Label1.AutoSize = true;
+            this.Totaal_Snacks_Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Totaal_Snacks_Label1.Location = new System.Drawing.Point(30, 382);
+            this.Totaal_Snacks_Label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Totaal_Snacks_Label1.Name = "Totaal_Snacks_Label1";
+            this.Totaal_Snacks_Label1.Size = new System.Drawing.Size(47, 13);
+            this.Totaal_Snacks_Label1.TabIndex = 80;
+            this.Totaal_Snacks_Label1.Text = "Totaal:";
+            // 
+            // Totaal_Snacks_Label
+            // 
+            this.Totaal_Snacks_Label.AutoSize = true;
+            this.Totaal_Snacks_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Totaal_Snacks_Label.Location = new System.Drawing.Point(205, 382);
+            this.Totaal_Snacks_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Totaal_Snacks_Label.Name = "Totaal_Snacks_Label";
+            this.Totaal_Snacks_Label.Size = new System.Drawing.Size(14, 13);
+            this.Totaal_Snacks_Label.TabIndex = 79;
+            this.Totaal_Snacks_Label.Text = "0";
+            // 
+            // Snoep_Aantal_Label
+            // 
+            this.Snoep_Aantal_Label.AutoSize = true;
+            this.Snoep_Aantal_Label.Location = new System.Drawing.Point(353, 341);
+            this.Snoep_Aantal_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Snoep_Aantal_Label.Name = "Snoep_Aantal_Label";
+            this.Snoep_Aantal_Label.Size = new System.Drawing.Size(13, 13);
+            this.Snoep_Aantal_Label.TabIndex = 72;
+            this.Snoep_Aantal_Label.Text = "0";
+            // 
+            // Plus_Snoep_Button
+            // 
+            this.Plus_Snoep_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Plus_Snoep_Button.Location = new System.Drawing.Point(370, 341);
+            this.Plus_Snoep_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Plus_Snoep_Button.Name = "Plus_Snoep_Button";
+            this.Plus_Snoep_Button.Size = new System.Drawing.Size(18, 19);
+            this.Plus_Snoep_Button.TabIndex = 77;
+            this.Plus_Snoep_Button.Text = "+";
+            this.Plus_Snoep_Button.UseVisualStyleBackColor = true;
+            this.Plus_Snoep_Button.Click += new System.EventHandler(this.Plus_Snoep_Button_Click);
+            // 
+            // Frisdrank_Aantal_Label
+            // 
+            this.Frisdrank_Aantal_Label.AutoSize = true;
+            this.Frisdrank_Aantal_Label.Location = new System.Drawing.Point(354, 314);
+            this.Frisdrank_Aantal_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Frisdrank_Aantal_Label.Name = "Frisdrank_Aantal_Label";
+            this.Frisdrank_Aantal_Label.Size = new System.Drawing.Size(13, 13);
+            this.Frisdrank_Aantal_Label.TabIndex = 71;
+            this.Frisdrank_Aantal_Label.Text = "0";
+            // 
+            // Min_Snoep_Button
+            // 
+            this.Min_Snoep_Button.BackColor = System.Drawing.Color.Transparent;
+            this.Min_Snoep_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min_Snoep_Button.Location = new System.Drawing.Point(333, 341);
+            this.Min_Snoep_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Min_Snoep_Button.Name = "Min_Snoep_Button";
+            this.Min_Snoep_Button.Size = new System.Drawing.Size(16, 19);
+            this.Min_Snoep_Button.TabIndex = 76;
+            this.Min_Snoep_Button.Text = "-";
+            this.Min_Snoep_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Min_Snoep_Button.UseVisualStyleBackColor = false;
+            this.Min_Snoep_Button.Click += new System.EventHandler(this.Min_Snoep_Button_Click);
+            // 
+            // Min_Popcorn_Button
+            // 
+            this.Min_Popcorn_Button.BackColor = System.Drawing.Color.Transparent;
+            this.Min_Popcorn_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min_Popcorn_Button.Location = new System.Drawing.Point(333, 283);
+            this.Min_Popcorn_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Min_Popcorn_Button.Name = "Min_Popcorn_Button";
+            this.Min_Popcorn_Button.Size = new System.Drawing.Size(16, 19);
+            this.Min_Popcorn_Button.TabIndex = 73;
+            this.Min_Popcorn_Button.Text = "-";
+            this.Min_Popcorn_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Min_Popcorn_Button.UseVisualStyleBackColor = false;
+            this.Min_Popcorn_Button.Click += new System.EventHandler(this.Min_Popcorn_Button_Click);
+            // 
+            // Popcorn_Aantal_Label
+            // 
+            this.Popcorn_Aantal_Label.AutoSize = true;
+            this.Popcorn_Aantal_Label.Location = new System.Drawing.Point(353, 284);
+            this.Popcorn_Aantal_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Popcorn_Aantal_Label.Name = "Popcorn_Aantal_Label";
+            this.Popcorn_Aantal_Label.Size = new System.Drawing.Size(13, 13);
+            this.Popcorn_Aantal_Label.TabIndex = 70;
+            this.Popcorn_Aantal_Label.Text = "0";
+            // 
+            // Plus_Frisdrank_Button
+            // 
+            this.Plus_Frisdrank_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Plus_Frisdrank_Button.Location = new System.Drawing.Point(370, 309);
+            this.Plus_Frisdrank_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Plus_Frisdrank_Button.Name = "Plus_Frisdrank_Button";
+            this.Plus_Frisdrank_Button.Size = new System.Drawing.Size(18, 19);
+            this.Plus_Frisdrank_Button.TabIndex = 78;
+            this.Plus_Frisdrank_Button.Text = "+";
+            this.Plus_Frisdrank_Button.UseVisualStyleBackColor = true;
+            this.Plus_Frisdrank_Button.Click += new System.EventHandler(this.Plus_Frisdrank_Button_Click);
+            // 
+            // Plus_Popcorn_Button
+            // 
+            this.Plus_Popcorn_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Plus_Popcorn_Button.Location = new System.Drawing.Point(370, 283);
+            this.Plus_Popcorn_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Plus_Popcorn_Button.Name = "Plus_Popcorn_Button";
+            this.Plus_Popcorn_Button.Size = new System.Drawing.Size(18, 19);
+            this.Plus_Popcorn_Button.TabIndex = 74;
+            this.Plus_Popcorn_Button.Text = "+";
+            this.Plus_Popcorn_Button.UseVisualStyleBackColor = true;
+            this.Plus_Popcorn_Button.Click += new System.EventHandler(this.Plus_Popcorn_Button_Click);
+            // 
+            // Min_Frisdrank_Button
+            // 
+            this.Min_Frisdrank_Button.BackColor = System.Drawing.Color.Transparent;
+            this.Min_Frisdrank_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min_Frisdrank_Button.Location = new System.Drawing.Point(333, 309);
+            this.Min_Frisdrank_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Min_Frisdrank_Button.Name = "Min_Frisdrank_Button";
+            this.Min_Frisdrank_Button.Size = new System.Drawing.Size(16, 19);
+            this.Min_Frisdrank_Button.TabIndex = 75;
+            this.Min_Frisdrank_Button.Text = "-";
+            this.Min_Frisdrank_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Min_Frisdrank_Button.UseVisualStyleBackColor = false;
+            this.Min_Frisdrank_Button.Click += new System.EventHandler(this.Min_Frisdrank_Button_Click);
+            // 
+            // Snacks_Prijs_Aantal_Label
+            // 
+            this.Snacks_Prijs_Aantal_Label.AutoSize = true;
+            this.Snacks_Prijs_Aantal_Label.Location = new System.Drawing.Point(30, 260);
+            this.Snacks_Prijs_Aantal_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Snacks_Prijs_Aantal_Label.Name = "Snacks_Prijs_Aantal_Label";
+            this.Snacks_Prijs_Aantal_Label.Size = new System.Drawing.Size(347, 13);
+            this.Snacks_Prijs_Aantal_Label.TabIndex = 69;
+            this.Snacks_Prijs_Aantal_Label.Text = "Snacks                                               Prijs                       " +
+    "               Aantal\r\n";
+            // 
+            // Snoep_Prijs_Label
+            // 
+            this.Snoep_Prijs_Label.AutoSize = true;
+            this.Snoep_Prijs_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Snoep_Prijs_Label.Location = new System.Drawing.Point(205, 348);
+            this.Snoep_Prijs_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Snoep_Prijs_Label.Name = "Snoep_Prijs_Label";
+            this.Snoep_Prijs_Label.Size = new System.Drawing.Size(32, 13);
+            this.Snoep_Prijs_Label.TabIndex = 68;
+            this.Snoep_Prijs_Label.Text = "1,00";
+            // 
+            // Frisdrank_Prijs_Label
+            // 
+            this.Frisdrank_Prijs_Label.AutoSize = true;
+            this.Frisdrank_Prijs_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frisdrank_Prijs_Label.Location = new System.Drawing.Point(205, 314);
+            this.Frisdrank_Prijs_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Frisdrank_Prijs_Label.Name = "Frisdrank_Prijs_Label";
+            this.Frisdrank_Prijs_Label.Size = new System.Drawing.Size(32, 13);
+            this.Frisdrank_Prijs_Label.TabIndex = 67;
+            this.Frisdrank_Prijs_Label.Text = "1,50";
+            // 
+            // Popcorn_Prijs_Label
+            // 
+            this.Popcorn_Prijs_Label.AutoSize = true;
+            this.Popcorn_Prijs_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Popcorn_Prijs_Label.Location = new System.Drawing.Point(205, 283);
+            this.Popcorn_Prijs_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Popcorn_Prijs_Label.Name = "Popcorn_Prijs_Label";
+            this.Popcorn_Prijs_Label.Size = new System.Drawing.Size(32, 13);
+            this.Popcorn_Prijs_Label.TabIndex = 66;
+            this.Popcorn_Prijs_Label.Text = "3,50";
+            // 
+            // Snoep_Label
+            // 
+            this.Snoep_Label.AutoSize = true;
+            this.Snoep_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Snoep_Label.Location = new System.Drawing.Point(30, 348);
+            this.Snoep_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Snoep_Label.Name = "Snoep_Label";
+            this.Snoep_Label.Size = new System.Drawing.Size(43, 13);
+            this.Snoep_Label.TabIndex = 65;
+            this.Snoep_Label.Text = "Snoep";
+            // 
+            // Frisdrank_Label
+            // 
+            this.Frisdrank_Label.AutoSize = true;
+            this.Frisdrank_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frisdrank_Label.Location = new System.Drawing.Point(30, 314);
+            this.Frisdrank_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Frisdrank_Label.Name = "Frisdrank_Label";
+            this.Frisdrank_Label.Size = new System.Drawing.Size(59, 13);
+            this.Frisdrank_Label.TabIndex = 64;
+            this.Frisdrank_Label.Text = "Frisdrank";
+            // 
+            // Popcorn_Label
+            // 
+            this.Popcorn_Label.AutoSize = true;
+            this.Popcorn_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Popcorn_Label.Location = new System.Drawing.Point(30, 283);
+            this.Popcorn_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Popcorn_Label.Name = "Popcorn_Label";
+            this.Popcorn_Label.Size = new System.Drawing.Size(54, 13);
+            this.Popcorn_Label.TabIndex = 63;
+            this.Popcorn_Label.Text = "Popcorn";
             // 
             // Ticket_Label2
             // 
             this.Ticket_Label2.AutoSize = true;
             this.Ticket_Label2.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.Ticket_Label2.Location = new System.Drawing.Point(24, 208);
+            this.Ticket_Label2.Location = new System.Drawing.Point(26, 224);
             this.Ticket_Label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Ticket_Label2.Name = "Ticket_Label2";
             this.Ticket_Label2.Size = new System.Drawing.Size(364, 21);
@@ -1527,8 +1794,8 @@
             // 
             this.Ticket_ToSeats_Button.BackColor = System.Drawing.Color.Orange;
             this.Ticket_ToSeats_Button.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold);
-            this.Ticket_ToSeats_Button.Location = new System.Drawing.Point(39, 349);
-            this.Ticket_ToSeats_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ticket_ToSeats_Button.Location = new System.Drawing.Point(39, 417);
+            this.Ticket_ToSeats_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ticket_ToSeats_Button.Name = "Ticket_ToSeats_Button";
             this.Ticket_ToSeats_Button.Size = new System.Drawing.Size(349, 35);
             this.Ticket_ToSeats_Button.TabIndex = 61;
@@ -1572,7 +1839,7 @@
             // 
             this.Ticket_PlusGehandicapten_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ticket_PlusGehandicapten_Button.Location = new System.Drawing.Point(370, 141);
-            this.Ticket_PlusGehandicapten_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ticket_PlusGehandicapten_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ticket_PlusGehandicapten_Button.Name = "Ticket_PlusGehandicapten_Button";
             this.Ticket_PlusGehandicapten_Button.Size = new System.Drawing.Size(18, 19);
             this.Ticket_PlusGehandicapten_Button.TabIndex = 59;
@@ -1595,7 +1862,7 @@
             this.Ticket_MinGehandicapten_Button.BackColor = System.Drawing.Color.Transparent;
             this.Ticket_MinGehandicapten_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ticket_MinGehandicapten_Button.Location = new System.Drawing.Point(333, 141);
-            this.Ticket_MinGehandicapten_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ticket_MinGehandicapten_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ticket_MinGehandicapten_Button.Name = "Ticket_MinGehandicapten_Button";
             this.Ticket_MinGehandicapten_Button.Size = new System.Drawing.Size(16, 19);
             this.Ticket_MinGehandicapten_Button.TabIndex = 58;
@@ -1609,7 +1876,7 @@
             this.Ticket_PlusVolwassen_Button.BackColor = System.Drawing.Color.Transparent;
             this.Ticket_PlusVolwassen_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ticket_PlusVolwassen_Button.Location = new System.Drawing.Point(333, 95);
-            this.Ticket_PlusVolwassen_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ticket_PlusVolwassen_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ticket_PlusVolwassen_Button.Name = "Ticket_PlusVolwassen_Button";
             this.Ticket_PlusVolwassen_Button.Size = new System.Drawing.Size(16, 19);
             this.Ticket_PlusVolwassen_Button.TabIndex = 55;
@@ -1621,7 +1888,7 @@
             // Ticket_Label3
             // 
             this.Ticket_Label3.AutoSize = true;
-            this.Ticket_Label3.Location = new System.Drawing.Point(38, 51);
+            this.Ticket_Label3.Location = new System.Drawing.Point(27, 58);
             this.Ticket_Label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Ticket_Label3.Name = "Ticket_Label3";
             this.Ticket_Label3.Size = new System.Drawing.Size(350, 13);
@@ -1643,7 +1910,7 @@
             // 
             this.Ticket_PlusKinderen_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ticket_PlusKinderen_Button.Location = new System.Drawing.Point(370, 118);
-            this.Ticket_PlusKinderen_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ticket_PlusKinderen_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ticket_PlusKinderen_Button.Name = "Ticket_PlusKinderen_Button";
             this.Ticket_PlusKinderen_Button.Size = new System.Drawing.Size(18, 19);
             this.Ticket_PlusKinderen_Button.TabIndex = 60;
@@ -1655,7 +1922,7 @@
             // 
             this.Ticket_MinVolwassenen_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ticket_MinVolwassenen_Button.Location = new System.Drawing.Point(370, 94);
-            this.Ticket_MinVolwassenen_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ticket_MinVolwassenen_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ticket_MinVolwassenen_Button.Name = "Ticket_MinVolwassenen_Button";
             this.Ticket_MinVolwassenen_Button.Size = new System.Drawing.Size(18, 19);
             this.Ticket_MinVolwassenen_Button.TabIndex = 56;
@@ -1668,7 +1935,7 @@
             this.Ticket_MinKinderen_Button.BackColor = System.Drawing.Color.Transparent;
             this.Ticket_MinKinderen_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ticket_MinKinderen_Button.Location = new System.Drawing.Point(333, 118);
-            this.Ticket_MinKinderen_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ticket_MinKinderen_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ticket_MinKinderen_Button.Name = "Ticket_MinKinderen_Button";
             this.Ticket_MinKinderen_Button.Size = new System.Drawing.Size(16, 19);
             this.Ticket_MinKinderen_Button.TabIndex = 57;
@@ -1684,10 +1951,10 @@
             this.Ticket_Label4.Location = new System.Drawing.Point(27, 94);
             this.Ticket_Label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Ticket_Label4.Name = "Ticket_Label4";
-            this.Ticket_Label4.Size = new System.Drawing.Size(230, 91);
+            this.Ticket_Label4.Size = new System.Drawing.Size(226, 91);
             this.Ticket_Label4.TabIndex = 50;
-            this.Ticket_Label4.Text = "Volwassene                              13.95 \r\n\r\nKinderen                       " +
-    "            8.95\r\n\r\nGehandicapten                          5.95\r\n\r\nTotaal       " +
+            this.Ticket_Label4.Text = "Volwassene                              13.50\r\n\r\nKinderen                        " +
+    "           8.50\r\n\r\nGehandicapten                          5.50\r\n\r\nTotaal:       " +
     "                 ";
             // 
             // Ticket_BackToTime_LinkLabel
@@ -1699,7 +1966,7 @@
             this.Ticket_BackToTime_LinkLabel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Ticket_BackToTime_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.Ticket_BackToTime_LinkLabel.LinkColor = System.Drawing.Color.Black;
-            this.Ticket_BackToTime_LinkLabel.Location = new System.Drawing.Point(805, 3);
+            this.Ticket_BackToTime_LinkLabel.Location = new System.Drawing.Point(806, 2);
             this.Ticket_BackToTime_LinkLabel.Name = "Ticket_BackToTime_LinkLabel";
             this.Ticket_BackToTime_LinkLabel.Size = new System.Drawing.Size(192, 21);
             this.Ticket_BackToTime_LinkLabel.TabIndex = 46;
@@ -1741,7 +2008,7 @@
             this.Controls.Add(this.PatatTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Patat";
             this.Text = "PatatApplication";
             this.PatatTabControl.ResumeLayout(false);
@@ -1935,6 +2202,26 @@
         private System.Windows.Forms.Button AmountOrdersInfo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label DataLabel;
+        private System.Windows.Forms.Label Snacks_Prijs_Aantal_Label;
+        private System.Windows.Forms.Label Snoep_Prijs_Label;
+        private System.Windows.Forms.Label Frisdrank_Prijs_Label;
+        private System.Windows.Forms.Label Popcorn_Prijs_Label;
+        private System.Windows.Forms.Label Snoep_Label;
+        private System.Windows.Forms.Label Frisdrank_Label;
+        private System.Windows.Forms.Label Popcorn_Label;
+        private System.Windows.Forms.Label Totaal_Snacks_Label1;
+        private System.Windows.Forms.Label Totaal_Snacks_Label;
+        private System.Windows.Forms.Label Snoep_Aantal_Label;
+        private System.Windows.Forms.Button Plus_Snoep_Button;
+        private System.Windows.Forms.Label Frisdrank_Aantal_Label;
+        private System.Windows.Forms.Button Min_Snoep_Button;
+        private System.Windows.Forms.Button Min_Popcorn_Button;
+        private System.Windows.Forms.Label Popcorn_Aantal_Label;
+        private System.Windows.Forms.Button Plus_Frisdrank_Button;
+        private System.Windows.Forms.Button Plus_Popcorn_Button;
+        private System.Windows.Forms.Button Min_Frisdrank_Button;
+        private System.Windows.Forms.Label Totaal_Prijs_Alles_Label;
+        private System.Windows.Forms.Label Totaal_Prijs_Alles_Label1;
     }
 }
 
