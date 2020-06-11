@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -42,7 +43,6 @@ namespace Proejct_B
             Menu_Right_PictureBox.Image = Image.FromFile(root + movies[currentImage + 1].PosterLocation);
         }
         //----------End No Clue----------//
-
 
         //----------Menu Scherm----------//
         private void Menu_Login_Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -409,10 +409,66 @@ namespace Proejct_B
         {
             PatatTabControl.SelectedTab = TicketPage;
         }
+
         //----------Einde Payment Scherm----------//
+       
+        //----------Begin Admin Scherm------------//
+
+        
+
+        private void Calender_Data_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateSelected_Textbox.Text = Calender_Data.SelectionStart.ToShortDateString();
+        }
+
+        private void SearchDate_Button_Click_1(object sender, EventArgs e)
+        {
+            if (DateSelected_Textbox.Text != "")
+            {
+                PatatTabControl.SelectedTab = AdminPage2;
+                DateSelectedText.Text = DateSelected_Textbox.Text;
+                string dateselect = DateSelected_Textbox.Text;
+                Tuple<string, string, string, Tuple<string, string, string>> revenue = JsonToObjectLists.GetData(dateselect);
+                AmountOrders.Text = revenue.Item2;
+                AmountTickets.Text = revenue.Item3;
+                Revenue.Text = "€ " + revenue.Item1;
+            }
+            else
+            {
+                MessageBox.Show("Kies een datum");
+            }
+        }
+
+        private void Admin2_BacktoMenu_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PatatTabControl.SelectedTab = MenuPage;
+        }
+
+        private void OtherDate_Button_Click(object sender, EventArgs e)
+        {
+            PatatTabControl.SelectedTab = AdminPage;
+        }
+
+        private void AmountOrdersInfo_Click(object sender, EventArgs e)
+        {
+            Tuple<string, string, string> MovieList = JsonToObjectLists.GetMovie();
+            string dateselect = DateSelected_Textbox.Text;
+            Tuple<string, string, string, Tuple<string, string, string>> revenue = JsonToObjectLists.GetData(dateselect);
+            MessageBox.Show(MovieList.Item1 + " = " + revenue.Item4.Item1 + "\n" +
+                            MovieList.Item2 + " = " + revenue.Item4.Item2 + "\n" +
+                            MovieList.Item3 + " = " + revenue.Item4.Item3);
+        }
+
+        private void AmountTicketsInfo_Click(object sender, EventArgs e)
+        {
+            string dateselect = DateSelected_Textbox.Text;
+            Tuple<string, string, string> SortTickets = JsonToObjectLists.GetSortTickets(dateselect);
+            MessageBox.Show("Adult tickets: " + SortTickets.Item1 + "\n" +
+                            "Child tickets: " + SortTickets.Item2 + "\n" +
+                            "Disabled tickets: " + SortTickets.Item3);
+        }
 
 
-
-
+        //----------Einde Admin Scherm------------//
     }
 }

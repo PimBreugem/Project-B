@@ -88,6 +88,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="json\movies.json" />
+    <None Include="json\orders.json" />
     <None Include="json\users.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
