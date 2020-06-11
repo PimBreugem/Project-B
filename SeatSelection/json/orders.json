@@ -1,0 +1,40 @@
+[
+  {
+    "Id": 0,
+    "MovieTitle": 0,
+    "MoviePlaytimeId": 0,
+    "SeatAmount": [
+      3,
+      3,
+      0,
+      0
+    ],
+    "MySeats": [
+      2,
+      3,
+      4
+    ],
+    "TotalPrice": 44.97,
+    "OrderDate": "2020-05-04T11:56:20.406304+02:00",
+    "Paid": true
+  },
+  {
+    "Id": 1,
+    "MovieTitle": 1,
+    "MoviePlaytimeId": 1,
+    "SeatAmount": [
+      3,
+      3,
+      0,
+      0
+    ],
+    "MySeats": [
+      2,
+      3,
+      4
+    ],
+    "TotalPrice": 44.97,
+    "OrderDate": "2020-05-06T10:57:05.4997146+02:00",
+    "Paid": true
+  }
+]

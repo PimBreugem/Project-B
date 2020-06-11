@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 0,
+    "Username": "PimBreugem",
+    "Password": "Test1234",
+    "Email": "PimBreugem@gmail.com",
+    "Admin": true,
+    "OrderArray": [ 0 ]
+  },
+  {
+    "Id": 1,
+    "Title": "Test1",
+    "Username": "123",
+    "Email": "Test1@gmail.com",
+    "Admin": false,
+    "OrderArray": []
+  },
+  {
+    "Id": 2,
+    "Username": "Gebruiker1",
+    "Password": "Gebruiker1",
+    "Email": "Gebruiker1@gmail.com",
+    "Admin": false,
+    "OrderArray": [ 1 ]
+  }
+]
