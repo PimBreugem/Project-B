@@ -247,7 +247,6 @@ namespace Proejct_B
         public string[] Genre { get; set; }
         public int Length { get; set; }
         public PlayOptions[] PlayOptions { get; set; }
-
         public int GetId() { return Id; }
         public string GetTitle() { return Title; }
         public string PosterLocation { get; set; }
